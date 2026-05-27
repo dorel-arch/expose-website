@@ -2770,12 +2770,12 @@
 
   /* ── Hero badge ── */
   .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 7px 16px 7px 10px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px 5px 8px; border-radius: 999px;
     background: rgba(255,255,255,.88);
     border: 1px solid rgba(255,106,26,.22);
-    font-size: 12px; font-weight: 600; color: var(--orange);
-    margin-bottom: 18px; cursor: default;
+    font-size: 10.5px; font-weight: 600; color: var(--orange);
+    margin-bottom: 16px; cursor: default;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 16px rgba(255,106,26,.12);
@@ -2795,9 +2795,9 @@
 
   /* ── Hero subtitle ── */
   .hero-sub {
-    margin: 12px auto 0;
-    max-width: 500px;
-    font-size: 13px; line-height: 1.65;
+    margin: 14px auto 0;
+    max-width: 480px;
+    font-size: 15px; line-height: 1.6;
     color: var(--gray);
     animation: hero-sub-in .9s cubic-bezier(.16,1,.3,1) .5s both;
   }
@@ -2806,55 +2806,31 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Mobile hero floating stat pills ── */
-  .hero-float-l, .hero-float-r {
-    display: none;
-  }
-  @media (max-width: 899px) {
-    .hero-float-l, .hero-float-r {
-      display: inline-flex; align-items: center; gap: 6px;
-      position: absolute;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(255,106,26,.18);
-      border-radius: 999px;
-      padding: 7px 13px 7px 9px;
-      font-size: 11.5px; font-weight: 600; color: var(--ink-2);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 4px 16px rgba(28,18,8,.09);
-      opacity: 0;
-      animation: float-stat-in .8s cubic-bezier(.34,1.5,.64,1) both;
-      z-index: 2;
-    }
-    .hero-float-l { top: 14%; left: 12px; animation-delay: .6s; }
-    .hero-float-r { top: 14%; right: 12px; animation-delay: .8s; }
-    .hero-float-l strong, .hero-float-r strong { color: var(--ink); }
-    .hf-dot { width: 6px; height: 6px; border-radius: 50%; background: #1FBF6B; flex-shrink: 0; }
-  }
-  @keyframes float-stat-in {
-    from { opacity: 0; transform: translateY(8px) scale(.92); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
   /* ── Scroll cue (mobile only) ── */
   .scroll-cue { display: none; }
   @media (max-width: 899px) {
     .scroll-cue {
-      display: flex; flex-direction: column; align-items: center; gap: 3px;
-      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 5px;
+      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
       z-index: 2; pointer-events: none;
-      opacity: 0; animation: cue-fade-in .5s ease 1.4s forwards;
+      opacity: 0; animation: cue-fade-in .6s ease 1.6s forwards;
+    }
+    .sc-ring {
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(19,19,19,.18);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      color: var(--gray-2);
+      animation: cue-bounce 2.2s ease-in-out 2s infinite;
     }
     .scroll-cue span {
-      font-size: 9px; font-weight: 700; letter-spacing: .14em;
+      font-size: 8px; font-weight: 700; letter-spacing: .18em;
       text-transform: uppercase; color: var(--gray-2);
     }
-    .scroll-cue svg { animation: cue-bounce 2s ease-in-out 1.8s infinite; }
   }
-  @keyframes cue-fade-in { to { opacity: 1; } }
   @keyframes cue-bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+    50% { transform: translateY(8px); }
   }
 
   /* ── Enhanced button glow ── */
@@ -3215,16 +3191,6 @@
       <div class="hero-exi">Exi</div>
     </div>
 
-    <!-- Mobile floating stat pills -->
-    <div class="hero-float-l" aria-hidden="true">
-      <span class="hf-dot"></span>
-      <strong>380+</strong>&nbsp;live brands
-    </div>
-    <div class="hero-float-r" aria-hidden="true">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      <strong>48h</strong>&nbsp;avg. booking
-    </div>
-
     <div class="hero-badge">
       <span class="badge-dot"></span>
       EXi is live · AI-powered talent matching for brands
@@ -3295,8 +3261,10 @@
 
     <!-- Scroll cue (mobile only) -->
     <div class="scroll-cue" aria-hidden="true">
+      <div class="sc-ring">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v8M9 14l3 3 3-3"/></svg>
+      </div>
       <span>Scroll</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gray-2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
     </div>
   </header>
 
