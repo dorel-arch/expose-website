@@ -334,7 +334,7 @@
   }
 
   .hero h1 {
-    margin: 6px 0 0; font-size: 32px; line-height: 1.08; font-weight: 800;
+    margin: 6px 0 0; font-size: 38px; line-height: 1.1; font-weight: 800;
     letter-spacing: -0.03em;
     animation: h1-in 1s cubic-bezier(.16,1,.3,1) .3s both;
   }
@@ -342,7 +342,7 @@
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .hero h1 .it { display: block; font-size: 32px; }
+  .hero h1 .it { display: block; font-size: 38px; }
   .hero-search {
     margin: 28px auto 0; max-width: 360px;
     background: rgba(255,255,255,.96);
@@ -560,7 +560,7 @@
     .tabs-row { padding: 0 60px 40px; }
     .tabs-row .tabs { max-width: 360px; }
     .workflow .workflow-title { font-size: 38px; margin: 12px 0 36px; }
-    .workflow .workflow-title .workflow-sub { font-size: 18px; margin-top: 10px; }
+    .workflow .workflow-title .workflow-sub { font-size: 16px; margin-top: 10px; }
   }
 
   /* ───────── For Creatives section ───────── */
@@ -2795,15 +2795,66 @@
 
   /* ── Hero subtitle ── */
   .hero-sub {
-    margin: 16px auto 0;
+    margin: 12px auto 0;
     max-width: 500px;
-    font-size: 15px; line-height: 1.7;
+    font-size: 13px; line-height: 1.65;
     color: var(--gray);
     animation: hero-sub-in .9s cubic-bezier(.16,1,.3,1) .5s both;
   }
   @keyframes hero-sub-in {
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Mobile hero floating stat pills ── */
+  .hero-float-l, .hero-float-r {
+    display: none;
+  }
+  @media (max-width: 899px) {
+    .hero-float-l, .hero-float-r {
+      display: inline-flex; align-items: center; gap: 6px;
+      position: absolute;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,106,26,.18);
+      border-radius: 999px;
+      padding: 7px 13px 7px 9px;
+      font-size: 11.5px; font-weight: 600; color: var(--ink-2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 16px rgba(28,18,8,.09);
+      opacity: 0;
+      animation: float-stat-in .8s cubic-bezier(.34,1.5,.64,1) both;
+      z-index: 2;
+    }
+    .hero-float-l { top: 14%; left: 12px; animation-delay: .6s; }
+    .hero-float-r { top: 14%; right: 12px; animation-delay: .8s; }
+    .hero-float-l strong, .hero-float-r strong { color: var(--ink); }
+    .hf-dot { width: 6px; height: 6px; border-radius: 50%; background: #1FBF6B; flex-shrink: 0; }
+  }
+  @keyframes float-stat-in {
+    from { opacity: 0; transform: translateY(8px) scale(.92); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* ── Scroll cue (mobile only) ── */
+  .scroll-cue { display: none; }
+  @media (max-width: 899px) {
+    .scroll-cue {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      z-index: 2; pointer-events: none;
+      opacity: 0; animation: cue-fade-in .5s ease 1.4s forwards;
+    }
+    .scroll-cue span {
+      font-size: 9px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--gray-2);
+    }
+    .scroll-cue svg { animation: cue-bounce 2s ease-in-out 1.8s infinite; }
+  }
+  @keyframes cue-fade-in { to { opacity: 1; } }
+  @keyframes cue-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
   }
 
   /* ── Enhanced button glow ── */
@@ -2914,13 +2965,40 @@
   }
 
   /* ============================================
-     MOBILE — visual section separation
+     MOBILE — visual section separation + typography normalization
      ============================================ */
   @media (max-width: 899px) {
     .stats     { background: var(--bg-soft); }
     .campaigns { background: var(--bg-soft); }
     .faq       { background: var(--bg-soft); }
     .meet, .community, .testi { border-top: 1px solid var(--line); }
+
+    /* ── Uniform heading sizes across all sections ── */
+    .brands h2,
+    .workflow .workflow-title,
+    .meet h2,
+    .stats h2,
+    .community h2,
+    .campaigns h2,
+    .testi h2,
+    .faq h2 {
+      font-size: 26px !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.02em !important;
+      line-height: 1.15 !important;
+    }
+    .workflow .workflow-title .workflow-sub { font-size: 13px !important; }
+
+    /* ── Uniform description/sub text ── */
+    .stats > p,
+    .meet > p,
+    .community > p,
+    .campaigns > p,
+    .faq-sub { font-size: 14px; color: var(--gray); }
+
+    /* ── Final CTA: hide stat cards on mobile, bigger heading ── */
+    .fc-stats { display: none; }
+    .final-cta h2 { font-size: 36px !important; }
   }
 
   /* ============================================
@@ -3137,6 +3215,16 @@
       <div class="hero-exi">Exi</div>
     </div>
 
+    <!-- Mobile floating stat pills -->
+    <div class="hero-float-l" aria-hidden="true">
+      <span class="hf-dot"></span>
+      <strong>380+</strong>&nbsp;live brands
+    </div>
+    <div class="hero-float-r" aria-hidden="true">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <strong>48h</strong>&nbsp;avg. booking
+    </div>
+
     <div class="hero-badge">
       <span class="badge-dot"></span>
       EXi is live · AI-powered talent matching for brands
@@ -3203,6 +3291,12 @@
         <div class="trust-num"><span class="live-dot"></span><b>2,400+</b> brands shipping weekly</div>
         <div class="trust-sub"><span class="stars">★★★★★</span> 4.9 <span class="dot">·</span> trusted in 14 cities</div>
       </div>
+    </div>
+
+    <!-- Scroll cue (mobile only) -->
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gray-2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
     </div>
   </header>
 
