@@ -300,15 +300,27 @@
     50%      { box-shadow: 0 14px 36px rgba(255,106,26,.55), 0 0 0 12px rgba(255,106,26,.04); }
   }
 
-  /* Show constellation on tablet+ where there's actually space */
-  @media (min-width: 900px) {
+  /* Show constellation only when viewport is wide enough for clear side margins */
+  @media (min-width: 1280px) {
     .hero-orbit { display: block; }
+    .hero { min-height: 780px; }
+    /* Cards tucked into corners, outside the centered content column */
+    .hero-card-1 { top: 6%;    left: 2%; }
+    .hero-card-2 { top: 4%;   right: 2%; }
+    .hero-card-3 { bottom: 14%; left: 2%; }
+    .hero-card-4 { bottom: 12%; right: 2%; }
+    /* Blobs between cards and content column, no overlap */
+    .hero-blob.b1 { top: 23%;    left: 21%; }
+    .hero-blob.b2 { top: 21%;   right: 19%; }
+    .hero-blob.b3 { bottom: 23%; left: 19%; }
+    .hero-blob.b4 { bottom: 22%; right: 21%; }
+    .hero-blob.b5 { top: 12%;   right: 37%; }
   }
-  @media (min-width: 1100px) {
-    .hero-card-1 { left: 8%; }
-    .hero-card-2 { right: 8%; }
-    .hero-card-3 { left: 12%; }
-    .hero-card-4 { right: 12%; }
+  @media (min-width: 1500px) {
+    .hero-card-1 { left: 5%; }
+    .hero-card-2 { right: 5%; }
+    .hero-card-3 { left: 6%; }
+    .hero-card-4 { right: 6%; }
     .hero-blob.b1 { left: 24%; }
     .hero-blob.b2 { right: 22%; }
     .hero-blob.b3 { left: 22%; }
@@ -2806,7 +2818,7 @@
     .nav-menu { display: none; }
 
     .hero { padding: 100px 60px 80px; min-height: 720px; display: flex; flex-direction: column; justify-content: center; }
-    .hero h1 { font-size: 64px; }
+    .hero h1 { font-size: 64px; max-width: 660px; margin-left: auto; margin-right: auto; }
     .trust-row { gap: 16px; padding: 0; margin-top: 32px; }
     .avatar-stack .av { width: 34px; height: 34px; }
     .trust-num { font-size: 15px; }
