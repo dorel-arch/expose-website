@@ -117,13 +117,16 @@
     position: relative; padding: 36px 20px 28px;
     text-align: center;
     overflow: hidden;
+    background: #FFFBF7;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
     background:
-      radial-gradient(75% 75% at 50% 50%, rgba(255,150,80,.42), rgba(255,150,80,.18) 45%, rgba(255,180,120,.06) 75%, rgba(255,180,120,0) 100%),
-      radial-gradient(120% 70% at 50% 0%,  rgba(255,140,60,.18), rgba(255,140,60,0) 60%),
-      radial-gradient(120% 70% at 50% 100%, rgba(255,180,120,.20), rgba(255,180,120,0) 65%);
+      radial-gradient(ellipse 85% 60% at 50% 0%,    rgba(255,140,60,.22) 0%, transparent 70%),
+      radial-gradient(ellipse 70% 50% at 50% 100%,  rgba(255,180,100,.14) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 60% at 20% 40%,   rgba(255,106,26,.08) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 80% 60%,   rgba(255,106,26,.07) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(255,248,240,.9) 0%, rgba(255,253,250,.6) 60%, rgba(250,247,242,.95) 100%);
     pointer-events: none;
     z-index: 0;
   }
@@ -131,13 +134,13 @@
   .hero::after {
     content: '';
     position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(255,106,26,.16) 1px, transparent 1.5px);
-    background-size: 22px 22px;
-    -webkit-mask-image: radial-gradient(70% 80% at 50% 45%, black 20%, transparent 75%);
-            mask-image: radial-gradient(70% 80% at 50% 45%, black 20%, transparent 75%);
+    background-image: radial-gradient(rgba(255,106,26,.14) 1px, transparent 1.5px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(75% 70% at 50% 40%, black 15%, transparent 70%);
+            mask-image: radial-gradient(75% 70% at 50% 40%, black 15%, transparent 70%);
     pointer-events: none;
     z-index: 0;
-    opacity: .6;
+    opacity: .7;
   }
   .hero > * { position: relative; z-index: 1; }
 
@@ -338,21 +341,33 @@
   }
 
   .hero h1 {
-    margin: 6px 0 0; font-size: 30px; line-height: 1.1; font-weight: 700;
-    letter-spacing: -0.025em;
+    margin: 6px 0 0; font-size: 32px; line-height: 1.08; font-weight: 800;
+    letter-spacing: -0.03em;
+    animation: h1-in 1s cubic-bezier(.16,1,.3,1) .3s both;
   }
-  .hero h1 .it { display: block; font-size: 30px; }
+  @keyframes h1-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero h1 .it { display: block; font-size: 32px; }
   .hero-search {
-    margin: 24px auto 0; max-width: 360px;
-    background: #fff;
+    margin: 28px auto 0; max-width: 360px;
+    background: rgba(255,255,255,.96);
     border-radius: 999px;
     padding: 6px 6px 6px 22px;
     display: flex; align-items: center; gap: 8px;
     box-shadow:
-      0 1px 0 rgba(255,106,26,.15) inset,
-      0 10px 24px rgba(255,106,26,.18),
-      0 2px 6px rgba(28,18,8,.06);
-    border: 1px solid #FFE2CB;
+      0 1px 0 rgba(255,106,26,.12) inset,
+      0 12px 32px rgba(255,106,26,.20),
+      0 3px 8px rgba(28,18,8,.07);
+    border: 1px solid rgba(255,106,26,.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: search-in 1s cubic-bezier(.16,1,.3,1) .6s both;
+  }
+  @keyframes search-in {
+    from { opacity: 0; transform: translateY(12px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
   }
   .hero-search input {
     flex: 1; border: 0; outline: 0; background: transparent;
@@ -469,11 +484,22 @@
 
   /* Trusted by */
   .trusted {
-    padding: 32px 20px 8px; text-align: center;
+    padding: 40px 20px 12px; text-align: center;
+    border-top: 1px solid var(--line);
+    background: var(--bg);
   }
   .trusted-label {
-    font-size: 10px; font-weight: 600; letter-spacing: .18em;
-    color: var(--gray); text-transform: uppercase; margin-bottom: 16px;
+    font-size: 10px; font-weight: 700; letter-spacing: .2em;
+    color: var(--gray-2); text-transform: uppercase; margin-bottom: 18px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .trusted-label::before, .trusted-label::after {
+    content: '';
+    width: 32px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-2));
+  }
+  .trusted-label::after {
+    background: linear-gradient(90deg, var(--line-2), transparent);
   }
   .brand-row {
     margin: 0 -20px; overflow: hidden;
@@ -845,7 +871,21 @@
     transition: transform .15s ease, box-shadow .15s ease;
   }
   .btn-dark { background: var(--tag-bg); color: #fff; }
-  .btn-orange { background: var(--orange); color: #fff; box-shadow: 0 6px 14px rgba(255,106,26,.3); }
+  .btn-orange {
+    background: linear-gradient(135deg, #FF7A2A 0%, #FF6A1A 55%, #E85810 100%);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(255,106,26,.32), 0 2px 6px rgba(255,106,26,.16);
+    position: relative; overflow: hidden;
+  }
+  .btn-orange::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+    transition: left .5s ease;
+  }
+  .btn-orange:hover::after { left: 100%; }
+  .btn-orange:hover { box-shadow: 0 10px 24px rgba(255,106,26,.4), 0 4px 10px rgba(255,106,26,.2); transform: translateY(-1px); }
   .btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
   .btn-ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
   .btn:active { transform: translateY(1px); }
@@ -853,11 +893,21 @@
 
   /* ───────── Workflow ───────── */
   .workflow {
-    background: var(--bg-soft);
+    background: linear-gradient(180deg, #FAF6EF 0%, #FAF4EA 100%);
     padding: 56px 20px;
     text-align: center;
     border-radius: 28px 28px 0 0;
     margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  .workflow::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,106,26,.06) 1px, transparent 1.5px);
+    background-size: 24px 24px;
+    pointer-events: none;
+    opacity: .5;
   }
   .workflow .eyebrow { color: var(--orange); }
   .workflow h2 {
@@ -2796,6 +2846,215 @@
   }
   .legal .dot { margin: 0 6px; opacity: .5; }
 
+  /* ================================================================
+     ENTERPRISE LAYER — Scroll reveals, premium polish, dark footer
+     ================================================================ */
+
+  /* ── Scroll reveal system ── */
+  .sr {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s cubic-bezier(.16,1,.3,1),
+                transform .7s cubic-bezier(.16,1,.3,1);
+    will-change: opacity, transform;
+  }
+  .sr.in { opacity: 1; transform: translateY(0); }
+  .sr.s1 { transition-delay: .08s; }
+  .sr.s2 { transition-delay: .16s; }
+  .sr.s3 { transition-delay: .24s; }
+  .sr.s4 { transition-delay: .32s; }
+  .sr.s5 { transition-delay: .40s; }
+  .sr.s6 { transition-delay: .48s; }
+  .sr.sr-scale { transform: translateY(16px) scale(.97); }
+  .sr.sr-scale.in { transform: translateY(0) scale(1); }
+
+  /* ── Nav scroll shadow ── */
+  .nav.scrolled {
+    box-shadow: 0 4px 24px rgba(20,16,12,.07);
+    border-bottom-color: transparent;
+  }
+
+  /* ── Nav link hover indicator ── */
+  .nav-links a {
+    position: relative;
+    padding: 4px 0;
+    transition: color .2s ease;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 2px; border-radius: 99px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s cubic-bezier(.16,1,.3,1);
+  }
+  .nav-links a:hover::after,
+  .nav-links a.active::after { transform: scaleX(1); }
+
+  /* ── Hero badge ── */
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px 7px 10px; border-radius: 999px;
+    background: rgba(255,255,255,.88);
+    border: 1px solid rgba(255,106,26,.22);
+    font-size: 12px; font-weight: 600; color: var(--orange);
+    margin-bottom: 18px; cursor: default;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(255,106,26,.12);
+    animation: badge-in .9s cubic-bezier(.34,1.4,.64,1) .2s both;
+  }
+  @keyframes badge-in {
+    from { opacity: 0; transform: translateY(-10px) scale(.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .hero-badge .badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #1FBF6B;
+    box-shadow: 0 0 0 0 rgba(31,191,107,.5);
+    animation: pulse 1.8s ease-out infinite;
+    flex-shrink: 0;
+  }
+
+  /* ── Hero subtitle ── */
+  .hero-sub {
+    margin: 16px auto 0;
+    max-width: 500px;
+    font-size: 15px; line-height: 1.7;
+    color: var(--gray);
+    animation: hero-sub-in .9s cubic-bezier(.16,1,.3,1) .5s both;
+  }
+  @keyframes hero-sub-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Enhanced button glow ── */
+  .fc-cta-primary, .nav-login {
+    position: relative; overflow: hidden;
+  }
+  .fc-cta-primary::before, .nav-login::before {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+    transition: left .6s ease;
+  }
+  .fc-cta-primary:hover::before, .nav-login:hover::before { left: 100%; }
+
+  /* ── Section divider accent ── */
+  .section-accent {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 10px;
+  }
+  .section-accent::before {
+    content: '';
+    width: 24px; height: 2px; border-radius: 99px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-2));
+    flex-shrink: 0;
+  }
+
+  /* ── Premium stat cards ── */
+  .stat-card {
+    transition: transform .35s cubic-bezier(.16,1,.3,1),
+                box-shadow .35s cubic-bezier(.16,1,.3,1) !important;
+    cursor: default;
+  }
+  .stat-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 24px 48px rgba(28,18,8,.13), 0 4px 12px rgba(28,18,8,.06) !important;
+  }
+  .stat-card.orange:hover {
+    box-shadow: 0 24px 48px rgba(255,106,26,.35), 0 4px 12px rgba(255,106,26,.18) !important;
+  }
+
+  /* ── Testimonial card hover ── */
+  .testi-card {
+    transition: transform .3s cubic-bezier(.16,1,.3,1),
+                box-shadow .3s cubic-bezier(.16,1,.3,1) !important;
+  }
+  .testi-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 16px 36px rgba(28,18,8,.1), 0 3px 8px rgba(28,18,8,.05) !important;
+  }
+
+  /* ── Campaign card hover ── */
+  .case {
+    transition: transform .3s cubic-bezier(.16,1,.3,1),
+                box-shadow .3s cubic-bezier(.16,1,.3,1) !important;
+    cursor: pointer;
+  }
+  .case:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 16px 36px rgba(28,18,8,.1) !important;
+  }
+
+  /* ── Step card hover ── */
+  .step {
+    transition: transform .3s cubic-bezier(.16,1,.3,1),
+                box-shadow .3s cubic-bezier(.16,1,.3,1),
+                border-color .3s ease !important;
+  }
+  .step:hover {
+    transform: translateY(-3px) !important;
+    border-color: rgba(255,106,26,.25) !important;
+    box-shadow: 0 16px 36px rgba(28,18,8,.08) !important;
+  }
+
+  /* ── Dark footer ── */
+  .footer {
+    background: #0F0F0F !important;
+    border-top: 0 !important;
+  }
+  .footer-brand { color: #fff !important; }
+  .footer-brand .spark { color: var(--orange) !important; }
+  .footer-tagline { color: rgba(255,255,255,.45) !important; }
+  .foot-col h6 { color: rgba(255,255,255,.35) !important; border: 0; }
+  .foot-col a { color: rgba(255,255,255,.6) !important; transition: color .2s ease, padding-left .2s ease; }
+  .foot-col a:hover { color: #fff !important; padding-left: 4px !important; }
+  .foot-grid { border-top-color: rgba(255,255,255,.08) !important; }
+  .footer-top { border-bottom-color: rgba(255,255,255,.08) !important; }
+  .legal { color: rgba(255,255,255,.3) !important; border-top-color: rgba(255,255,255,.08) !important; }
+  .legal a { color: rgba(255,255,255,.45) !important; }
+  .legal a:hover { color: #fff !important; }
+  .social {
+    background: rgba(255,255,255,.07) !important;
+    color: rgba(255,255,255,.55) !important;
+    transition: background .2s ease, color .2s ease !important;
+  }
+  .social:hover { background: var(--orange) !important; color: #fff !important; }
+  .store { background: rgba(255,255,255,.07) !important; border: 1px solid rgba(255,255,255,.08); }
+  .stores .store { color: #fff; }
+  .socials { border-top-color: rgba(255,255,255,.08) !important; }
+
+  /* ── Counter numbers ── */
+  [data-count] { font-variant-numeric: tabular-nums; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sr { transition: none !important; opacity: 1 !important; transform: none !important; }
+    .hero-badge, .hero-sub { animation: none !important; opacity: 1 !important; }
+  }
+
+  /* ── Larger desktop scale ── */
+  @media (min-width: 900px) {
+    .hero h1 { font-size: 80px; letter-spacing: -0.036em; line-height: 1.04; }
+    .hero h1 .it { font-size: 80px; }
+    .hero-sub { font-size: 18px; max-width: 560px; }
+    .creatives h2 { font-size: 48px; }
+    .workflow h2 { font-size: 46px; }
+    .meet h2 { font-size: 46px; }
+    .stats h2 { font-size: 46px; }
+    .community h2 { font-size: 46px; }
+    .campaigns h2 { font-size: 46px; }
+    .testi h2 { font-size: 46px; }
+    .faq h2 { font-size: 50px; }
+    .final-cta h2 { font-size: 62px; }
+  }
+
   /* ============================================
      MOBILE — visual section separation
      ============================================ */
@@ -2831,13 +3090,13 @@
     }
     .nav-menu { display: none; }
 
-    .hero { padding: 100px 60px 80px; min-height: 720px; display: flex; flex-direction: column; justify-content: center; }
-    .hero h1 { font-size: 64px; max-width: 660px; margin-left: auto; margin-right: auto; }
-    .trust-row { gap: 16px; padding: 0; margin-top: 32px; }
+    .hero { padding: 100px 60px 90px; min-height: 780px; display: flex; flex-direction: column; justify-content: center; }
+    .hero h1 { font-size: 80px; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .trust-row { gap: 16px; padding: 0; margin-top: 36px; }
     .avatar-stack .av { width: 34px; height: 34px; }
     .trust-num { font-size: 15px; }
     .trust-sub { font-size: 12px; }
-    .hero h1 .it { font-size: 64px; }
+    .hero h1 .it { font-size: 80px; }
     .hero-search { max-width: 560px; padding: 8px 8px 8px 28px; }
     .hero-search input { font-size: 15px; padding: 12px 0; }
     .hero-search button { width: 42px; height: 42px; }
@@ -3033,10 +3292,17 @@
       <div class="hero-exi">Exi</div>
     </div>
 
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      EXi is live · AI-powered creative matching
+    </div>
+
     <h1>
       Stop Chasing After Clients.
       <span class="it italic-accent">Let EXi Run It.</span>
     </h1>
+
+    <p class="hero-sub">The AI platform connecting the world's best creatives with the brands that need them — no hustle required.</p>
     <div class="hero-search" style="width: 450px">
       <input placeholder="How to improve my Instagram?" />
       <button aria-label="Search">
@@ -3105,8 +3371,8 @@
   <!-- FOR CREATIVES -->
   <section class="creatives">
     <div class="copy">
-      <div class="eyebrow">Your career, your rules.</div>
-      <h2>Creatives deserve to be seen. <span class="muted" style="color: var(--orange);">Most never are.</span></h2>
+      <div class="eyebrow sr">Your career, your rules.</div>
+      <h2 class="sr s1">Creatives deserve to be seen. <span class="muted" style="color: var(--orange);">Most never are.</span></h2>
       <ul class="check-list">
         <li>
           <span class="ck">✓</span>
@@ -3210,8 +3476,8 @@
 
   <!-- WORKFLOW -->
   <section class="workflow">
-    <div class="eyebrow">Workflow</div>
-    <h2 style="font-size: 35px; font-weight: 500">Complete career ecosystem<br><span style="color: rgb(145, 145, 145); font-weight: 400; font-size: 24px">expose gives you everything you need to grow, get booked, and get paid.</span></h2>
+    <div class="eyebrow sr">Workflow</div>
+    <h2 class="sr s1" style="font-size: 35px; font-weight: 500">Complete career ecosystem<br><span style="color: rgb(145, 145, 145); font-weight: 400; font-size: 24px">expose gives you everything you need to grow, get booked, and get paid.</span></h2>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
@@ -3283,8 +3549,8 @@
         <svg class="sp" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
         Meet EXi
       </div>
-      <h2>Your personal agent.<br>Always working for you.</h2>
-      <p>EXi watches your visibility, lines the right projects, submits your work, and tells you exactly what to do to grow. You never figure it out alone.</p>
+      <h2 class="sr">Your personal agent.<br>Always working for you.</h2>
+      <p class="sr s1">EXi watches your visibility, lines the right projects, submits your work, and tells you exactly what to do to grow. You never figure it out alone.</p>
 
       <div class="feature">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
@@ -3345,8 +3611,8 @@
 
   <!-- STATS -->
   <section class="stats">
-    <h2>Why EXPOSE?</h2>
-    <p>Real numbers. Real results.</p>
+    <h2 class="sr">Why EXPOSE?</h2>
+    <p class="sr s1">Real numbers. Real results.</p>
     <div class="stat-grid">
       <!-- Card 1: Community -->
       <div class="stat-card dark">
@@ -3421,8 +3687,8 @@
 
   <!-- COMMUNITY -->
   <section class="community">
-    <h2>Join the community</h2>
-    <p>of getting booked, paid, and growing together.</p>
+    <h2 class="sr">Join the community</h2>
+    <p class="sr s1">of getting booked, paid, and growing together.</p>
     <div class="filter-tabs">
       <button class="active"><span class="emo">✨</span>All</button>
       <button data-c="rose"><span class="emo">📷</span>Photography</button>
@@ -3486,8 +3752,8 @@
 
   <!-- CAMPAIGNS -->
   <section class="campaigns">
-    <h2>Real campaigns. Real results.</h2>
-    <p>Real projects, real brands, real pay — booked on EXPOSE this season.</p>
+    <h2 class="sr">Real campaigns. Real results.</h2>
+    <p class="sr s1">Real projects, real brands, real pay — booked on EXPOSE this season.</p>
     <div class="case-grid">
 
       <div class="case">
@@ -3656,8 +3922,8 @@
       <span class="testi-bubble b6"></span>
       <span class="testi-bubble b7"></span>
     </div>
-    <h2>Loved by creatives.</h2>
-    <p class="testi-meta">2,439+ professionals · 4.9★ average · 14 cities</p>
+    <h2 class="sr">Loved by creatives.</h2>
+    <p class="testi-meta sr s1">2,439+ professionals · 4.9★ average · 14 cities</p>
 
     <!-- Row 1 — scroll left -->
     <div class="testi-marquee">
@@ -3871,8 +4137,8 @@
 
   <!-- FAQ -->
   <section class="faq">
-    <h2>Got questions? <span class="italic-accent">Ask EXi.</span></h2>
-    <p class="faq-sub">Tap a question below — EXi answers in real time.</p>
+    <h2 class="sr">Got questions? <span class="italic-accent">Ask EXi.</span></h2>
+    <p class="faq-sub sr s1">Tap a question below — EXi answers in real time.</p>
 
     <div class="faq-chat">
       <div class="faq-chat-head">
@@ -4095,6 +4361,30 @@
 </div>
 
 <script>
+  // ── Nav scroll shadow ──
+  (() => {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+    const toggle = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+  })();
+
+  // ── Scroll reveal system ──
+  (() => {
+    const els = document.querySelectorAll('.sr');
+    if (!els.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  })();
+
   // Community — reveal + rotate creators every few seconds
   (() => {
     const section = document.querySelector('.community');
