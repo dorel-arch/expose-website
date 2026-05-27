@@ -2836,11 +2836,59 @@
 
   <!-- HERO -->
   <header class="hero">
+    <!-- Floating constellation (desktop only) -->
+    <div class="hero-orbit" aria-hidden="true">
+      <svg class="hero-orbit-svg" preserveAspectRatio="none" viewBox="0 0 1000 600">
+        <path class="ln l1" d="M 130 90  Q 280 100 480 80" />
+        <path class="ln l2" d="M 870 70  Q 720 100 520 80" />
+        <path class="ln l3" d="M 160 510 Q 320 480 480 520" />
+        <path class="ln l4" d="M 840 500 Q 680 480 520 520" />
+      </svg>
+
+      <!-- live activity cards -->
+      <div class="hero-card hero-card-1">
+        <div class="hc-head"><span class="live-dot"></span> Campaign live</div>
+        <div class="hc-title">Nike — Summer Drop '25</div>
+        <div class="hc-meta"><b>14 creatives</b> · 3 cities · Active</div>
+      </div>
+      <div class="hero-card hero-card-2">
+        <div class="hc-head"><span class="hc-payicon">↑</span> ROI this week</div>
+        <div class="hc-title">+340% engagement</div>
+        <div class="hc-meta">vs last campaign · EXi-optimised</div>
+      </div>
+      <div class="hero-card hero-card-3">
+        <div class="hc-head"><span class="live-dot"></span> EXi at work</div>
+        <div class="hc-title">8 briefs matched today</div>
+        <div class="hc-bars">
+          <span class="br"></span>
+          <span class="br"></span>
+          <span class="br"></span>
+          <span class="br"></span>
+          <span class="br"></span>
+        </div>
+      </div>
+      <div class="hero-card hero-card-4">
+        <div class="hc-head"><span class="live-dot"></span> Booked</div>
+        <div class="hc-title">Asanaké — SS25 Campaign</div>
+        <div class="hc-meta"><b>$22,000</b> · 6 weeks · Paris</div>
+      </div>
+
+      <!-- avatar bubbles -->
+      <div class="hero-blob bob b1" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&auto=format')"></div>
+      <div class="hero-blob bob b2" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&auto=format')"></div>
+      <div class="hero-blob bob b3" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&auto=format')"></div>
+      <div class="hero-blob bob b4" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=120&h=120&fit=crop&auto=format')"></div>
+      <div class="hero-blob bob b5" style="background-image:url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=120&h=120&fit=crop&auto=format')"></div>
+
+      <!-- EXi satellite -->
+      <div class="hero-exi">Exi</div>
+    </div>
+
     <h1>
       Stop Guessing Your Marketing.
       <span class="it italic-accent">Let EXi Run It.</span>
     </h1>
-    <div class="hero-search">
+    <div class="hero-search" style="width: 450px">
       <input placeholder="How to improve my Instagram?" />
       <button aria-label="Search">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
