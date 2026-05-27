@@ -1046,7 +1046,7 @@
 
   /* ───────── Meet EXi ───────── */
   .meet {
-    padding: 18px 20px 56px;
+    padding: 36px 20px 44px;
   }
   .meet h2 {
     font-size: 26px; font-weight: 700; letter-spacing: -0.02em;
@@ -1114,7 +1114,7 @@
   /* ── Chat thread ── */
   .chat {
     padding: 14px 2px;
-    min-height: 360px;
+    min-height: 220px;
     display: flex; flex-direction: column; gap: 10px;
   }
   .msg {
@@ -1259,7 +1259,7 @@
   }
 
   /* ───────── Stats ───────── */
-  .stats { padding: 56px 20px; text-align: center; }
+  .stats { padding: 44px 20px; text-align: center; }
   .stats h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
   .stats > p { margin: 0 0 24px; font-size: 14px; color: var(--gray); }
   .stat-grid {
@@ -1458,7 +1458,7 @@
   }
 
   /* ───────── Community ───────── */
-  .community { padding: 24px 20px 56px; }
+  .community { padding: 36px 20px 44px; }
   .community h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
   .community > p { font-size: 13px; color: var(--gray); margin: 0 0 16px; }
   .filter-tabs {
@@ -1590,7 +1590,7 @@
   }
 
   /* ───────── Campaigns ───────── */
-  .campaigns { padding: 24px 20px 56px; }
+  .campaigns { padding: 36px 20px 44px; }
   .campaigns h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
   .campaigns > p { font-size: 13px; color: var(--gray); margin: 0 0 22px; }
   .case-grid {
@@ -1882,7 +1882,7 @@
   }
 
   /* ───────── Testimonials ───────── */
-  .testi { padding: 30px 20px 50px; text-align: center; overflow: hidden; }
+  .testi { padding: 40px 20px 48px; text-align: center; overflow: hidden; }
   .testi h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 6px; }
   .testi-meta { font-size: 12px; color: var(--gray); margin: 0 0 22px; }
 
@@ -2040,7 +2040,7 @@
   }
 
   /* ───────── FAQ ───────── */
-  .faq { padding: 30px 20px 50px; position: relative; overflow: hidden; }
+  .faq { padding: 40px 20px 48px; position: relative; overflow: hidden; }
   .faq-eyebrow {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 6px 12px 6px 10px; border-radius: 999px;
@@ -2110,7 +2110,7 @@
 
   .faq-thread {
     padding: 14px 4px;
-    min-height: 240px;
+    min-height: 180px;
     max-height: 380px;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -2680,6 +2680,16 @@
     text-align: center; color: var(--gray); font-size: 10px;
   }
   .legal .dot { margin: 0 6px; opacity: .5; }
+
+  /* ============================================
+     MOBILE — visual section separation
+     ============================================ */
+  @media (max-width: 899px) {
+    .stats     { background: var(--bg-soft); }
+    .campaigns { background: var(--bg-soft); }
+    .faq       { background: var(--bg-soft); }
+    .meet, .community, .testi { border-top: 1px solid var(--line); }
+  }
 
   /* ============================================
      DESKTOP — ≥ 900px
