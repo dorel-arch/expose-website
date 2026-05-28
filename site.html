@@ -118,8 +118,10 @@
     text-align: center;
     overflow: hidden;
     background: #FFFBF7;
-    /* Mobile: full viewport height */
-    min-height: 100svh;
+    /* Lock height — prevents iOS Safari resize-on-scroll */
+    height: 100svh;
+    min-height: 580px;
+    max-height: 100svh;
     display: flex; flex-direction: column; justify-content: center;
   }
   .hero::before {

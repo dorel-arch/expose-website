@@ -118,6 +118,10 @@
     text-align: center;
     overflow: hidden;
     background: #FFFBF7;
+    height: 100svh;
+    min-height: 580px;
+    max-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
@@ -2924,6 +2928,41 @@
     .hero-badge, .hero-sub { animation: none !important; opacity: 1 !important; }
   }
 
+  /* ── Mobile benefit cards (brand version) ── */
+  .mobile-benefits { display: none; }
+  .mb-card {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: #fff; border: 1px solid var(--line); border-radius: 18px;
+    padding: 16px 18px; opacity: 0;
+    transform: translateY(20px) scale(.96);
+    transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);
+    box-shadow: 0 4px 14px rgba(28,18,8,.05);
+  }
+  .mb-card.in { opacity: 1; transform: translateY(0) scale(1); }
+  .mb-card:nth-child(1) { transition-delay: .05s; }
+  .mb-card:nth-child(2) { transition-delay: .15s; }
+  .mb-card:nth-child(3) { transition-delay: .25s; }
+  .mb-card:nth-child(4) { transition-delay: .35s; }
+  .mb-icon {
+    width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0;
+    background: linear-gradient(135deg, #FF8B47, #FF6A1A);
+    display: grid; place-items: center;
+    box-shadow: 0 6px 14px rgba(255,106,26,.28);
+  }
+  .mb-icon svg { color: #fff; }
+  .mb-body { flex: 1; min-width: 0; }
+  .mb-title { font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; line-height: 1.2; margin: 0 0 3px; }
+  .mb-desc { font-size: 12px; color: var(--gray); line-height: 1.45; margin: 0; }
+  .mb-tag { display: inline-block; margin-top: 5px; font-size: 11px; font-weight: 700; color: var(--orange); background: var(--orange-soft); padding: 2px 8px; border-radius: 99px; }
+
+  @media (max-width: 899px) {
+    .mobile-benefits { display: grid; gap: 10px; margin-top: 4px; }
+    .creatives .phone-wrap { display: none; }
+    .creatives .check-list { display: none; }
+    .creatives { grid-template-columns: 1fr; padding: 24px 20px 36px; }
+    .creatives .cta-row { margin-top: 20px; }
+  }
+
   /* ── Larger desktop scale ── */
   @media (min-width: 900px) {
     .hero h1 { font-size: 80px; letter-spacing: -0.036em; line-height: 1.04; }
@@ -3282,17 +3321,104 @@
       <div class="eyebrow sr">Your marketing, on autopilot.</div>
       <h2 class="sr s1">Your marketing was a mystery. <span class="muted" style="color: var(--orange);">Not anymore.</span></h2>
       <ul class="check-list">
-        <li><span class="ck">✓</span> AI-powered intelligence</li>
-        <li><span class="ck">✓</span> Match the best creatives</li>
-        <li><span class="ck">✓</span> Real-time campaign tracking</li>
-        <li><span class="ck">✓</span> Zero-guesswork strategy</li>
+        <li>
+          <span class="ck">✓</span>
+          <div class="cl-body">
+            <span class="cl-title">Creatives come to you</span>
+            <span class="cl-sub">EXi matches your brief — get the right talent, not random applicants.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ck">✓</span>
+          <div class="cl-body">
+            <span class="cl-title">Launch campaigns in 48h</span>
+            <span class="cl-sub">Brief approved, creator booked, content delivered — zero lag.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ck">✓</span>
+          <div class="cl-body">
+            <span class="cl-title">Full transparency, live</span>
+            <span class="cl-sub">Real-time ROI tracking, creator performance, campaign analytics.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ck">✓</span>
+          <div class="cl-body">
+            <span class="cl-title">Pay for results</span>
+            <span class="cl-sub">6% platform fee only. No subscriptions, no hidden costs.</span>
+          </div>
+        </li>
       </ul>
+
+      <!-- Mobile-only animated benefit cards -->
+      <div class="mobile-benefits" aria-hidden="true">
+        <div class="mb-card">
+          <div class="mb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="mb-body">
+            <p class="mb-title">Creatives come to you</p>
+            <p class="mb-desc">EXi matches your brief to verified talent and delivers the best 3 instantly.</p>
+            <span class="mb-tag">Avg. 3 matches in 48h</span>
+          </div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="mb-body">
+            <p class="mb-title">Launch campaigns in 48h</p>
+            <p class="mb-desc">Brief in → creator booked → content delivered. No agency delays, no guesswork.</p>
+            <span class="mb-tag">Avg. 48h booking</span>
+          </div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div class="mb-body">
+            <p class="mb-title">Live ROI dashboard</p>
+            <p class="mb-desc">Impressions, conversions, creator performance — all tracked in real time.</p>
+            <span class="mb-tag">Live dashboard</span>
+          </div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="mb-body">
+            <p class="mb-title">Pay for results only</p>
+            <p class="mb-desc">Just 6% platform fee — no retainer, no surprise charges, no wasted budget.</p>
+            <span class="mb-tag">6% platform fee</span>
+          </div>
+        </div>
+      </div>
+
       <div class="cta-row">
         <a class="btn btn-dark">Find Talent</a>
         <a class="btn btn-orange">Book Demo</a>
       </div>
     </div>
     <div class="phone-wrap">
+      <!-- Floating push notifications -->
+      <div class="phone-push pp-1" aria-hidden="true">
+        <div class="pp-icon">E</div>
+        <div class="pp-body">
+          <div class="pp-head">EXi · campaign update <span class="pp-ago">now</span></div>
+          <div class="pp-title">Spring Editorial — 2.4M impressions</div>
+          <div class="pp-meta"><b>+34% ROI</b> · 5 days remaining</div>
+        </div>
+      </div>
+      <div class="phone-push pp-2" aria-hidden="true">
+        <div class="pp-icon">✓</div>
+        <div class="pp-body">
+          <div class="pp-head">Creator booked <span class="pp-ago">2m</span></div>
+          <div class="pp-title">Sofia Rossi confirmed</div>
+          <div class="pp-meta">Content goes live in 48h</div>
+        </div>
+      </div>
+
       <div class="phone-glow"></div>
       <div class="iphone">
         <span class="iphone-btn silent"></span>
@@ -3304,33 +3430,33 @@
           <div class="iphone-island"></div>
           <div class="ms-header">
             <div class="ms-back">‹</div>
-            <div class="ms-title">New Briefs</div>
-            <div class="ms-badge">3</div>
+            <div class="ms-title">Campaigns</div>
+            <div class="ms-badge" style="background:#1FBF6B;color:#fff">Live</div>
           </div>
-          <div class="ms-live"><span class="ms-dot"></span>3 brands matched you today</div>
+          <div class="ms-live"><span class="ms-dot"></span>3 active campaigns · All on track</div>
           <div class="ms-cards">
             <div class="ms-card featured">
               <div class="ms-logo vogue"><span>V</span></div>
               <div class="ms-card-body">
-                <div class="ms-card-h"><b>Vogue Italia</b><span class="ms-tag new">NEW</span></div>
-                <div class="ms-card-sub">Editorial campaign</div>
-                <div class="ms-card-meta"><span class="ms-price">$4,200</span><span class="ms-time">5 days</span></div>
+                <div class="ms-card-h"><b>Spring Editorial</b><span class="ms-tag new" style="background:#e6f9f0;color:#1FBF6B">Live</span></div>
+                <div class="ms-card-sub">2.4M reach · Sofia Rossi</div>
+                <div class="ms-card-meta"><span class="ms-price" style="color:#1FBF6B">+34% ROI</span><span class="ms-time">5d left</span></div>
               </div>
             </div>
             <div class="ms-card">
               <div class="ms-logo nike"><span>N</span></div>
               <div class="ms-card-body">
-                <div class="ms-card-h"><b>Nike Run Club</b></div>
-                <div class="ms-card-sub">Photography · SS25</div>
-                <div class="ms-card-meta"><span class="ms-price">$2,800</span><span class="ms-time">2 days</span></div>
+                <div class="ms-card-h"><b>Run Club SS25</b></div>
+                <div class="ms-card-sub">Photography · Marcus Chen</div>
+                <div class="ms-card-meta"><span class="ms-price" style="color:#1FBF6B">+41% ROI</span><span class="ms-time">2d left</span></div>
               </div>
             </div>
             <div class="ms-card">
               <div class="ms-logo adidas"><span>A</span></div>
               <div class="ms-card-body">
-                <div class="ms-card-h"><b>Adidas Originals</b></div>
-                <div class="ms-card-sub">Editorial set</div>
-                <div class="ms-card-meta"><span class="ms-price">$3,500</span><span class="ms-time">1 week</span></div>
+                <div class="ms-card-h"><b>Summer Campaign</b></div>
+                <div class="ms-card-sub">Brief sent · 3 creators matched</div>
+                <div class="ms-card-meta"><span class="ms-price">$8,500</span><span class="ms-time">Pending</span></div>
               </div>
             </div>
           </div>
@@ -3478,20 +3604,20 @@
   <!-- STATS -->
   <section class="stats">
     <h2 class="sr">Why EXPOSE?</h2>
-    <p class="sr s1">Real numbers. Real results.</p>
+    <p class="sr s1">Brands that use EXPOSE ship faster, spend smarter, and scale bigger.</p>
     <div class="stat-grid">
-      <!-- Card 1: Community -->
+      <!-- Card 1: Brands -->
       <div class="stat-card dark">
-        <div class="stat-num">2.4K<span class="plus">+</span></div>
-        <div class="stat-label">Verified creatives</div>
+        <div class="stat-num">380<span class="plus">+</span></div>
+        <div class="stat-label">Brands trust EXPOSE</div>
         <div class="stat-avs">
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&auto=format')"></div>
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&auto=format')"></div>
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&auto=format')"></div>
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=60&h=60&fit=crop&auto=format')"></div>
-          <div class="sa sa-more">+2K</div>
+          <div class="sa sa-more">+350</div>
         </div>
-        <span class="city-pin">Across 14 cities</span>
+        <span class="city-pin">Shipping campaigns weekly</span>
       </div>
 
       <!-- Card 2: Speed -->
@@ -3510,17 +3636,17 @@
             </div>
           </div>
         </div>
-        <div class="stat-label">Median time to first booking</div>
+        <div class="stat-label">Brief to first creator booked</div>
       </div>
 
-      <!-- Card 3: Income lift -->
+      <!-- Card 3: ROI -->
       <div class="stat-card cream">
         <span class="trend-tag">
           <svg width="9" height="9" viewBox="0 0 12 12" fill="currentColor"><path d="M2 9l4-5 4 5z"/></svg>
-          Trending
+          vs agencies
         </span>
-        <div class="stat-num orange-text" style="margin-top:8px">+60%</div>
-        <div class="stat-label">Avg. monthly income lift</div>
+        <div class="stat-num orange-text" style="margin-top:8px">3.2x</div>
+        <div class="stat-label">Avg. ROI vs traditional agency</div>
         <div class="bars">
           <span class="bar" style="height:22%"></span>
           <span class="bar" style="height:36%"></span>
@@ -3546,7 +3672,7 @@
           </svg>
         </div>
         <div class="stat-num orange-text">24/7</div>
-        <div class="stat-label">EXPOSE never stops working</div>
+        <div class="stat-label">EXi monitors your campaigns</div>
       </div>
     </div>
   </section>
@@ -4250,6 +4376,22 @@
     els.forEach(el => io.observe(el));
   })();
 
+  // ── Mobile benefit cards reveal ──
+  (() => {
+    const container = document.querySelector('.mobile-benefits');
+    if (!container) return;
+    const cards = container.querySelectorAll('.mb-card');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          cards.forEach(c => c.classList.add('in'));
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    io.observe(container);
+  })();
+
   // Community — reveal + rotate creators every few seconds
   (() => {
     const section = document.querySelector('.community');
@@ -4428,33 +4570,33 @@
     const composerInput = document.querySelector('.meet .composer-input');
     if (!chat) return;
 
-    // Script of the conversation
+    // Script of the conversation — brand-focused
     const SCRIPT = [
       { type: 'exi-typing', delay: 350 },
-      { type: 'exi', text: 'Good morning ☀️ Your portfolio just scored <b>84/100</b> — up from 71 last week.', delay: 700 },
+      { type: 'exi', text: 'Good morning! Your Q2 campaign is up <b>+34%</b> vs last month.', delay: 700 },
       { type: 'exi-typing', delay: 400 },
-      { type: 'exi', text: 'I pulled this week so far 👇', delay: 500 },
+      { type: 'exi', text: 'Here\'s your live dashboard 👇', delay: 500 },
       { type: 'stats', delay: 350 },
       { type: 'exi-typing', delay: 500 },
-      { type: 'exi', text: '4 new briefs just landed that match your style. One feels really right for you →', delay: 900 },
-      { type: 'brief', delay: 400, brand: 'V', brandColor: '#111', name: 'Vogue Italia', sub: 'Editorial · Milan', price: '$4,200' },
+      { type: 'exi', text: '3 creators perfectly matched your Spring brief. This one has the highest reach →', delay: 900 },
+      { type: 'brief', delay: 400, brand: 'S', brandColor: '#7C3AED', name: 'Sofia Rossi', sub: '2.1M reach · Fashion & Lifestyle', price: '98% match' },
       { type: 'quick', delay: 500, options: [
-        { label: 'Tell me more', primary: false },
-        { label: 'Apply for me', primary: true }
+        { label: 'See all 3', primary: false },
+        { label: 'Book her', primary: true }
       ] },
       { type: 'user-typing', delay: 800 },
-      { type: 'user', text: 'Apply for me', delay: 400 },
+      { type: 'user', text: 'Book her', delay: 400 },
       { type: 'exi-typing', delay: 500 },
-      { type: 'exi', text: '✓ Submitted with your top 8 frames + the SS25 reel. I\'ll ping you the moment they reply.', delay: 1100 },
+      { type: 'exi', text: '✓ Sofia is confirmed. Contract signed, brief sent. Content goes live in <b>48h</b>.', delay: 1100 },
     ];
 
     // Composer placeholder rotation while chat plays
     const PLACEHOLDERS = [
       'Ask EXi anything…',
-      'Find me a fashion brief in NYC…',
-      'How do I raise my rates?',
-      'Pitch me to Nike…',
-      'What should I post today?'
+      'Find me a photographer in NYC…',
+      'How is my campaign performing?',
+      'Match me with top creators…',
+      'What should we post this week?'
     ];
     let phIdx = 0, phTimer = null;
     const rotatePlaceholder = () => {
@@ -4497,8 +4639,8 @@
       wrap.className = 'msg from-exi';
       wrap.innerHTML = `
         <div class="msg-stats">
-          <div class="msg-stat"><b>4</b><span>Done projects</span></div>
-          <div class="msg-stat"><b class="green">$2,000</b><span>Average offer</span></div>
+          <div class="msg-stat"><b>2.4M</b><span>Impressions</span></div>
+          <div class="msg-stat"><b class="green">3.2x</b><span>ROI</span></div>
         </div>`;
       return wrap;
     };
