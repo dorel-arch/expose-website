@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXi — Your AI Agent | EXPOSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange:      #FF6A1A;
+    --orange-2:    #FF8533;
+    --orange-soft: #FFEDE0;
+    --ink:         #131313;
+    --ink-2:       #3A3A3A;
+    --gray:        #6E6E6E;
+    --gray-2:      #9A9A9A;
+    --line:        #ECE7E2;
+    --bg:          #FFFFFF;
+    --bg-soft:     #FAF7F2;
+    --warm:        #FAF6EF;
+    --dark:        #111111;
+    --dark-2:      #1C1C1C;
+    --dark-card:   #1E1E1E;
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+  }
+  button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .italic-accent {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic; font-weight: 400;
+    color: var(--orange);
+  }
+
+  /* ── Nav ── */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    display: grid; grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    padding: 14px 18px;
+    background: rgba(17,17,17,.9);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .nav-logo {
+    grid-column: 2; justify-self: center;
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 800; font-size: 19px; letter-spacing: 0.01em;
+    color: #fff;
+  }
+  .nav-logo .spark { width: 14px; height: 14px; color: var(--orange); }
+  .nav-menu {
+    grid-column: 1; justify-self: start;
+    width: 36px; height: 36px;
+    display: grid; place-items: center;
+    border-radius: 10px; color: #fff;
+  }
+
+  /* ── Mobile drawer ── */
+  .drawer-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,.5); z-index: 999;
+    opacity: 0; transition: opacity .25s;
+  }
+  .drawer-overlay.open { display: block; opacity: 1; }
+  .drawer {
+    position: fixed; top: 0; left: 0; bottom: 0; width: 80vw; max-width: 300px;
+    background: #fff; z-index: 1000;
+    display: flex; flex-direction: column;
+    transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1);
+    box-shadow: 4px 0 24px rgba(0,0,0,.15);
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px; border-bottom: 1px solid var(--line);
+  }
+  .drawer-head .nav-logo { color: var(--ink); }
+  .drawer-close {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: grid; place-items: center;
+    background: var(--bg-soft); border: none; cursor: pointer; color: var(--ink);
+  }
+  .drawer-nav { flex: 1; padding: 12px 0; overflow-y: auto; }
+  .drawer-nav a {
+    display: block; padding: 14px 24px;
+    font-size: 16px; font-weight: 600; color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    transition: background .15s, color .15s;
+  }
+  .drawer-nav a:last-child { border-bottom: none; }
+  .drawer-nav a:hover { background: var(--bg-soft); color: var(--orange); }
+  .drawer-nav a.active { color: var(--orange); }
+  .drawer-foot { padding: 20px; border-top: 1px solid var(--line); }
+  .drawer-foot .btn-orange {
+    display: block; text-align: center; width: 100%;
+    padding: 14px; border-radius: 10px;
+    background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 14px rgba(255,106,26,.3);
+  }
+  body.drawer-lock { overflow: hidden; }
+
+  /* ── Eyebrow ── */
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 10px;
+  }
+
+  /* ══ HERO ══ */
+  .hero {
+    background: var(--dark);
+    padding: 52px 22px 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,106,26,.15); border: 1px solid rgba(255,106,26,.3);
+    border-radius: 100px; padding: 5px 14px 5px 10px;
+    font-size: 11px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 22px;
+  }
+  .hero-tag svg { width: 10px; height: 10px; }
+  .hero h1 {
+    font-size: 38px; line-height: 1.08; font-weight: 800;
+    letter-spacing: -0.03em; color: #fff;
+    margin: 0 0 16px;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--orange);
+    font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+  }
+  .hero-sub {
+    font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.55;
+    max-width: 300px; margin: 0 auto 36px;
+  }
+
+  /* Hero dashboard card */
+  .hero-card {
+    background: #1A1A1A;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 22px 22px 0 0;
+    padding: 20px;
+    text-align: left;
+    max-width: 340px;
+    margin: 0 auto;
+    box-shadow: 0 -20px 60px rgba(255,106,26,.12);
+  }
+  .hc-profile {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 18px;
+  }
+  .hc-av {
+    width: 42px; height: 42px; border-radius: 14px;
+    background: linear-gradient(135deg, #FF6A1A, #FF3D00);
+    display: grid; place-items: center;
+    font-size: 14px; font-weight: 800; color: #fff;
+    flex-shrink: 0;
+  }
+  .hc-name { font-size: 13px; font-weight: 700; color: #fff; }
+  .hc-role { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 2px; }
+  .hc-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin-bottom: 16px;
+  }
+  .hc-stat {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  .hc-stat-val {
+    font-size: 20px; font-weight: 800; color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .hc-stat-val.up { color: #4ADE80; }
+  .hc-stat-label { font-size: 10px; color: rgba(255,255,255,.4); margin-top: 3px; }
+  .hc-income {
+    background: rgba(255,106,26,.12);
+    border: 1px solid rgba(255,106,26,.25);
+    border-radius: 12px; padding: 12px 14px;
+    margin-bottom: 14px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hc-income-label { font-size: 11px; color: rgba(255,255,255,.5); }
+  .hc-income-val { font-size: 22px; font-weight: 800; color: var(--orange); letter-spacing: -0.02em; }
+  .hc-chart {
+    height: 42px; display: flex; align-items: flex-end; gap: 4px;
+  }
+  .hc-bar {
+    flex: 1; border-radius: 4px 4px 0 0;
+    background: rgba(255,255,255,.1);
+  }
+  .hc-bar.hi { background: var(--orange); }
+  .hc-bar.mid { background: rgba(255,106,26,.5); }
+
+  /* ══ KNOWS YOUR WORLD ══ */
+  .knows {
+    padding: 56px 22px;
+    text-align: center;
+    background: var(--bg-soft);
+  }
+  .knows h2 {
+    font-size: 28px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; margin: 0 0 12px;
+  }
+  .knows-sub {
+    font-size: 14px; color: var(--gray); line-height: 1.6;
+    max-width: 310px; margin: 0 auto 36px;
+  }
+  .knows-diagram {
+    position: relative; width: 280px; height: 280px;
+    margin: 0 auto;
+  }
+  .kd-center {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px; height: 72px; border-radius: 20px;
+    background: var(--dark);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 2px; z-index: 2;
+    box-shadow: 0 0 0 8px rgba(255,106,26,.12), 0 0 0 16px rgba(255,106,26,.05);
+  }
+  .kd-center svg { color: var(--orange); }
+  .kd-center span { font-size: 11px; font-weight: 800; color: #fff; letter-spacing: .05em; }
+  .kd-node {
+    position: absolute;
+    width: 56px; height: 56px; border-radius: 16px;
+    background: #fff; border: 1.5px solid var(--line);
+    box-shadow: 0 4px 12px rgba(0,0,0,.06);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 4px;
+    font-size: 9.5px; font-weight: 700; color: var(--ink-2);
+    letter-spacing: .02em;
+  }
+  .kd-node svg { width: 18px; height: 18px; }
+  /* Position nodes in a circle */
+  .kd-node:nth-child(2) { top: 4px; left: 50%; transform: translateX(-50%); }
+  .kd-node:nth-child(3) { top: 44px; right: 10px; }
+  .kd-node:nth-child(4) { bottom: 44px; right: 10px; }
+  .kd-node:nth-child(5) { bottom: 4px; left: 50%; transform: translateX(-50%); }
+  .kd-node:nth-child(6) { bottom: 44px; left: 10px; }
+  .kd-node:nth-child(7) { top: 44px; left: 10px; }
+  .kd-svg-lines {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+
+  /* ══ NEVER SLEEPS ══ */
+  .sleeps {
+    padding: 56px 22px;
+    background: var(--dark);
+    color: #fff;
+  }
+  .sleeps .eyebrow { color: var(--orange); }
+  .sleeps h2 {
+    font-size: 28px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; color: #fff;
+    margin: 0 0 12px;
+  }
+  .sleeps-sub {
+    font-size: 14px; color: rgba(255,255,255,.5);
+    line-height: 1.6; margin-bottom: 32px;
+  }
+  .sleeps-list { display: flex; flex-direction: column; gap: 14px; }
+  .sleeps-item {
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px; padding: 16px 18px;
+  }
+  .sleeps-ic {
+    width: 40px; height: 40px; border-radius: 12px;
+    background: rgba(255,106,26,.15);
+    border: 1px solid rgba(255,106,26,.25);
+    display: grid; place-items: center; flex-shrink: 0;
+    color: var(--orange);
+  }
+  .sleeps-item h4 { font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 3px; }
+  .sleeps-item p { font-size: 12px; color: rgba(255,255,255,.45); margin: 0; }
+
+  /* ══ CAREER SCORE ══ */
+  .score-sec {
+    padding: 56px 22px;
+    background: var(--bg);
+    text-align: center;
+  }
+  .score-sec h2 {
+    font-size: 28px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; margin: 0 0 12px;
+  }
+  .score-sec .sub {
+    font-size: 14px; color: var(--gray); line-height: 1.6;
+    max-width: 300px; margin: 0 auto 30px;
+  }
+  .score-card {
+    background: var(--bg-soft);
+    border: 1.5px solid var(--line);
+    border-radius: 22px; padding: 24px 22px;
+    text-align: left; max-width: 340px; margin: 0 auto;
+  }
+  .score-top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .score-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gray); }
+  .score-number {
+    font-size: 48px; font-weight: 800; color: var(--ink);
+    letter-spacing: -0.04em; line-height: 1;
+  }
+  .score-number span { font-size: 20px; color: var(--gray-2); font-weight: 600; }
+  .score-badge {
+    background: #DCFCE7; color: #16A34A;
+    border-radius: 8px; padding: 5px 10px;
+    font-size: 11px; font-weight: 700;
+  }
+  .score-bars { display: flex; flex-direction: column; gap: 14px; }
+  .sb-label {
+    display: flex; justify-content: space-between;
+    font-size: 11px; font-weight: 600; color: var(--ink-2);
+    margin-bottom: 6px; text-transform: uppercase; letter-spacing: .08em;
+  }
+  .sb-label span { color: var(--gray-2); font-weight: 500; }
+  .sb-track {
+    height: 8px; background: var(--line);
+    border-radius: 100px; overflow: hidden;
+  }
+  .sb-fill {
+    height: 100%; border-radius: 100px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-2));
+    transition: width 1.2s cubic-bezier(.4,0,.2,1);
+  }
+  .score-cta {
+    margin-top: 22px;
+    display: block; text-align: center;
+    padding: 14px; border-radius: 12px;
+    background: var(--ink); color: #fff;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: .01em;
+  }
+
+  /* ══ EXI ACTS ══ */
+  .acts {
+    padding: 56px 22px;
+    background: var(--warm);
+  }
+  .acts h2 {
+    font-size: 28px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; margin: 0 0 12px;
+  }
+  .acts-sub {
+    font-size: 14px; color: var(--gray); line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .acts-cards { display: flex; flex-direction: column; gap: 12px; }
+  .act-card {
+    background: #fff; border: 1.5px solid var(--line);
+    border-radius: 16px; padding: 16px 18px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .act-ic {
+    width: 40px; height: 40px; border-radius: 12px;
+    background: var(--orange-soft);
+    display: grid; place-items: center; flex-shrink: 0;
+    color: var(--orange);
+  }
+  .act-card h4 { font-size: 13px; font-weight: 700; margin: 0 0 3px; }
+  .act-card p { font-size: 12px; color: var(--gray); margin: 0; }
+  .act-approve {
+    margin-top: 4px; margin-left: auto; flex-shrink: 0;
+    padding: 7px 14px; border-radius: 8px;
+    background: var(--bg-soft); border: 1px solid var(--line);
+    font-size: 12px; font-weight: 600; color: var(--ink);
+    cursor: pointer; white-space: nowrap;
+  }
+  .act-approve-all {
+    display: block; width: 100%; margin-top: 20px;
+    padding: 15px; border-radius: 14px;
+    background: var(--orange); color: #fff;
+    font-size: 15px; font-weight: 700; text-align: center;
+    box-shadow: 0 6px 18px rgba(255,106,26,.3);
+    border: none; cursor: pointer;
+  }
+
+  /* ══ DOESN'T STOP ══ */
+  .no-stop {
+    padding: 56px 22px;
+    background: var(--dark);
+    color: #fff;
+  }
+  .no-stop h2 {
+    font-size: 28px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; color: #fff; margin: 0 0 12px;
+  }
+  .no-stop .sub {
+    font-size: 14px; color: rgba(255,255,255,.5);
+    line-height: 1.6; margin-bottom: 30px;
+  }
+  .ns-items { display: flex; flex-direction: column; gap: 0; margin-bottom: 28px; }
+  .ns-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .ns-item:last-child { border-bottom: none; }
+  .ns-dot {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(255,106,26,.15);
+    border: 1px solid rgba(255,106,26,.25);
+    display: grid; place-items: center; flex-shrink: 0;
+    margin-top: 2px; color: var(--orange);
+  }
+  .ns-item h4 { font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 4px; }
+  .ns-item p { font-size: 12px; color: rgba(255,255,255,.45); margin: 0; line-height: 1.55; }
+  .ns-cta {
+    display: block; text-align: center;
+    padding: 15px; border-radius: 14px;
+    background: var(--orange); color: #fff;
+    font-size: 15px; font-weight: 700;
+    box-shadow: 0 6px 18px rgba(255,106,26,.3);
+  }
+
+  /* ══ ONE AGENT ══ */
+  .one-agent {
+    padding: 56px 22px;
+    background: var(--bg-soft);
+  }
+  .one-agent h2 {
+    font-size: 28px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; margin: 0 0 10px;
+  }
+  .one-agent .sub {
+    font-size: 14px; color: var(--gray); line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .oa-list { display: flex; flex-direction: column; gap: 12px; }
+  .oa-item {
+    display: flex; align-items: center; gap: 14px;
+    background: #fff; border: 1.5px solid var(--line);
+    border-radius: 16px; padding: 16px 18px;
+  }
+  .oa-ic {
+    width: 42px; height: 42px; border-radius: 13px;
+    display: grid; place-items: center; flex-shrink: 0;
+    background: var(--orange-soft); color: var(--orange);
+  }
+  .oa-item h4 { font-size: 14px; font-weight: 700; margin: 0 0 3px; }
+  .oa-item p { font-size: 12px; color: var(--gray); margin: 0; }
+  .oa-arrow {
+    margin-left: auto; color: var(--gray-2); flex-shrink: 0;
+  }
+
+  /* ══ ALWAYS IN CONTROL ══ */
+  .control {
+    padding: 56px 22px;
+    background: var(--bg);
+  }
+  .control h2 {
+    font-size: 28px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.025em; margin: 0 0 12px;
+  }
+  .control .sub {
+    font-size: 14px; color: var(--gray); line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .notif-stack { display: flex; flex-direction: column; gap: 10px; }
+  .notif {
+    display: flex; align-items: flex-start; gap: 13px;
+    background: var(--bg-soft); border: 1.5px solid var(--line);
+    border-radius: 16px; padding: 14px 16px;
+  }
+  .notif-av {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--dark); display: grid; place-items: center;
+    flex-shrink: 0; color: var(--orange);
+  }
+  .notif h5 { font-size: 13px; font-weight: 700; margin: 0 0 3px; color: var(--ink); }
+  .notif p { font-size: 12px; color: var(--gray); margin: 0; line-height: 1.5; }
+  .notif-time { font-size: 10px; color: var(--gray-2); margin-top: 5px; }
+  .notif-action {
+    margin-top: 10px; display: flex; gap: 8px;
+  }
+  .notif-btn {
+    flex: 1; padding: 9px; border-radius: 9px;
+    font-size: 12px; font-weight: 700; text-align: center; cursor: pointer;
+  }
+  .notif-btn.approve { background: var(--orange); color: #fff; border: none; }
+  .notif-btn.skip { background: var(--bg-soft); color: var(--gray); border: 1px solid var(--line); }
+
+  /* ══ CTA ══ */
+  .cta-sec {
+    padding: 60px 22px;
+    background: var(--dark);
+    text-align: center;
+  }
+  .cta-sec h2 {
+    font-size: 32px; font-weight: 800; line-height: 1.08;
+    letter-spacing: -0.03em; color: #fff; margin: 0 0 14px;
+  }
+  .cta-sec p {
+    font-size: 14px; color: rgba(255,255,255,.55);
+    line-height: 1.6; max-width: 280px; margin: 0 auto 32px;
+  }
+  .cta-btns { display: flex; flex-direction: column; gap: 12px; max-width: 300px; margin: 0 auto; }
+  .btn-primary {
+    padding: 16px; border-radius: 14px;
+    background: var(--orange); color: #fff;
+    font-size: 15px; font-weight: 700; text-align: center;
+    box-shadow: 0 6px 20px rgba(255,106,26,.35);
+    display: block;
+  }
+  .btn-secondary {
+    padding: 15px; border-radius: 14px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    color: #fff; font-size: 15px; font-weight: 700;
+    text-align: center; display: block;
+  }
+
+  /* ══ FOOTER ══ */
+  .footer {
+    background: #0D0D0D;
+    padding: 40px 22px 32px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  .footer-brand {
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 800; font-size: 18px; color: #fff;
+    margin-bottom: 6px;
+  }
+  .footer-brand .spark { width: 14px; height: 14px; color: var(--orange); }
+  .footer-tagline { font-size: 12px; color: rgba(255,255,255,.4); margin-bottom: 22px; }
+  .footer-apps { display: flex; gap: 10px; margin-bottom: 36px; }
+  .store-btn {
+    flex: 1; display: flex; align-items: center; gap: 9px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px; padding: 11px 14px;
+    color: #fff;
+  }
+  .store-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .store-label { font-size: 9px; color: rgba(255,255,255,.5); }
+  .store-name { font-size: 13px; font-weight: 700; }
+  .footer-cols {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 28px 16px; margin-bottom: 32px;
+  }
+  .footer-col h6 {
+    font-size: 11px; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: rgba(255,255,255,.35);
+    margin: 0 0 14px;
+  }
+  .footer-col a {
+    display: block; font-size: 13px; color: rgba(255,255,255,.6);
+    margin-bottom: 10px; transition: color .15s;
+  }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-copy { font-size: 11px; color: rgba(255,255,255,.25); }
+  .footer-socials { display: flex; gap: 12px; }
+  .footer-socials a {
+    width: 32px; height: 32px; border-radius: 9px;
+    background: rgba(255,255,255,.07);
+    display: grid; place-items: center;
+    color: rgba(255,255,255,.5);
+    transition: background .15s, color .15s;
+  }
+  .footer-socials a:hover { background: rgba(255,255,255,.13); color: #fff; }
+
+  /* ── Scroll reveal ── */
+  .sr { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+  .sr.in { opacity: 1; transform: none; }
+  .s1 { transition-delay: .1s; }
+  .s2 { transition-delay: .2s; }
+  .s3 { transition-delay: .3s; }
+  .s4 { transition-delay: .4s; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true">
+    <div class="drawer-head">
+      <div class="nav-logo">
+        <svg class="spark" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        EXPOSE
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="site.html">For Creatives</a>
+      <a href="site-brands.html">For Brands</a>
+      <a href="site-exi.html" class="active">Meet EXi</a>
+      <a href="#score">Career Score</a>
+      <a href="#control">How It Works</a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="#cta" class="btn-orange">Join EXPOSE — It's Free</a>
+    </div>
+  </aside>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-menu" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="nav-logo">
+      <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+      EXPOSE
+    </div>
+    <div></div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero">
+    <div class="hero-tag">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+      AI Agent
+    </div>
+    <h1>The Agent that<br>works for you <em>24/7</em></h1>
+    <p class="hero-sub">EXi finds the projects, grows your visibility, and tells you what to do next so you just show up and create.</p>
+
+    <div class="hero-card">
+      <div class="hc-profile">
+        <div class="hc-av">EX</div>
+        <div>
+          <div class="hc-name">EXi Dashboard</div>
+          <div class="hc-role">Your career · Live overview</div>
+        </div>
+      </div>
+      <div class="hc-stats">
+        <div class="hc-stat">
+          <div class="hc-stat-val up">+6.48%</div>
+          <div class="hc-stat-label">Profile visibility</div>
+        </div>
+        <div class="hc-stat">
+          <div class="hc-stat-val">15</div>
+          <div class="hc-stat-label">Active matches</div>
+        </div>
+      </div>
+      <div class="hc-income">
+        <div>
+          <div class="hc-income-label">Monthly earnings</div>
+          <div class="hc-income-val">$7,500</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,106,26,.6)" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div class="hc-chart">
+        <div class="hc-bar" style="height:30%"></div>
+        <div class="hc-bar" style="height:45%"></div>
+        <div class="hc-bar mid" style="height:38%"></div>
+        <div class="hc-bar" style="height:55%"></div>
+        <div class="hc-bar mid" style="height:62%"></div>
+        <div class="hc-bar hi" style="height:80%"></div>
+        <div class="hc-bar hi" style="height:100%"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ EXI KNOWS YOUR WORLD ═══ -->
+  <section class="knows">
+    <div class="eyebrow sr">Always connected</div>
+    <h2 class="sr s1">EXi knows your world<br>better than you do.</h2>
+    <p class="knows-sub sr s2">EXi connects to everything that matters for your career — and works on your behalf 24/7.</p>
+
+    <div class="knows-diagram sr s3">
+      <svg class="kd-svg-lines" viewBox="0 0 280 280" fill="none">
+        <line x1="140" y1="110" x2="140" y2="32" stroke="#ECE7E2" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="140" y1="110" x2="226" y2="72" stroke="#ECE7E2" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="140" y1="170" x2="226" y2="208" stroke="#ECE7E2" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="140" y1="170" x2="140" y2="248" stroke="#ECE7E2" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="140" y1="170" x2="54" y2="208" stroke="#ECE7E2" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="140" y1="110" x2="54" y2="72" stroke="#ECE7E2" stroke-width="1.5" stroke-dasharray="4 3"/>
+      </svg>
+      <div class="kd-center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        <span>EXi</span>
+      </div>
+      <!-- Top -->
+      <div class="kd-node">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 13h4"/></svg>
+        Portfolio
+      </div>
+      <!-- Top right -->
+      <div class="kd-node" style="color:#E1306C">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        Socials
+      </div>
+      <!-- Bottom right -->
+      <div class="kd-node" style="color:var(--orange)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2z"/></svg>
+        Briefs
+      </div>
+      <!-- Bottom -->
+      <div class="kd-node" style="color:#3B82F6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Calendar
+      </div>
+      <!-- Bottom left -->
+      <div class="kd-node" style="color:#10B981">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Rates
+      </div>
+      <!-- Top left -->
+      <div class="kd-node" style="color:#8B5CF6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>
+        Market
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXI NEVER SLEEPS ═══ -->
+  <section class="sleeps">
+    <div class="eyebrow sr">Always working</div>
+    <h2 class="sr s1">EXi<br><span class="italic-accent" style="font-size:32px">Never Sleeps</span></h2>
+    <p class="sleeps-sub sr s2">While you rest, EXi takes care of your profile, monitors your visibility, and alerts you to every opportunity.</p>
+
+    <div class="sleeps-list">
+      <div class="sleeps-item sr s2">
+        <div class="sleeps-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <h4>Update Profile Finder</h4>
+          <p>Keeps your profile sharp and optimized for the brands that matter to you.</p>
+        </div>
+      </div>
+      <div class="sleeps-item sr s3">
+        <div class="sleeps-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div>
+          <h4>Career Growth Alerts</h4>
+          <p>Notifies you the moment your visibility spikes or a relevant brand is searching.</p>
+        </div>
+      </div>
+      <div class="sleeps-item sr s4">
+        <div class="sleeps-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <h4>Initiates My Screening</h4>
+          <p>Pre-screens briefs and prepares your application before you even open the app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CAREER SCORE ═══ -->
+  <section class="score-sec" id="score">
+    <div class="eyebrow sr">Know your value</div>
+    <h2 class="sr s1">You don't need an agency<br>to know your worth</h2>
+    <p class="sub sr s2">EXi analyzes your profile, market demand, and activity to give you a real-time career score.</p>
+
+    <div class="score-card sr s3">
+      <div class="score-top">
+        <div>
+          <div class="score-label">Your career score</div>
+          <div class="score-number">84<span>/100</span></div>
+        </div>
+        <div class="score-badge">↑ Strong</div>
+      </div>
+      <div class="score-bars">
+        <div>
+          <div class="sb-label">Profile Visibility <span>82%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:82%" data-w="82"></div></div>
+        </div>
+        <div>
+          <div class="sb-label">Brand Alignment <span>76%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:76%" data-w="76"></div></div>
+        </div>
+        <div>
+          <div class="sb-label">Social Performance <span>68%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="width:68%" data-w="68"></div></div>
+        </div>
+      </div>
+      <a href="#cta" class="score-cta">Join Full Audit →</a>
+    </div>
+  </section>
+
+  <!-- ═══ EXI ACTS. YOU APPROVE. ═══ -->
+  <section class="acts">
+    <div class="eyebrow sr">Action, not noise</div>
+    <h2 class="sr s1">EXi acts.<br>You approve.</h2>
+    <p class="acts-sub sr s2">EXi drafts the pitch, lines up the brief, and prepares your application — you review and approve in one tap.</p>
+
+    <div class="acts-cards">
+      <div class="act-card sr s2">
+        <div class="act-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Submit Portfolio to Nike</h4>
+          <p>Sportswear campaign · Fit: 94% match</p>
+        </div>
+        <button class="act-approve">Approve</button>
+      </div>
+      <div class="act-card sr s3">
+        <div class="act-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Update Portfolio Intro</h4>
+          <p>EXi rewrote it for +22% acceptance</p>
+        </div>
+        <button class="act-approve">Approve</button>
+      </div>
+      <div class="act-card sr s4">
+        <div class="act-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Raise Your Minimum Rate</h4>
+          <p>Market says you're under-charging by 30%</p>
+        </div>
+        <button class="act-approve">Approve</button>
+      </div>
+    </div>
+    <button class="act-approve-all">Approve All</button>
+  </section>
+
+  <!-- ═══ DOESN'T STOP ═══ -->
+  <section class="no-stop">
+    <div class="eyebrow sr" style="color:var(--orange)">Daily automation</div>
+    <h2 class="sr s1">EXi doesn't stop<br>when you do.</h2>
+    <p class="sub sr s2">Every day, EXi runs these tasks on your behalf — finds new opportunities, improves your profile, and keeps you growing.</p>
+
+    <div class="ns-items">
+      <div class="ns-item sr s2">
+        <div class="ns-dot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2z"/></svg>
+        </div>
+        <div>
+          <h4>Daily Career Reports</h4>
+          <p>A concise summary of your visibility, new briefs, and what EXi did overnight.</p>
+        </div>
+      </div>
+      <div class="ns-item sr s3">
+        <div class="ns-dot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <div>
+          <h4>Instant Opportunity Alerts</h4>
+          <p>Brands searching for your style right now — EXi flags them before anyone else sees them.</p>
+        </div>
+      </div>
+      <div class="ns-item sr s4">
+        <div class="ns-dot">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+        </div>
+        <div>
+          <h4>Your Next Career Move</h4>
+          <p>EXi tells you exactly what to do next — which brands to target, what to post, how to level up.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#cta" class="ns-cta sr">Let EXi Work for You →</a>
+  </section>
+
+  <!-- ═══ ONE AGENT TOTAL CONTROL ═══ -->
+  <section class="one-agent">
+    <div class="eyebrow sr">Everything in one place</div>
+    <h2 class="sr s1">One agent,<br><span class="italic-accent">total control.</span></h2>
+    <p class="sub sr s2">EXi doesn't just assist — it runs your entire career operation from one dashboard.</p>
+
+    <div class="oa-list">
+      <div class="oa-item sr s2">
+        <div class="oa-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Career Management</h4>
+          <p>Tracks every booking, brief, and deadline in one clean view.</p>
+        </div>
+        <div class="oa-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <div class="oa-item sr s3">
+        <div class="oa-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Work Intelligence</h4>
+          <p>Understands your style and only surfaces briefs that truly fit.</p>
+        </div>
+        <div class="oa-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <div class="oa-item sr s3">
+        <div class="oa-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Portfolio Optimization</h4>
+          <p>Constantly updates and strengthens your portfolio for better acceptance rates.</p>
+        </div>
+        <div class="oa-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <div class="oa-item sr s4">
+        <div class="oa-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Market Trend Tracking</h4>
+          <p>Monitors what brands are looking for so you stay one step ahead.</p>
+        </div>
+        <div class="oa-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <div class="oa-item sr s4">
+        <div class="oa-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.51 5.79 21l2.39-7.15L2 9.36h7.61z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h4>Auto Project Matching</h4>
+          <p>Matches you to new briefs and applies on your behalf before you ask.</p>
+        </div>
+        <div class="oa-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ YOU'RE ALWAYS IN CONTROL ═══ -->
+  <section class="control" id="control">
+    <div class="eyebrow sr">Transparent by design</div>
+    <h2 class="sr s1">You're always<br>in control</h2>
+    <p class="sub sr s2">EXi works for you, but never surprises you. Every action is visible and requires your approval before it happens.</p>
+
+    <div class="notif-stack">
+      <div class="notif sr s2">
+        <div class="notif-av">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h5>EXi found a new brief</h5>
+          <p>Zara is looking for a lifestyle photographer in your style — match score 96%.</p>
+          <div class="notif-time">Just now</div>
+          <div class="notif-action">
+            <button class="notif-btn approve">Apply Now</button>
+            <button class="notif-btn skip">Skip</button>
+          </div>
+        </div>
+      </div>
+      <div class="notif sr s3">
+        <div class="notif-av">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h5>Rate increase recommended</h5>
+          <p>Your market value has risen 28% — EXi suggests raising your min. rate to $850/day.</p>
+          <div class="notif-time">2 hours ago</div>
+          <div class="notif-action">
+            <button class="notif-btn approve">Update Rate</button>
+            <button class="notif-btn skip">Later</button>
+          </div>
+        </div>
+      </div>
+      <div class="notif sr s4">
+        <div class="notif-av">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        </div>
+        <div style="flex:1">
+          <h5>Portfolio updated overnight</h5>
+          <p>EXi rewrote your intro section. Projected acceptance rate improvement: +18%.</p>
+          <div class="notif-time">This morning</div>
+          <div class="notif-action">
+            <button class="notif-btn approve">Approve</button>
+            <button class="notif-btn skip">Review</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-sec" id="cta">
+    <div class="eyebrow" style="color:var(--orange)">Get started</div>
+    <h2>Ready to get<br><span class="italic-accent" style="color:var(--orange)">discovered?</span></h2>
+    <p>Join thousands of creatives already getting booked through EXPOSE.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">Start for Free</a>
+      <a href="#" class="btn-secondary">Book a Meeting</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+      EXPOSE
+    </div>
+    <p class="footer-tagline">AI-powered creative career platform</p>
+    <div class="footer-apps">
+      <a href="#" class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div>
+          <div class="store-label">Download on the</div>
+          <div class="store-name">App Store</div>
+        </div>
+      </a>
+      <a href="#" class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.66.19.99.08l12.35-7.04-2.73-2.74-10.61 9.7zM20.93 10.62L17.78 8.8l-3.07 3.07 3.07 3.07 3.17-1.84c.9-.52.9-2 .02-2.52l-.04.04zM2.08.37C1.7.61 1.5 1.03 1.5 1.55v20.9c0 .52.2.94.58 1.18l.08.04 11.71-11.71v-.27L2.08.37zm3.1 9.17l3.07-3.07L5.52 3.75 2.45 7.04l2.73 2.5z"/></svg>
+        <div>
+          <div class="store-label">Get it on</div>
+          <div class="store-name">Google Play</div>
+        </div>
+      </a>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h6>Product</h6>
+        <a href="site.html">For Creatives</a>
+        <a href="site-brands.html">For Brands</a>
+        <a href="site-exi.html">Meet EXi</a>
+        <a href="#">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer-col">
+        <h6>Support</h6>
+        <a href="#">Help Center</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h6>Follow us</h6>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 EXPOSE. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  // Mobile drawer
+  (function(){
+    const btn = document.getElementById('navMenuBtn');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const closeBtn = document.getElementById('drawerClose');
+    if (!btn || !drawer) return;
+    function openDrawer() {
+      drawer.classList.add('open'); overlay.classList.add('open');
+      document.body.classList.add('drawer-lock');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('open'); overlay.classList.remove('open');
+      document.body.classList.remove('drawer-lock');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    btn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+    drawer.querySelectorAll('.drawer-nav a[href^="#"]').forEach(a => a.addEventListener('click', closeDrawer));
+  })();
+
+  // Animate score bars on scroll
+  (function(){
+    const fills = document.querySelectorAll('.sb-fill');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const w = e.target.dataset.w || '0';
+          e.target.style.width = w + '%';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    fills.forEach(f => { f.style.width = '0'; io.observe(f); });
+  })();
+</script>
+</body>
+</html>
