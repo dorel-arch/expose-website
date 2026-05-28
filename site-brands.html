@@ -112,6 +112,56 @@
   .nav-links { display: none; }
   .nav-cta { display: none; }
 
+  /* ───────── Mobile drawer ───────── */
+  .drawer-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,.45); z-index: 999;
+    opacity: 0; transition: opacity .25s;
+  }
+  .drawer-overlay.open { display: block; opacity: 1; }
+  .drawer {
+    position: fixed; top: 0; left: 0; bottom: 0; width: 80vw; max-width: 300px;
+    background: #fff; z-index: 1000;
+    display: flex; flex-direction: column;
+    transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1);
+    box-shadow: 4px 0 24px rgba(0,0,0,.12);
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px; border-bottom: 1px solid var(--line);
+  }
+  .drawer-head .nav-logo {
+    font-size: 18px; font-weight: 800; color: var(--ink);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .drawer-close {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: grid; place-items: center;
+    background: var(--bg-soft); border: none; cursor: pointer; color: var(--ink);
+  }
+  .drawer-nav { flex: 1; padding: 12px 0; overflow-y: auto; }
+  .drawer-nav a {
+    display: block; padding: 14px 24px;
+    font-size: 16px; font-weight: 600; color: var(--ink);
+    text-decoration: none; border-bottom: 1px solid var(--line);
+    transition: background .15s, color .15s;
+  }
+  .drawer-nav a:last-child { border-bottom: none; }
+  .drawer-nav a:hover { background: var(--bg-soft); color: var(--orange); }
+  .drawer-nav a.active { color: var(--orange); }
+  .drawer-foot {
+    padding: 20px; border-top: 1px solid var(--line);
+  }
+  .drawer-foot .btn-orange {
+    display: block; text-align: center; width: 100%;
+    padding: 14px; border-radius: 10px;
+    background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 4px 14px rgba(255,106,26,.3);
+  }
+  body.drawer-lock { overflow: hidden; }
+
   /* ───────── Hero ───────── */
   .hero {
     position: relative; padding: 36px 20px 28px;
@@ -3162,9 +3212,34 @@
 <body>
 <div class="page">
 
+  <!-- Mobile drawer overlay + panel -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <div class="drawer-head">
+      <div class="nav-logo">
+        <svg class="spark" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        EXPOSE
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="site.html">For Creatives</a>
+      <a href="site-brands.html" class="active">For Brands</a>
+      <a href="#workflow">How it works</a>
+      <a href="#campaigns">Campaigns</a>
+      <a href="#meet">Meet EXi</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="#join" class="btn-orange">Join EXPOSE — It's Free</a>
+    </div>
+  </aside>
+
   <!-- NAV -->
   <nav class="nav">
-    <button class="nav-menu" aria-label="Open menu">
+    <button class="nav-menu" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
       <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
     <div class="nav-logo">
@@ -3172,10 +3247,10 @@
       EXPOSE
     </div>
     <div class="nav-links">
-      <a>For Creatives</a>
-      <a>For Brands</a>
-      <a>How it works</a>
-      <a>Pricing</a>
+      <a href="site.html">For Creatives</a>
+      <a href="site-brands.html" class="active">For Brands</a>
+      <a href="#workflow">How it works</a>
+      <a href="#campaigns">Campaigns</a>
     </div>
     <a class="nav-login" href="#join">Join</a>
   </nav>
@@ -5124,6 +5199,38 @@
         livePing();
       }, wait);
     }
+  })();
+
+  // Mobile drawer menu
+  (function(){
+    const btn = document.getElementById('navMenuBtn');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const closeBtn = document.getElementById('drawerClose');
+    if (!btn || !drawer) return;
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      document.body.classList.add('drawer-lock');
+      btn.setAttribute('aria-expanded', 'true');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.classList.remove('drawer-lock');
+      btn.setAttribute('aria-expanded', 'false');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    btn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
+    drawer.querySelectorAll('.drawer-nav a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', closeDrawer);
+    });
   })();
 </script>
 </body>
