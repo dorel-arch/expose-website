@@ -384,11 +384,11 @@
     margin: 24px 0;
   }
   .pull-quote p {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-    font-size: 18px; line-height: 1.55;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-style: normal; font-weight: 500;
+    font-size: 16px; line-height: 1.65;
     color: var(--ink);
-    margin: 0 0 12px;
+    margin: 0 0 14px;
   }
   .pull-quote cite {
     font-size: 13px; font-weight: 600; color: var(--gray);
@@ -588,51 +588,31 @@
   .value-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.07); border-color: rgba(255,106,26,.25); }
 
   /* ───────── TEAM ───────── */
-  .team {
-    background: #0D0D0D;
-    border-top: none;
-    padding: 64px 20px;
-    position: relative; overflow: hidden;
-  }
-  .team::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(255,106,26,.07) 1px, transparent 1.5px);
-    background-size: 28px 28px;
-    pointer-events: none;
-  }
-  .team > * { position: relative; z-index: 1; }
-  .team .eyebrow { color: var(--orange); }
-  .team h2 { color: #fff; }
-
-  .team-cards { display: grid; gap: 14px; margin-top: 28px; }
-
+  .team { background: var(--bg-soft); border-top: 3px solid var(--orange); }
+  .team-cards { display: grid; gap: 16px; margin-top: 24px; }
   .team-card {
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 24px;
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 20px;
     overflow: hidden;
-    transition: border-color .25s ease, background .25s ease, transform .28s cubic-bezier(.16,1,.3,1);
+    transition: transform .22s cubic-bezier(.16,1,.3,1), box-shadow .22s ease;
   }
-  .team-card:hover { background: rgba(255,255,255,.07); transform: translateY(-5px); }
-  .tc-ron:hover   { border-color: rgba(59,130,246,.4); box-shadow: 0 20px 48px rgba(59,130,246,.12); }
-  .tc-emily:hover { border-color: rgba(139,92,246,.4); box-shadow: 0 20px 48px rgba(139,92,246,.12); }
-  .tc-roei:hover  { border-color: rgba(16,185,129,.4); box-shadow: 0 20px 48px rgba(16,185,129,.12); }
-
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,.08);
+  }
   .tc-top {
-    padding: 28px 20px 22px;
+    padding: 24px 20px 18px;
     display: flex; flex-direction: column; align-items: center;
+    border-bottom: 1px solid var(--line);
   }
-  .tc-ron .tc-top   { background: radial-gradient(ellipse 90% 90% at 50% 0%, rgba(59,130,246,.14), transparent 68%); }
-  .tc-emily .tc-top { background: radial-gradient(ellipse 90% 90% at 50% 0%, rgba(139,92,246,.14), transparent 68%); }
-  .tc-roei .tc-top  { background: radial-gradient(ellipse 90% 90% at 50% 0%, rgba(16,185,129,.14), transparent 68%); }
-
   .tc-photo-wrap {
-    width: 80px; height: 80px; border-radius: 50%;
+    width: 72px; height: 72px; border-radius: 50%;
     display: grid; place-items: center;
     position: relative; overflow: hidden;
-    font-size: 28px; font-weight: 800; color: #fff;
-    margin-bottom: 14px;
+    font-size: 26px; font-weight: 800; color: #fff;
+    margin-bottom: 12px;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4.5px var(--orange);
   }
   .tc-photo-wrap img {
     position: absolute; inset: 0;
@@ -640,31 +620,17 @@
     object-fit: cover; object-position: top center;
   }
   .tc-init { position: relative; z-index: 0; pointer-events: none; }
-  .tc-ron .tc-photo-wrap   { background: linear-gradient(135deg, #3B82F6, #2563EB); box-shadow: 0 0 0 2.5px rgba(59,130,246,.5), 0 0 24px rgba(59,130,246,.3); }
-  .tc-emily .tc-photo-wrap { background: linear-gradient(135deg, #8B5CF6, #7C3AED); box-shadow: 0 0 0 2.5px rgba(139,92,246,.5), 0 0 24px rgba(139,92,246,.3); }
-  .tc-roei .tc-photo-wrap  { background: linear-gradient(135deg, #10B981, #059669); box-shadow: 0 0 0 2.5px rgba(16,185,129,.5), 0 0 24px rgba(16,185,129,.3); }
-
-  .tc-name { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -.01em; margin-bottom: 4px; }
-  .tc-role { font-size: 11.5px; color: rgba(255,255,255,.38); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
-
-  .tc-quote {
-    padding: 20px 22px 26px;
-    border-top: 1px solid rgba(255,255,255,.07);
-    position: relative; overflow: hidden;
-  }
-  .tc-quote::before {
-    content: '\201C';
-    position: absolute; bottom: -18px; right: 14px;
-    font-size: 110px; line-height: 1;
-    color: rgba(255,255,255,.04);
-    font-family: 'Instrument Serif', serif; font-style: normal;
-    pointer-events: none; user-select: none;
-  }
+  .tc-ron .tc-photo-wrap   { background: var(--ink); }
+  .tc-emily .tc-photo-wrap { background: var(--ink); }
+  .tc-roei .tc-photo-wrap  { background: var(--ink); }
+  .tc-name { font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; margin-bottom: 3px; }
+  .tc-role { font-size: 12px; color: var(--gray); font-weight: 500; }
+  .tc-quote { padding: 20px 22px 22px; }
   .tc-quote blockquote {
-    font-family: 'Instrument Serif', serif; font-style: italic;
-    font-size: 15.5px; line-height: 1.76;
-    color: rgba(255,255,255,.78);
-    margin: 0; letter-spacing: .008em;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-style: normal; font-weight: 400;
+    font-size: 14px; line-height: 1.72;
+    color: var(--ink-2); margin: 0;
   }
 
   /* Pull-quote photo */
@@ -829,11 +795,7 @@
     .team .about-section { max-width: 860px; margin: 0 auto; padding-left: 0; padding-right: 0; }
 
     .values-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
-    .team-cards { grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-    .team { padding-left: 60px; padding-right: 60px; }
-    .tc-top { padding: 32px 24px 24px; }
-    .tc-quote { padding: 22px 26px 28px; }
-    .tc-photo-wrap { width: 88px; height: 88px; font-size: 32px; }
+    .team-cards { grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
     .why-cards { gap: 18px; }
 
     .manifesto h2 { font-size: 56px; }
