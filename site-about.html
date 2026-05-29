@@ -285,10 +285,9 @@
   /* ───────── HERO ───────── */
   .about-hero {
     position: relative;
-    min-height: 100svh;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     text-align: center;
-    padding: 80px 20px 60px;
+    padding: 72px 20px 56px;
     background: var(--dark);
     overflow: hidden;
   }
@@ -804,21 +803,27 @@
     .nav-login { grid-column: 3; justify-self: end; padding: 10px 20px; font-size: 13px; }
     .nav-menu { display: none; }
 
-    .about-hero { padding: 120px 60px 90px; }
-    .about-hero h1 { font-size: 72px; }
-    .about-hero p { font-size: 18px; }
+    .about-hero { padding: 80px 60px 64px; }
+    .about-hero h1 { font-size: 64px; }
+    .about-hero p { font-size: 17px; }
 
-    .about-section { padding: 80px 60px; max-width: 860px; margin: 0 auto; }
+    /* Sections: full-width background, centered content via padding */
+    .about-section {
+      max-width: none; margin: 0;
+      padding-top: 80px; padding-bottom: 80px;
+      padding-left: max(60px, calc((100% - 860px) / 2));
+      padding-right: max(60px, calc((100% - 860px) / 2));
+    }
     .about-section h2 { font-size: 38px; }
 
-    .origin, .why-exist, .journey, .manifesto, .values, .team, .about-cta {
-      padding-left: 60px; padding-right: 60px;
+    .manifesto {
+      padding-left: max(60px, calc((100% - 860px) / 2));
+      padding-right: max(60px, calc((100% - 860px) / 2));
     }
-    .origin .about-section,
-    .why-exist .about-section,
-    .journey .about-section,
-    .values .about-section,
-    .team .about-section { max-width: 860px; margin: 0 auto; padding-left: 0; padding-right: 0; }
+    .about-cta {
+      padding-left: max(60px, calc((100% - 860px) / 2));
+      padding-right: max(60px, calc((100% - 860px) / 2));
+    }
 
     .values-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
     .team-cards { grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
