@@ -75,33 +75,49 @@ body.drawer-lock{overflow:hidden}
 .hero h1{font-size:40px;line-height:1.06;font-weight:800;letter-spacing:-0.035em;color:#fff;margin:0 0 16px;position:relative;z-index:1}
 .hero-sub{font-size:15px;color:rgba(255,255,255,.55);line-height:1.6;max-width:290px;margin:0 auto 40px;position:relative;z-index:1}
 
-/* Hero phone mockup */
-.hero-phone{position:relative;z-index:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:18px;max-width:320px;margin:0 auto;backdrop-filter:blur(10px);box-shadow:0 32px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06) inset}
-.hp-notch{width:60px;height:5px;background:rgba(255,255,255,.12);border-radius:100px;margin:0 auto 16px}
-.hp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.hp-greeting{font-size:12px;color:rgba(255,255,255,.45)}
-.hp-greeting strong{display:block;font-size:15px;font-weight:700;color:#fff;margin-top:2px}
-.hp-av{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#FF6A1A,#FF3D00);display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
-.hp-score-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
-.hp-score-cell{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:11px 10px;text-align:center}
-.hp-score-val{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
-.hp-score-val.up{color:#4ADE80}
-.hp-score-val.orange{color:var(--orange)}
-.hp-score-sub{font-size:9px;color:rgba(255,255,255,.35);margin-top:2px}
-.hp-chart{height:48px;display:flex;align-items:flex-end;gap:3px;padding:0 2px;margin-bottom:12px}
-.hp-bar{flex:1;border-radius:3px 3px 0 0;background:rgba(255,255,255,.1);position:relative;overflow:hidden}
-.hp-bar::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--orange),rgba(255,106,26,.3));border-radius:inherit;transform:scaleY(0);transform-origin:bottom;animation:bar-rise 1s cubic-bezier(.4,0,.2,1) forwards}
-.hp-bar:nth-child(1)::after{transform:scaleY(.28);animation-delay:.1s}
-.hp-bar:nth-child(2)::after{transform:scaleY(.44);animation-delay:.15s}
-.hp-bar:nth-child(3)::after{transform:scaleY(.35);animation-delay:.2s}
-.hp-bar:nth-child(4)::after{transform:scaleY(.6);animation-delay:.25s}
-.hp-bar:nth-child(5)::after{transform:scaleY(.72);animation-delay:.3s}
-.hp-bar:nth-child(6)::after{transform:scaleY(.88);animation-delay:.35s}
-.hp-bar:nth-child(7)::after{transform:scaleY(1);animation-delay:.4s}
-@keyframes bar-rise{from{transform:scaleY(0)}to{transform:scaleY(var(--h,1))}}
-.hp-match-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.25);border-radius:10px;padding:8px 12px;font-size:11px;font-weight:700;color:#4ADE80;width:100%}
-.hp-match-dot{width:6px;height:6px;border-radius:50%;background:#4ADE80;box-shadow:0 0 6px #4ADE80;animation:ping 1.5s ease-in-out infinite}
-@keyframes ping{0%,100%{opacity:1}50%{opacity:.4}}
+/* ── EXI Master Dashboard mockup ── */
+.dash-frame{position:relative;z-index:1;background:#141414;border-radius:28px;padding:18px 16px 0;max-width:310px;margin:0 auto;box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.07) inset;overflow:hidden}
+.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.dash-title{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.dash-dots{display:flex;gap:6px;align-items:center}
+.dash-dot{width:9px;height:9px;border-radius:50%}
+.dash-dot.active{background:var(--orange);box-shadow:0 0 6px var(--orange);animation:ping 1.5s ease-in-out infinite}
+.dash-dot.idle{background:rgba(255,255,255,.2)}
+/* Status card */
+.dash-status{display:flex;align-items:center;gap:12px;background:#1E1E1E;border-radius:16px;padding:14px;margin-bottom:12px}
+.dash-exi-av{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#FF6A1A,#FF3D00);display:grid;place-items:center;flex-shrink:0;box-shadow:0 4px 14px rgba(255,106,26,.4);position:relative}
+.dash-exi-av::after{content:'';position:absolute;inset:0;border-radius:14px;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.3),transparent 60%)}
+.dash-status-text h5{font-size:15px;font-weight:800;color:#fff;margin:0 0 3px;letter-spacing:-.01em}
+.dash-status-text p{font-size:12px;color:rgba(255,255,255,.45);margin:0}
+.typing-dots{display:inline-flex;gap:3px;margin-left:4px;vertical-align:middle}
+.typing-dots span{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);animation:typing-bounce .9s ease-in-out infinite}
+.typing-dots span:nth-child(2){animation-delay:.15s}
+.typing-dots span:nth-child(3){animation-delay:.3s}
+@keyframes typing-bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-4px)}}
+/* 2×2 stats grid */
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.dc{background:#1E1E1E;border-radius:16px;padding:14px 13px;position:relative;overflow:hidden}
+.dc-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:8px}
+.dc-num{font-size:30px;font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1}
+.dc-trend{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:#4ADE80;margin-top:6px;letter-spacing:.04em}
+.dc-trend svg{width:12px;height:12px}
+/* Bar chart cell */
+.dc-bars{display:flex;align-items:flex-end;gap:5px;height:44px;margin:4px 0}
+.dcb{border-radius:4px 4px 0 0;flex:1}
+.dcb.dim{background:rgba(255,106,26,.35)}
+.dcb.bright{background:var(--orange)}
+.dc-bars-foot{display:flex;justify-content:space-between;align-items:center}
+.dc-trend-arrow{color:rgba(255,255,255,.25)}
+/* Earnings card */
+.dash-earnings{background:#1A1208;border-top:1px solid rgba(255,106,26,.15);margin:0 -16px;padding:16px 16px 0;position:relative;overflow:hidden}
+.de-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px}
+.de-label{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px}
+.de-num{font-size:32px;font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1}
+.de-trend{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:#4ADE80;margin-top:6px}
+.de-live{background:#3D1E00;border:1px solid rgba(255,106,26,.4);border-radius:8px;padding:5px 11px;font-size:10px;font-weight:800;letter-spacing:.1em;color:var(--orange);align-self:flex-start}
+.dash-wave{display:block;width:calc(100% + 32px);margin:12px -16px 0;height:90px}
+/* Ping animation reuse */
+@keyframes ping{0%,100%{opacity:1}50%{opacity:.35}}
 
 /* ════════════════════════════════════
    KNOWS — Cream + Orbital diagram
@@ -411,37 +427,100 @@ body.drawer-lock{overflow:hidden}
   <h1 class="sr s1">The Agent that<br>works for you <span class="italic-accent" style="color:var(--orange)">24/7</span></h1>
   <p class="hero-sub sr s2">EXi finds the projects, grows your visibility, and tells you exactly what to do next — so you just show up and create.</p>
 
-  <div class="hero-phone sr s3">
-    <div class="hp-notch"></div>
-    <div class="hp-top">
-      <div class="hp-greeting">
-        Good morning<strong>Mia Khalifa ✦</strong>
-      </div>
-      <div class="hp-av">EX</div>
-    </div>
-    <div class="hp-score-row">
-      <div class="hp-score-cell">
-        <div class="hp-score-val up" id="heroVis">0%</div>
-        <div class="hp-score-sub">Visibility</div>
-      </div>
-      <div class="hp-score-cell">
-        <div class="hp-score-val orange" id="heroMatches">0</div>
-        <div class="hp-score-sub">Matches</div>
-      </div>
-      <div class="hp-score-cell">
-        <div class="hp-score-val" id="heroScore">0</div>
-        <div class="hp-score-sub">Score</div>
+  <div class="dash-frame sr s3">
+    <!-- Header -->
+    <div class="dash-header">
+      <span class="dash-title">EXi Master Dashboard</span>
+      <div class="dash-dots">
+        <div class="dash-dot active"></div>
+        <div class="dash-dot idle"></div>
       </div>
     </div>
-    <div class="hp-chart">
-      <div class="hp-bar"></div><div class="hp-bar"></div><div class="hp-bar"></div>
-      <div class="hp-bar"></div><div class="hp-bar"></div><div class="hp-bar"></div>
-      <div class="hp-bar"></div>
+
+    <!-- EXi status -->
+    <div class="dash-status">
+      <div class="dash-exi-av">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+      </div>
+      <div class="dash-status-text">
+        <h5>EXi is active</h5>
+        <p>Optimizing Your Career<span class="typing-dots"><span></span><span></span><span></span></span></p>
+      </div>
     </div>
-    <div style="height:10px"></div>
-    <div class="hp-match-tag">
-      <div class="hp-match-dot"></div>
-      EXi found 3 new briefs for you right now
+
+    <!-- 2×2 Stats grid -->
+    <div class="dash-grid">
+      <!-- Active Proposals -->
+      <div class="dc">
+        <div class="dc-label">Active Proposal</div>
+        <div class="dc-num" id="dashProp">0</div>
+        <div class="dc-trend">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          +18.2%
+        </div>
+      </div>
+      <!-- Profile Views -->
+      <div class="dc">
+        <div class="dc-label">Profile Views</div>
+        <div class="dc-num" id="dashViews">0%</div>
+        <div class="dc-trend" style="text-transform:uppercase;font-size:9px;letter-spacing:.06em">Above industry avg</div>
+      </div>
+      <!-- Social Media Eng — bar chart -->
+      <div class="dc">
+        <div class="dc-label">Social Media Eng</div>
+        <div class="dc-bars">
+          <div class="dcb dim" style="height:40%"></div>
+          <div class="dcb dim" style="height:62%"></div>
+          <div class="dcb bright" style="height:100%"></div>
+          <div class="dcb dim" style="height:55%"></div>
+        </div>
+        <div class="dc-bars-foot">
+          <div class="dc-trend">+24%</div>
+          <div class="dc-trend-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+          </div>
+        </div>
+      </div>
+      <!-- Project Matches -->
+      <div class="dc">
+        <div class="dc-label">Projects Matches</div>
+        <div class="dc-num" id="dashMatch">0</div>
+        <div class="dc-trend">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          12.4k Views
+        </div>
+      </div>
+    </div>
+
+    <!-- Earnings card + wave chart -->
+    <div class="dash-earnings">
+      <div class="de-top">
+        <div>
+          <div class="de-label">Earnings this week</div>
+          <div class="de-num" id="dashEarn">$0</div>
+          <div class="de-trend">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            +10.8%
+          </div>
+        </div>
+        <div class="de-live">LIVE</div>
+      </div>
+      <!-- SVG wave chart -->
+      <svg class="dash-wave" viewBox="0 0 310 90" preserveAspectRatio="none" fill="none">
+        <defs>
+          <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(255,106,26,.45)"/>
+            <stop offset="100%" stop-color="rgba(255,106,26,0)"/>
+          </linearGradient>
+        </defs>
+        <path id="wavePath" d="M0 72 C30 72 40 60 60 56 C80 52 90 64 110 58 C130 52 140 38 170 30 C200 22 220 50 250 32 C270 20 285 10 310 8 L310 90 L0 90 Z" fill="url(#waveGrad)" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur=".6s" fill="freeze" begin="0.4s"/>
+        </path>
+        <path id="waveStroke" d="M0 72 C30 72 40 60 60 56 C80 52 90 64 110 58 C130 52 140 38 170 30 C200 22 220 50 250 32 C270 20 285 10 310 8" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" fill="none"
+          stroke-dasharray="600" stroke-dashoffset="600">
+          <animate attributeName="stroke-dashoffset" from="600" to="0" dur="1.2s" fill="freeze" begin="0.2s" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+        </path>
+      </svg>
     </div>
   </div>
 </header>
@@ -818,9 +897,34 @@ function animCount(el, end, suffix, duration){
   requestAnimationFrame(step);
 }
 setTimeout(()=>{
-  animCount(document.getElementById('heroVis'), 6.48, '%', 1400);
-  animCount(document.getElementById('heroMatches'), 15, '', 1000);
-  animCount(document.getElementById('heroScore'), 84, '', 1200);
+  animCount(document.getElementById('dashProp'), 15, '', 900);
+  animCount(document.getElementById('dashMatch'), 15, '', 900);
+  // Views counter with decimal
+  (function(){
+    const el=document.getElementById('dashViews');
+    if(!el) return;
+    let s=performance.now();
+    function step(now){
+      const t=Math.min(1,(now-s)/1200);
+      const ease=1-Math.pow(1-t,3);
+      el.textContent=(ease*6.48).toFixed(2)+'%';
+      if(t<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  })();
+  // Earnings counter
+  (function(){
+    const el=document.getElementById('dashEarn');
+    if(!el) return;
+    let s=performance.now();
+    function step(now){
+      const t=Math.min(1,(now-s)/1100);
+      const ease=1-Math.pow(1-t,3);
+      el.textContent='$'+(Math.round(ease*7800)).toLocaleString();
+      if(t<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  })();
 },600);
 
 // ── Terminal typewriter ──
