@@ -52,7 +52,7 @@ a{color:inherit;text-decoration:none}
 .da-sub-list.open{display:block}
 .da-sub-list a{display:block;padding:12px 24px 12px 42px;font-size:14px;font-weight:600;color:var(--gray);border-top:1px solid var(--line);background:var(--bg-soft)}
 .da-sub-list a:hover{background:#fff;color:var(--orange)}
-.da-sub-list a.active{color:var(--orange);background:#fff}
+.da-sub-list a.active{color:var(--orange);background:#fff}.drawer-divider{height:1px;background:var(--line);margin:4px 14px}
 .drawer-foot{padding:20px;border-top:1px solid var(--line)}
 .drawer-foot .btn-orange{display:block;text-align:center;padding:14px;border-radius:10px;background:var(--orange);color:#fff;font-size:14px;font-weight:700;box-shadow:0 4px 14px rgba(255,106,26,.3)}
 body.drawer-lock{overflow:hidden}
@@ -405,8 +405,9 @@ body.drawer-lock{overflow:hidden}
     </button>
   </div>
   <nav class="drawer-nav">
-    <a href="site.html">For Creatives</a>
     <a href="site-brands.html">For Brands</a>
+    <a href="site.html">For Creatives</a>
+    <div class="drawer-divider"></div>
     <div class="da-wrap">
       <button class="da-toggle exi-active" id="exiToggle" aria-expanded="false">
         Meet EXi
@@ -417,6 +418,9 @@ body.drawer-lock{overflow:hidden}
         <a href="site-exi-brands.html">For Brands</a>
       </div>
     </div>
+    <a href="#pricing">Pricing</a>
+    <a href="site-about.html">About Us</a>
+    <a href="#contact">Contact</a>
   </nav>
   <div class="drawer-foot"><a href="#cta" class="btn-orange">Join EXPOSE — It's Free</a></div>
 </aside>
