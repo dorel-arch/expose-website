@@ -150,6 +150,17 @@
   .drawer-nav a:last-child { border-bottom: none; }
   .drawer-nav a:hover { background: var(--bg-soft); color: var(--orange); }
   .drawer-nav a.active { color: var(--orange); }
+  .da-wrap { border-bottom: 1px solid var(--line); }
+  .da-toggle { display:flex; align-items:center; justify-content:space-between; width:100%; padding:14px 24px; font-size:16px; font-weight:600; color:var(--ink); background:none; border:none; cursor:pointer; font-family:inherit; text-align:left; transition:background .15s,color .15s; }
+  .da-toggle:hover { background:var(--bg-soft); color:var(--orange); }
+  .da-toggle.exi-active { color:var(--orange); }
+  .da-arrow { transition:transform .25s; flex-shrink:0; color:var(--gray); }
+  .da-toggle[aria-expanded="true"] .da-arrow { transform:rotate(180deg); }
+  .da-sub-list { display:none; }
+  .da-sub-list.open { display:block; }
+  .da-sub-list a { display:block; padding:12px 24px 12px 42px; font-size:14px; font-weight:600; color:var(--gray); border-bottom:none; border-top:1px solid var(--line); background:var(--bg-soft); }
+  .da-sub-list a:hover { background:#fff; color:var(--orange); }
+  .da-sub-list a.active { color:var(--orange); background:#fff; }
   .drawer-foot {
     padding: 20px; border-top: 1px solid var(--line);
   }
@@ -3229,7 +3240,16 @@
       <a href="site-brands.html" class="active">For Brands</a>
       <a href="#workflow">How it works</a>
       <a href="#campaigns">Campaigns</a>
-      <a href="site-exi.html">Meet EXi</a>
+      <div class="da-wrap">
+        <button class="da-toggle" id="exiToggle" aria-expanded="false">
+          Meet EXi
+          <svg class="da-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="da-sub-list" id="exiSubList">
+          <a href="site-exi.html">For Creatives</a>
+          <a href="site-exi-brands.html">For Brands</a>
+        </div>
+      </div>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="drawer-foot">
@@ -5230,6 +5250,16 @@
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
     drawer.querySelectorAll('.drawer-nav a[href^="#"]').forEach(function(a){
       a.addEventListener('click', closeDrawer);
+    });
+  })();
+  (function(){
+    var toggle=document.getElementById('exiToggle');
+    var subList=document.getElementById('exiSubList');
+    if(!toggle||!subList) return;
+    toggle.addEventListener('click',function(){
+      var open=toggle.getAttribute('aria-expanded')==='true';
+      toggle.setAttribute('aria-expanded',String(!open));
+      subList.classList.toggle('open',!open);
     });
   })();
 </script>
