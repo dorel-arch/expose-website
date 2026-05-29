@@ -432,6 +432,8 @@
     font-size: 14px; line-height: 1.65; color: var(--gray);
     margin: 0;
   }
+  .why-card { transition: transform .18s ease, box-shadow .18s ease; }
+  .why-card:hover { transform: translateX(4px); box-shadow: 0 6px 24px rgba(255,106,26,.08); }
   .testimonial-card {
     margin-top: 32px;
     background: var(--bg-soft);
@@ -582,37 +584,88 @@
     font-size: 13px; line-height: 1.6; color: var(--gray);
     margin: 0;
   }
+  .value-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .value-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.07); border-color: rgba(255,106,26,.25); }
 
   /* ───────── TEAM ───────── */
   .team { background: var(--bg-soft); border-top: 3px solid var(--orange); }
-  .team-cards { display: grid; gap: 14px; margin-top: 24px; }
+  .team-cards { display: grid; gap: 16px; margin-top: 24px; }
   .team-card {
     background: #fff;
     border: 1.5px solid var(--line);
-    border-radius: 20px;
-    padding: 22px;
+    border-radius: 22px;
+    padding: 24px;
     box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    transition: transform .22s cubic-bezier(.16,1,.3,1), box-shadow .22s ease, border-color .22s ease;
+  }
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 48px rgba(0,0,0,.09), 0 4px 12px rgba(0,0,0,.04);
+    border-color: rgba(255,106,26,.2);
+  }
+  .team-quote-mark {
+    font-family: 'Instrument Serif', serif;
+    font-size: 52px; line-height: .8;
+    color: var(--orange); opacity: .25;
+    margin-bottom: 8px;
+    font-style: normal;
+    display: block;
   }
   .team-card blockquote {
-    font-size: 14px; line-height: 1.7;
-    color: var(--ink-2); margin: 0 0 18px;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 15.5px; line-height: 1.72;
+    color: var(--ink); margin: 0 0 20px;
+    letter-spacing: .005em;
   }
   .team-author {
     display: flex; align-items: center; gap: 12px;
     padding-top: 16px;
-    border-top: 1px dashed var(--line);
+    border-top: 1px solid var(--line);
   }
-  .team-av {
-    width: 44px; height: 44px; border-radius: 50%;
+  /* Photo wrap — shows photo if exists, initial otherwise */
+  .team-av-wrap {
+    width: 52px; height: 52px; border-radius: 50%;
     display: grid; place-items: center;
-    font-size: 18px; font-weight: 800; color: #fff;
+    position: relative; overflow: hidden;
+    font-size: 19px; font-weight: 800; color: #fff;
     flex-shrink: 0;
+    border: 2.5px solid #fff;
+    box-shadow: 0 0 0 1.5px var(--line);
   }
-  .team-av.av-d { background: var(--orange); }
-  .team-av.av-a { background: #4F6AF0; }
-  .team-av.av-m { background: #1FBF6B; }
-  .team-author b { font-size: 14px; font-weight: 700; display: block; }
+  .team-av-wrap img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+  }
+  .team-av-init { position: relative; z-index: 0; pointer-events: none; }
+  .av-ron   { background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%); }
+  .av-emily { background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); }
+  .av-roei  { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+  .team-author b { font-size: 14px; font-weight: 700; display: block; letter-spacing: -.01em; }
   .team-author span { font-size: 12px; color: var(--gray); }
+
+  /* Pull-quote photo */
+  .pq-author {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .pq-av {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--orange);
+    display: grid; place-items: center;
+    font-size: 14px; font-weight: 800; color: #fff;
+    position: relative; overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px rgba(255,106,26,.3);
+  }
+  .pq-av img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+  }
+  .pq-name { display: flex; flex-direction: column; }
+  .pq-name b { font-size: 13px; font-weight: 700; color: var(--ink); }
+  .pq-name span { font-size: 12px; color: var(--gray); }
 
   /* ───────── ABOUT CTA ───────── */
   .about-cta {
@@ -887,7 +940,18 @@
 
     <div class="pull-quote sr s4">
       <p>"EXPOSE is for the creative who deserves better, the brand that wants more, and the agency that needs to move faster."</p>
-      <cite>— Dorel Shnaiderman, Co-Founder &amp; CEO</cite>
+      <cite>
+        <div class="pq-author">
+          <div class="pq-av">
+            <img src="assets/team/dorel.jpg" alt="Dorel Shnaiderman" onerror="this.remove()">
+            <span>D</span>
+          </div>
+          <div class="pq-name">
+            <b>Dorel Shnaiderman</b>
+            <span>Co-Founder &amp; CEO</span>
+          </div>
+        </div>
+      </cite>
     </div>
 
     <p class="origin-bottom sr s5">And we're just getting started.</p>
@@ -930,16 +994,6 @@
       </div>
     </div>
 
-    <div class="testimonial-card sr s5">
-      <blockquote>"EXPOSE changed how I think about my career. For the first time I feel like someone is actually in my corner."</blockquote>
-      <div class="testimonial-author">
-        <div class="t-avatar" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&auto=format')"></div>
-        <div>
-          <b>Sarah Robertson</b>
-          <span>Head of Marketing at Brandco</span>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ④ TIMELINE -->
@@ -1039,9 +1093,13 @@
 
     <div class="team-cards">
       <div class="team-card sr s2">
-        <blockquote>"Technology should feel invisible. If you have to think about how to use it we haven't done our job yet. I want every person on EXPOSE to feel like the platform was built just for them."</blockquote>
+        <span class="team-quote-mark">"</span>
+        <blockquote>Technology should feel invisible. If you have to think about how to use it we haven't done our job yet. I want every person on EXPOSE to feel like the platform was built just for them.</blockquote>
         <div class="team-author">
-          <div class="team-av av-d">R</div>
+          <div class="team-av-wrap av-ron">
+            <img src="assets/team/ron.jpg" alt="Ron Kolsky" onerror="this.remove()">
+            <span class="team-av-init">R</span>
+          </div>
           <div>
             <b>Ron Kolsky</b>
             <span>Co-Founder &amp; CTO</span>
@@ -1050,9 +1108,13 @@
       </div>
 
       <div class="team-card sr s3">
-        <blockquote>"We're not just building a product, we're building a home for creative professionals. A place where people learn, grow, and support each other. That's what gets me up in the morning."</blockquote>
+        <span class="team-quote-mark">"</span>
+        <blockquote>We're not just building a product, we're building a home for creative professionals. A place where people learn, grow, and support each other. That's what gets me up in the morning.</blockquote>
         <div class="team-author">
-          <div class="team-av av-a">E</div>
+          <div class="team-av-wrap av-emily">
+            <img src="assets/team/emily.jpg" alt="Emily Zeltser" onerror="this.remove()">
+            <span class="team-av-init">E</span>
+          </div>
           <div>
             <b>Emily Zeltser</b>
             <span>Head of Community</span>
@@ -1061,9 +1123,13 @@
       </div>
 
       <div class="team-card sr s4">
-        <blockquote>"The most powerful AI in the world should be available to everyone, not just big companies. EXI is our way of giving every person their own personal agent. Someone in their corner, 24/7."</blockquote>
+        <span class="team-quote-mark">"</span>
+        <blockquote>The most powerful AI in the world should be available to everyone, not just big companies. EXI is our way of giving every person their own personal agent. Someone in their corner, 24/7.</blockquote>
         <div class="team-author">
-          <div class="team-av av-m">R</div>
+          <div class="team-av-wrap av-roei">
+            <img src="assets/team/roei.jpg" alt="Roei Michael" onerror="this.remove()">
+            <span class="team-av-init">R</span>
+          </div>
           <div>
             <b>Roei Michael</b>
             <span>Lead AI Engineer</span>
