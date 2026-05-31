@@ -388,6 +388,97 @@ body.drawer-lock{overflow:hidden}
 .footer-socials{display:flex;gap:10px}
 .footer-socials a{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.06);display:grid;place-items:center;color:rgba(255,255,255,.4);transition:background .15s,color .15s}
 .footer-socials a:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* ════════════════════════════════════
+   DASHBOARD CARD ANIMATIONS
+════════════════════════════════════ */
+.dc{animation:dc-pop .45s ease both}
+.dash-grid .dc:nth-child(1){animation-delay:.65s}
+.dash-grid .dc:nth-child(2){animation-delay:.77s}
+.dash-grid .dc:nth-child(3){animation-delay:.89s}
+.dash-grid .dc:nth-child(4){animation-delay:1.01s}
+@keyframes dc-pop{from{opacity:0;transform:translateY(10px) scale(.95)}to{opacity:1;transform:none}}
+.dcb{clip-path:inset(100% 0 0 0);animation:bar-clip .45s ease-out both}
+.dcb:nth-child(1){animation-delay:1s}
+.dcb:nth-child(2){animation-delay:1.1s}
+.dcb:nth-child(3){animation-delay:1.2s}
+.dcb:nth-child(4){animation-delay:1.3s}
+@keyframes bar-clip{to{clip-path:inset(0% 0 0 0)}}
+.dash-status{animation:dash-status-in .5s ease .55s both}
+@keyframes dash-status-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.dash-earnings{animation:dash-earn-in .5s ease 1.15s both}
+@keyframes dash-earn-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes float-frame{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ════════════════════════════════════
+   DESKTOP — ≥ 900px
+════════════════════════════════════ */
+@media(min-width:900px){
+
+/* Hero two-column */
+.hero{padding:80px max(60px,calc(50% - 570px)) 80px}
+.hero-content{display:flex;align-items:center;gap:80px;width:100%}
+.hero-text{flex:1;text-align:left}
+.hero-text .hero-orb{margin:0 0 32px}
+.hero h1{font-size:58px}
+.hero-sub{max-width:460px;margin:0 0 40px}
+.dash-frame{flex-shrink:0;width:400px;max-width:400px;animation:float-frame 7s ease-in-out infinite;margin:0}
+
+/* Typography scale-up */
+.knows h2,.sleeps h2,.score-sec h2,.acts h2,.no-stop h2,.one-agent h2,.control h2{font-size:42px}
+.cta-sec h2{font-size:56px}
+
+/* Section centering */
+.knows{padding:100px max(40px,calc(50% - 570px)) 80px}
+.sleeps{padding:100px max(40px,calc(50% - 570px))}
+.score-sec{padding:100px max(40px,calc(50% - 570px))}
+.acts{padding:100px max(40px,calc(50% - 570px))}
+.one-agent{padding:100px max(40px,calc(50% - 570px))}
+.control{padding:100px max(40px,calc(50% - 570px))}
+.cta-sec{padding:100px max(40px,calc(50% - 570px)) 120px}
+.no-stop-inner{padding:0 max(40px,calc(50% - 570px))}
+
+/* Knows: 4-column grid */
+.knows-grid{grid-template-columns:repeat(4,1fr);max-width:none}
+.knows-sub{max-width:560px}
+
+/* Sleeps: terminal + items side by side */
+.sleeps-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:32px}
+.sleeps-items{margin-top:0}
+
+/* Score: gauge + bars side by side */
+.score-layout{display:flex;align-items:center;gap:60px;margin-top:40px}
+.gauge-wrap{width:240px;height:240px;flex-shrink:0;margin:0}
+.gauge-num{font-size:64px}
+.score-bars-card{flex:1;max-width:none;margin:0}
+
+/* Acts: 3-column cards */
+.act-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+.act-approve-all{max-width:300px;margin:0 auto;display:block}
+
+/* No-stop: horizontal cards */
+.ns-cards{flex-direction:row;gap:16px}
+.ns-card{flex:1}
+.ns-cta{margin:0 max(40px,calc(50% - 570px))}
+
+/* Bento: 3-column */
+.bento{grid-template-columns:repeat(3,1fr)}
+.bento-cell{padding:28px}
+
+/* Control: 2-column notifs */
+.notif-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#n1{grid-column:1/-1}
+
+/* CTA horizontal */
+.cta-btns{flex-direction:row;max-width:420px;justify-content:center}
+.cta-sec p{max-width:480px}
+
+/* Footer */
+.footer{padding:60px max(40px,calc(50% - 570px)) 40px}
+.footer-cols{grid-template-columns:repeat(4,1fr)}
+.footer-apps{max-width:340px}
+
+}
 </style>
 </head>
 <body>
@@ -441,6 +532,8 @@ body.drawer-lock{overflow:hidden}
 
 <!-- ═══ HERO ═══ -->
 <header class="hero">
+  <div class="hero-content">
+  <div class="hero-text">
   <div class="hero-orb sr">
     <div class="orb-ring"></div>
     <div class="orb-ring"></div>
@@ -451,6 +544,7 @@ body.drawer-lock{overflow:hidden}
   </div>
   <h1 class="sr s1">The Agent that runs your campaigns <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--orange)">24/7</em></h1>
   <p class="hero-sub sr s2">EXi manages your creator relationships, optimizes campaigns, and delivers real ROI data — so your team focuses on strategy, not admin.</p>
+  </div><!-- /hero-text -->
 
   <div class="dash-frame sr s3">
     <!-- Header -->
@@ -548,6 +642,7 @@ body.drawer-lock{overflow:hidden}
       </svg>
     </div>
   </div>
+  </div><!-- /hero-content -->
 </header>
 
 <!-- ═══ KNOWS YOUR WORLD ═══ -->
@@ -674,6 +769,7 @@ body.drawer-lock{overflow:hidden}
   <h2 class="sr s1">EXi <span class="italic-accent" style="font-size:32px">Never Sleeps</span></h2>
   <p class="sleeps-sub sr s2">While your team sleeps, EXi is scanning campaign performance, monitoring creators, and protecting your brand.</p>
 
+  <div class="sleeps-layout">
   <div class="terminal sr s3" id="terminalCard">
     <div class="terminal-bar">
       <div class="tb-dot"></div><div class="tb-dot"></div><div class="tb-dot"></div>
@@ -699,6 +795,7 @@ body.drawer-lock{overflow:hidden}
       <div><h4>Budget Pacing Guard</h4><p>Watches spend vs. target and reallocates budget to top performers automatically.</p></div>
     </div>
   </div>
+  </div><!-- /sleeps-layout -->
 </section>
 
 <!-- ═══ CAMPAIGN HEALTH SCORE ═══ -->
@@ -709,6 +806,7 @@ body.drawer-lock{overflow:hidden}
   <h2 class="sr s1">Real data. Real ROI.<br>No <span class="italic-accent">guesswork.</span></h2>
   <p class="score-sub sr s2">EXi gives you a real-time campaign health score based on content quality, reach, and actual ROI.</p>
 
+  <div class="score-layout">
   <div class="gauge-wrap sr s3" id="gaugeWrap">
     <svg class="gauge-svg" viewBox="0 0 200 200">
       <defs>
@@ -742,6 +840,7 @@ body.drawer-lock{overflow:hidden}
     </div>
     <a href="#cta" class="score-cta">View Full Report →</a>
   </div>
+  </div><!-- /score-layout -->
 </section>
 
 <!-- ═══ EXI ACTS ═══ -->
