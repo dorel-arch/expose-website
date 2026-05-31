@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — EXPOSE | AI Marketing for Creatives &amp; Brands</title>
+<meta name="description" content="Insights on the creator economy, AI-powered marketing, brand-creator collaboration, and the future of content. Read the EXPOSE blog.">
+<meta name="keywords" content="creator economy, AI marketing, brand collaborations, influencer marketing, content creation, campaign management, creative freelancers">
+<link rel="canonical" href="https://expose.global/blog">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="EXPOSE Blog — The Creator Economy, Decoded">
+<meta property="og:description" content="Practical insights on AI marketing, brand-creator collaboration, and the future of the creator economy. Written by people who live it.">
+<meta property="og:url" content="https://expose.global/blog">
+<meta property="og:site_name" content="EXPOSE">
+<meta property="og:image" content="https://expose.global/assets/og-blog.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EXPOSE Blog — The Creator Economy, Decoded">
+<meta name="twitter:description" content="Practical insights on AI marketing, brand-creator collaboration, and the future of the creator economy.">
+
+<!-- Structured Data: Blog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "EXPOSE Blog",
+  "description": "Insights on the creator economy, AI marketing, brand-creator collaboration, and the future of content.",
+  "url": "https://expose.global/blog",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "EXPOSE",
+    "url": "https://expose.global",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://expose.global/assets/logo.png"
+    }
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How AI Is Reshaping Campaign Management in 2025",
+      "description": "The days of spreadsheet-based campaign tracking are over. Here's how AI agents are automating the entire workflow — from brief to final report.",
+      "author": { "@type": "Person", "name": "Dorel Shnaiderman" },
+      "datePublished": "2025-05-20",
+      "keywords": "AI marketing, campaign management, automation",
+      "articleSection": "AI & Automation"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Why Brands Are Pivoting to Micro-Creators in 2025",
+      "description": "Mega-influencers are losing ground. We break down why brands are allocating more budget to smaller, niche creators — and what it means for you.",
+      "author": { "@type": "Person", "name": "Emily Zeltser" },
+      "datePublished": "2025-05-14",
+      "keywords": "micro-influencers, brand strategy, creator marketing",
+      "articleSection": "Brand Strategy"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "The Creator Economy Is Worth $500B — Here's What That Means for You",
+      "description": "The numbers are staggering, but the real opportunity is in the details. A breakdown of where the money is flowing and how to position yourself.",
+      "author": { "@type": "Person", "name": "Ron Kolsky" },
+      "datePublished": "2025-05-08",
+      "keywords": "creator economy, creator monetization, content business",
+      "articleSection": "Creator Economy"
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://expose.global" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://expose.global/blog" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange:      #FF6A1A;
+    --orange-2:    #FF8533;
+    --orange-soft: #FFEDE0;
+    --ink:         #131313;
+    --ink-2:       #3A3A3A;
+    --gray:        #6E6E6E;
+    --gray-2:      #9A9A9A;
+    --line:        #ECE7E2;
+    --bg:          #FFFFFF;
+    --bg-soft:     #FAF7F2;
+    --dark:        #0D0D0D;
+    --radius:      18px;
+    --radius-sm:   12px;
+    --shadow-sm:   0 1px 2px rgba(20,16,12,.04), 0 2px 8px rgba(20,16,12,.04);
+    --shadow:      0 4px 18px rgba(28,18,8,.08), 0 1px 3px rgba(28,18,8,.05);
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+  }
+  img { max-width: 100%; display: block; }
+  button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+  a { color: inherit; text-decoration: none; }
+
+  .page { max-width: 100%; overflow-x: hidden; }
+  .italic-accent {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic; font-weight: 400;
+    color: var(--orange);
+  }
+
+  /* ── Nav ── */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    display: grid; grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    padding: 14px 18px;
+    background: rgba(255,255,255,.9);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid rgba(236,231,226,.6);
+  }
+  .nav-logo {
+    grid-column: 2; justify-self: center;
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 800; font-size: 19px;
+  }
+  .nav-logo .spark { width: 14px; height: 14px; color: var(--orange); }
+  .nav-menu {
+    grid-column: 1; justify-self: start;
+    width: 36px; height: 36px;
+    display: grid; place-items: center;
+    border-radius: 10px; color: var(--ink);
+  }
+  .nav-login {
+    grid-column: 3; justify-self: end;
+    padding: 9px 18px; border-radius: 8px;
+    background: var(--orange); color: #fff;
+    font-size: 12px; font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255,106,26,.28);
+  }
+  .nav-links { display: none; }
+
+  /* ── Drawer ── */
+  .drawer-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(19,19,19,.45); backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0; transition: opacity .25s ease;
+  }
+  .drawer-overlay.open { display: block; opacity: 1; }
+  .drawer {
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: min(320px,85vw);
+    background: #fff; z-index: 201;
+    display: flex; flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform .3s cubic-bezier(.16,1,.3,1);
+    box-shadow: 8px 0 40px rgba(19,19,19,.12);
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 22px; border-bottom: 1px solid var(--line);
+  }
+  .drawer-logo {
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 800; font-size: 17px; color: var(--ink);
+  }
+  .drawer-logo .spark { width: 13px; height: 13px; color: var(--orange); }
+  .drawer-close {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: grid; place-items: center;
+    background: var(--bg-soft); color: var(--gray);
+  }
+  .drawer-close:hover { color: var(--ink); }
+  .drawer-nav { flex: 1; padding: 12px 0; overflow-y: auto; }
+  .drawer-nav a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 22px; font-size: 14px; font-weight: 600;
+    color: var(--ink-2); border-radius: 0;
+    transition: background .15s, color .15s;
+  }
+  .drawer-nav a:hover { background: var(--bg-soft); color: var(--ink); }
+  .drawer-nav a.active { background: var(--orange-soft); color: var(--orange); }
+  .drawer-nav a .dn-icon {
+    width: 30px; height: 30px; border-radius: 8px;
+    background: var(--bg-soft); border: 1px solid var(--line);
+    display: grid; place-items: center; flex-shrink: 0;
+    color: var(--gray); transition: color .15s;
+  }
+  .drawer-nav a.active .dn-icon { background: rgba(255,106,26,.12); border-color: rgba(255,106,26,.2); color: var(--orange); }
+  .drawer-nav a:hover .dn-icon { color: var(--orange); }
+  .drawer-divider { height: 1px; background: var(--line); margin: 8px 14px; }
+  .da-wrap { }
+  .da-toggle {
+    display: flex; align-items: center; gap: 12px; width: 100%;
+    padding: 13px 22px; font-size: 14px; font-weight: 600;
+    color: var(--ink-2); background: none; border: none;
+    cursor: pointer; font-family: inherit; text-align: left;
+    transition: background .15s, color .15s;
+  }
+  .da-toggle:hover { background: var(--bg-soft); color: var(--ink); }
+  .da-toggle.exi-active { color: var(--orange); }
+  .da-arrow { transition: transform .25s; flex-shrink: 0; color: var(--gray); margin-left: auto; }
+  .da-toggle[aria-expanded="true"] .da-arrow { transform: rotate(180deg); }
+  .da-sub-list { display: none; }
+  .da-sub-list.open { display: block; }
+  .da-sub-list a {
+    padding: 11px 22px 11px 52px; font-size: 13px; font-weight: 600;
+    color: var(--gray); background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+  }
+  .da-sub-list a:hover { background: #fff; color: var(--orange); }
+  .da-sub-list a.active { color: var(--orange); background: #fff; }
+  .drawer-foot { padding: 18px 22px; border-top: 1px solid var(--line); }
+  .drawer-foot .btn-orange {
+    display: block; text-align: center; padding: 14px;
+    border-radius: 10px; background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 14px rgba(255,106,26,.3);
+  }
+  body.drawer-lock { overflow: hidden; }
+
+  /* ── Scroll reveal ── */
+  .sr { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+  .sr.in { opacity: 1; transform: none; }
+  .s1{transition-delay:.08s}.s2{transition-delay:.16s}.s3{transition-delay:.24s}.s4{transition-delay:.32s}.s5{transition-delay:.4s}.s6{transition-delay:.48s}
+
+  /* ══════════════════════════
+     BLOG HERO
+  ══════════════════════════ */
+  .blog-hero {
+    position: relative;
+    background: var(--dark);
+    padding: 52px 24px 44px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .blog-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,106,26,.15) 1px, transparent 1px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, black 30%, transparent 80%);
+            mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, black 30%, transparent 80%);
+    pointer-events: none;
+  }
+  .blog-hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,106,26,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .blog-hero > * { position: relative; z-index: 1; }
+  .blog-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 13px; border-radius: 999px;
+    background: rgba(255,106,26,.15); border: 1px solid rgba(255,106,26,.3);
+    font-size: 10px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 14px;
+  }
+  .blog-hero h1 {
+    font-size: 32px; line-height: 1.1; font-weight: 800;
+    letter-spacing: -0.03em; color: #fff;
+    margin: 0 0 12px;
+  }
+  .blog-hero p {
+    font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.5);
+    max-width: 400px; margin: 0 auto;
+  }
+
+  /* ══════════════════════════
+     FILTER TABS
+  ══════════════════════════ */
+  .filter-bar {
+    position: sticky; top: 57px; z-index: 40;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-tabs {
+    display: flex; gap: 0;
+    white-space: nowrap;
+    min-width: max-content;
+  }
+  .ftab {
+    padding: 14px 16px;
+    font-size: 13px; font-weight: 600;
+    color: var(--gray);
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color .2s, border-color .2s;
+    background: none; border-top: 0; border-left: 0; border-right: 0;
+    border-radius: 0;
+  }
+  .ftab:hover { color: var(--ink); }
+  .ftab.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+  /* ══════════════════════════
+     POSTS SECTION
+  ══════════════════════════ */
+  .posts-wrap {
+    padding: 32px 20px 60px;
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  /* Featured post */
+  .post-featured {
+    display: block;
+    background: var(--bg-soft);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    margin-bottom: 32px;
+    transition: box-shadow .2s, transform .2s;
+  }
+  .post-featured:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .pf-cover {
+    width: 100%; height: 200px;
+    position: relative; overflow: hidden;
+  }
+  .pf-cover-inner {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pf-body { padding: 24px 22px 22px; }
+  .post-cat {
+    display: inline-block;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 10px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .cat-ai    { background: rgba(255,106,26,.12); color: var(--orange); }
+  .cat-brand { background: rgba(20,184,166,.12); color: #0d9488; }
+  .cat-creator{ background: rgba(139,92,246,.12); color: #7c3aed; }
+  .cat-platform{ background: rgba(59,130,246,.12); color: #2563eb; }
+  .pf-title {
+    font-size: 22px; line-height: 1.2; font-weight: 800;
+    letter-spacing: -0.02em; color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .pf-excerpt {
+    font-size: 14px; line-height: 1.7; color: var(--gray);
+    margin: 0 0 18px;
+  }
+  .post-meta {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; color: var(--gray-2);
+  }
+  .meta-av {
+    width: 28px; height: 28px; border-radius: 50%;
+    overflow: hidden; background: var(--orange-soft);
+    flex-shrink: 0; display: grid; place-items: center;
+    font-size: 11px; font-weight: 700; color: var(--orange);
+  }
+  .meta-av img { width: 100%; height: 100%; object-fit: cover; }
+  .meta-sep { opacity: .35; }
+
+  /* Blog grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .post-card {
+    display: block;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    transition: box-shadow .2s, transform .2s;
+  }
+  .post-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .pc-cover {
+    width: 100%; height: 160px;
+    position: relative; overflow: hidden;
+  }
+  .pc-cover-inner {
+    position: absolute; inset: 0;
+  }
+  .pc-body { padding: 18px 18px 16px; }
+  .pc-title {
+    font-size: 16px; line-height: 1.3; font-weight: 700;
+    letter-spacing: -0.01em; color: var(--ink);
+    margin: 0 0 8px;
+  }
+  .pc-excerpt {
+    font-size: 13px; line-height: 1.65; color: var(--gray);
+    margin: 0 0 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Cover gradients per category */
+  .cover-ai {
+    background: linear-gradient(135deg, #1a0a00 0%, #3d1400 40%, #1a0a00 100%);
+  }
+  .cover-brand {
+    background: linear-gradient(135deg, #001a14 0%, #003d2e 40%, #001a14 100%);
+  }
+  .cover-creator {
+    background: linear-gradient(135deg, #0d0014 0%, #280040 40%, #0d0014 100%);
+  }
+  .cover-platform {
+    background: linear-gradient(135deg, #000d1a 0%, #001f3d 40%, #000d1a 100%);
+  }
+  /* Cover decorative SVG shapes */
+  .cover-deco {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+  }
+  .cover-deco svg { opacity: .35; }
+
+  /* ── No results ── */
+  .no-results {
+    text-align: center; padding: 60px 20px;
+    color: var(--gray); font-size: 14px;
+    display: none;
+  }
+  .no-results.show { display: block; }
+
+  /* ══════════════════════════
+     NEWSLETTER CTA
+  ══════════════════════════ */
+  .blog-cta {
+    background: var(--dark);
+    padding: 52px 24px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .blog-cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(255,106,26,.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .blog-cta > * { position: relative; z-index: 1; }
+  .blog-cta h2 {
+    font-size: 26px; font-weight: 800; letter-spacing: -0.02em;
+    color: #fff; margin: 0 0 10px;
+  }
+  .blog-cta p {
+    font-size: 14px; color: rgba(255,255,255,.5); margin: 0 0 24px;
+  }
+  .cta-form {
+    display: flex; flex-direction: column; gap: 10px;
+    max-width: 380px; margin: 0 auto;
+  }
+  .cta-form input {
+    padding: 13px 16px; border-radius: 10px;
+    border: 1.5px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06);
+    color: #fff; font: inherit; font-size: 14px;
+    outline: none; transition: border-color .2s;
+  }
+  .cta-form input::placeholder { color: rgba(255,255,255,.3); }
+  .cta-form input:focus { border-color: var(--orange); }
+  .cta-form button {
+    padding: 13px 24px; border-radius: 10px;
+    background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 16px rgba(255,106,26,.35);
+    transition: background .2s, transform .15s;
+  }
+  .cta-form button:hover { background: var(--orange-2); transform: translateY(-1px); }
+
+  /* ══════════════════════════
+     FOOTER
+  ══════════════════════════ */
+  .footer {
+    background: var(--dark); color: rgba(255,255,255,.6);
+    padding: 48px 22px 24px;
+    font-size: 13px;
+  }
+  .footer-top { padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .footer-brand {
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 800; font-size: 18px; color: #fff;
+    margin-bottom: 8px;
+  }
+  .footer-brand .spark { color: var(--orange); width: 13px; height: 13px; }
+  .footer-tagline { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 24px; line-height: 1.5; }
+  .foot-grid { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 24px; }
+  .foot-col h6 {
+    font-size: 10px; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: rgba(255,255,255,.3);
+    margin: 0 0 10px;
+  }
+  .foot-col a {
+    display: block; font-size: 13px; color: rgba(255,255,255,.55);
+    padding: 3px 0; transition: color .15s;
+  }
+  .foot-col a:hover { color: #fff; }
+  .legal {
+    margin-top: 24px; padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    font-size: 11px; color: rgba(255,255,255,.28);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .legal a { color: rgba(255,255,255,.4); }
+  .legal a:hover { color: rgba(255,255,255,.7); }
+  .legal .dot { margin: 0 5px; }
+
+  /* ══════════════════════════
+     DESKTOP (≥900px)
+  ══════════════════════════ */
+  @media (min-width: 900px) {
+    .nav {
+      grid-template-columns: 1fr auto 1fr;
+      padding: 18px 56px;
+    }
+    .nav-logo { grid-column: 1; justify-self: start; font-size: 21px; }
+    .nav-links {
+      grid-column: 2; display: flex; gap: 28px;
+      font-size: 14px; font-weight: 500; color: var(--ink-2);
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links a.active { color: var(--orange); }
+    .nav-login { grid-column: 3; justify-self: end; }
+    .nav-menu { display: none; }
+
+    .blog-hero { padding: 72px 60px; }
+    .blog-hero h1 { font-size: 52px; }
+    .blog-hero p { font-size: 17px; max-width: 500px; }
+
+    .filter-bar { top: 65px; padding: 0 56px; }
+
+    .posts-wrap { padding: 48px 56px 80px; }
+
+    .post-featured { display: grid; grid-template-columns: 1fr 1fr; }
+    .pf-cover { height: 100%; min-height: 260px; }
+    .pf-title { font-size: 26px; }
+
+    .blog-grid { grid-template-columns: 1fr 1fr 1fr; }
+
+    .blog-cta { padding: 80px 60px; }
+    .blog-cta h2 { font-size: 36px; }
+    .cta-form { flex-direction: row; max-width: 480px; }
+    .cta-form input { flex: 1; }
+
+    .footer { padding: 56px 56px 28px; }
+    .footer-top { display: flex; gap: 60px; align-items: flex-start; }
+    .foot-grid { margin-top: 0; }
+    .legal { flex-direction: row; justify-content: space-between; align-items: center; }
+  }
+</style>
+</head>
+<body class="page">
+
+<!-- DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+
+<!-- DRAWER -->
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="drawer-head">
+    <div class="drawer-logo">
+      <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+      EXPOSE
+    </div>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="site-brands.html">
+      <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+      For Brands
+    </a>
+    <a href="site.html">
+      <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+      For Creatives
+    </a>
+    <div class="drawer-divider"></div>
+    <div class="da-wrap">
+      <button class="da-toggle" id="exiToggle" aria-expanded="false">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></span>
+        Meet EXi
+        <svg class="da-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="da-sub-list" id="exiSubList">
+        <a href="site-exi.html">For Creatives</a>
+        <a href="site-exi-brands.html">For Brands</a>
+      </div>
+    </div>
+    <a href="#pricing">
+      <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+      Pricing
+    </a>
+    <a href="site-about.html">
+      <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      About Us
+    </a>
+    <a href="site-blog.html" class="active">
+      <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+      Blog
+    </a>
+    <a href="#contact">
+      <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+      Contact
+    </a>
+  </nav>
+  <div class="drawer-foot">
+    <a href="#join" class="btn-orange">Join EXPOSE — It's Free</a>
+  </div>
+</aside>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <button class="nav-menu" id="navMenuBtn" aria-label="Open menu">
+    <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="nav-logo">
+    <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+    EXPOSE
+  </div>
+  <div class="nav-links">
+    <a href="site-brands.html">For Brands</a>
+    <a href="site.html">For Creatives</a>
+    <a href="site-exi.html">Meet EXi</a>
+    <a href="site-about.html">About Us</a>
+    <a href="site-blog.html" class="active">Blog</a>
+  </div>
+  <a class="nav-login" href="#join">Join</a>
+</nav>
+
+<!-- HERO -->
+<header class="blog-hero">
+  <div class="blog-eyebrow">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+    EXPOSE Blog
+  </div>
+  <h1>The creator economy,<br><em class="italic-accent">decoded.</em></h1>
+  <p>Insights on AI marketing, brand-creator collaboration, and what's next for the creative industry.</p>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" role="navigation" aria-label="Filter posts by category">
+  <div class="filter-tabs">
+    <button class="ftab active" data-filter="all">All Posts</button>
+    <button class="ftab" data-filter="ai">AI &amp; Automation</button>
+    <button class="ftab" data-filter="brand">Brand Strategy</button>
+    <button class="ftab" data-filter="creator">Creator Economy</button>
+    <button class="ftab" data-filter="platform">Platform</button>
+  </div>
+</div>
+
+<!-- POSTS -->
+<main class="posts-wrap">
+
+  <!-- FEATURED POST -->
+  <a class="post-featured sr" href="#" data-cat="ai" aria-label="Read: How AI Is Reshaping Campaign Management in 2025">
+    <div class="pf-cover">
+      <div class="pf-cover-inner cover-ai">
+        <div class="cover-deco">
+          <svg width="220" height="180" viewBox="0 0 220 180" fill="none">
+            <circle cx="110" cy="90" r="70" stroke="rgba(255,106,26,.5)" stroke-width="1"/>
+            <circle cx="110" cy="90" r="45" stroke="rgba(255,106,26,.35)" stroke-width="1"/>
+            <circle cx="110" cy="90" r="22" fill="rgba(255,106,26,.2)"/>
+            <path d="M110 40 L125 78 L165 90 L125 102 L110 140 L95 102 L55 90 L95 78 Z" fill="rgba(255,106,26,.5)"/>
+          </svg>
+        </div>
+        <div style="position:absolute;bottom:14px;left:14px;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border:1px solid rgba(255,106,26,.3);border-radius:8px;padding:5px 10px;font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--orange);text-transform:uppercase;">Featured</div>
+      </div>
+    </div>
+    <div class="pf-body">
+      <span class="post-cat cat-ai">AI &amp; Automation</span>
+      <h2 class="pf-title">How AI Is Reshaping Campaign Management in 2025</h2>
+      <p class="pf-excerpt">The days of spreadsheet-based campaign tracking are over. AI agents are now automating the entire workflow — from brief creation to performance reporting — cutting campaign setup time by 80%. Here's what's changing and what you need to know.</p>
+      <div class="post-meta">
+        <div class="meta-av">
+          <img src="assets/team/dorel.png" alt="Dorel Shnaiderman" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span style="display:none">D</span>
+        </div>
+        <span>Dorel Shnaiderman</span>
+        <span class="meta-sep">·</span>
+        <span>May 20, 2025</span>
+        <span class="meta-sep">·</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- BLOG GRID -->
+  <div class="blog-grid" id="blogGrid">
+
+    <a class="post-card sr s1" href="#" data-cat="brand" aria-label="Read: Why Brands Are Pivoting to Micro-Creators in 2025">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-brand">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <rect x="40" y="30" width="100" height="80" rx="12" stroke="rgba(20,184,166,.6)" stroke-width="1"/>
+              <rect x="55" y="45" width="70" height="50" rx="8" fill="rgba(20,184,166,.15)"/>
+              <circle cx="90" cy="70" r="18" stroke="rgba(20,184,166,.5)" stroke-width="1"/>
+              <path d="M75 70 L88 83 L110 58" stroke="rgba(20,184,166,.8)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-brand">Brand Strategy</span>
+        <h3 class="pc-title">Why Brands Are Pivoting to Micro-Creators in 2025</h3>
+        <p class="pc-excerpt">Mega-influencers are losing budget share. We break down why niche creators are delivering 3–5× the ROI — and how to find them.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/emily.png" alt="Emily Zeltser" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">E</span>
+          </div>
+          <span>Emily Zeltser</span>
+          <span class="meta-sep">·</span>
+          <span>May 14</span>
+          <span class="meta-sep">·</span>
+          <span>4 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card sr s2" href="#" data-cat="creator" aria-label="Read: The Creator Economy Is Worth $500B — Here's What That Means for You">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-creator">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <circle cx="90" cy="70" r="45" stroke="rgba(139,92,246,.5)" stroke-width="1"/>
+              <circle cx="90" cy="70" r="28" stroke="rgba(139,92,246,.4)" stroke-width="1"/>
+              <path d="M90 30 L96 54 L120 62 L96 70 L90 110 L84 70 L60 62 L84 54 Z" fill="rgba(139,92,246,.45)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-creator">Creator Economy</span>
+        <h3 class="pc-title">The Creator Economy Is Worth $500B — Here's What It Means for You</h3>
+        <p class="pc-excerpt">The numbers are staggering. But the real story is in where the money is flowing — and who's being left behind.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/ron.png" alt="Ron Kolsky" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">R</span>
+          </div>
+          <span>Ron Kolsky</span>
+          <span class="meta-sep">·</span>
+          <span>May 8</span>
+          <span class="meta-sep">·</span>
+          <span>5 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card sr s3" href="#" data-cat="brand" aria-label="Read: 5 Things Every Creative Brief Must Include">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-brand">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <rect x="50" y="25" width="80" height="90" rx="10" stroke="rgba(20,184,166,.5)" stroke-width="1"/>
+              <line x1="65" y1="50" x2="115" y2="50" stroke="rgba(20,184,166,.6)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="65" y1="65" x2="115" y2="65" stroke="rgba(20,184,166,.4)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="65" y1="80" x2="95" y2="80" stroke="rgba(20,184,166,.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="58" cy="50" r="4" fill="rgba(20,184,166,.5)"/>
+              <circle cx="58" cy="65" r="4" fill="rgba(20,184,166,.4)"/>
+              <circle cx="58" cy="80" r="4" fill="rgba(20,184,166,.3)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-brand">Brand Strategy</span>
+        <h3 class="pc-title">5 Things Every Creative Brief Must Include (But Usually Doesn't)</h3>
+        <p class="pc-excerpt">A bad brief is the root cause of most failed campaigns. Here's exactly what to write — and what to stop leaving out.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/emily.png" alt="Emily Zeltser" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">E</span>
+          </div>
+          <span>Emily Zeltser</span>
+          <span class="meta-sep">·</span>
+          <span>Apr 29</span>
+          <span class="meta-sep">·</span>
+          <span>4 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card sr s4" href="#" data-cat="platform" aria-label="Read: EXi vs. Manual Workflows: A Side-by-Side Breakdown">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-platform">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <rect x="35" y="40" width="50" height="60" rx="8" stroke="rgba(59,130,246,.5)" stroke-width="1" fill="rgba(59,130,246,.08)"/>
+              <rect x="95" y="40" width="50" height="60" rx="8" stroke="rgba(255,106,26,.5)" stroke-width="1" fill="rgba(255,106,26,.08)"/>
+              <line x1="90" y1="70" x2="90" y2="70" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+              <text x="56" y="73" fill="rgba(59,130,246,.7)" font-size="11" text-anchor="middle" font-family="sans-serif">OLD</text>
+              <text x="120" y="73" fill="rgba(255,106,26,.7)" font-size="11" text-anchor="middle" font-family="sans-serif">EXi</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-platform">Platform</span>
+        <h3 class="pc-title">EXi vs. Manual Workflows: A Real Side-by-Side Breakdown</h3>
+        <p class="pc-excerpt">We ran the same campaign two ways. The results were uncomfortable — but unsurprising. The numbers are in.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/roei.png" alt="Roei Michael" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">R</span>
+          </div>
+          <span>Roei Michael</span>
+          <span class="meta-sep">·</span>
+          <span>Apr 22</span>
+          <span class="meta-sep">·</span>
+          <span>7 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card sr s5" href="#" data-cat="creator" aria-label="Read: How to Land Your First Brand Deal as an Independent Creator">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-creator">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <path d="M90 35 C60 35 40 55 40 75 C40 95 60 110 90 110 C120 110 140 95 140 75 C140 55 120 35 90 35Z" stroke="rgba(139,92,246,.4)" stroke-width="1" fill="rgba(139,92,246,.08)"/>
+              <path d="M75 75 L90 60 L105 75 L105 95 L75 95 Z" fill="rgba(139,92,246,.4)"/>
+              <circle cx="90" cy="52" r="8" fill="rgba(139,92,246,.5)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-creator">Creator Economy</span>
+        <h3 class="pc-title">How to Land Your First Brand Deal as an Independent Creator</h3>
+        <p class="pc-excerpt">No agency. No 100K followers. No problem. The exact playbook for getting brands to come to you — and saying yes.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/emily.png" alt="Emily Zeltser" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">E</span>
+          </div>
+          <span>Emily Zeltser</span>
+          <span class="meta-sep">·</span>
+          <span>Apr 15</span>
+          <span class="meta-sep">·</span>
+          <span>5 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card sr s6" href="#" data-cat="ai" aria-label="Read: AI-Generated vs. Human Content: What's Winning in 2025">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-ai">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <rect x="45" y="38" width="90" height="64" rx="10" stroke="rgba(255,106,26,.45)" stroke-width="1"/>
+              <rect x="55" y="48" width="35" height="44" rx="6" fill="rgba(255,106,26,.12)"/>
+              <rect x="97" y="48" width="32" height="44" rx="6" fill="rgba(255,106,26,.2)"/>
+              <line x1="58" y1="57" x2="85" y2="57" stroke="rgba(255,106,26,.5)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="58" y1="65" x2="80" y2="65" stroke="rgba(255,106,26,.35)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M113 62 L118 70 L107 70 Z" fill="rgba(255,106,26,.7)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-ai">AI &amp; Automation</span>
+        <h3 class="pc-title">AI-Generated vs. Human Content: What's Actually Winning in 2025</h3>
+        <p class="pc-excerpt">We analyzed 10,000 posts. The answer isn't what most people expect — and it changes everything about your content strategy.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/dorel.png" alt="Dorel Shnaiderman" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">D</span>
+          </div>
+          <span>Dorel Shnaiderman</span>
+          <span class="meta-sep">·</span>
+          <span>Apr 8</span>
+          <span class="meta-sep">·</span>
+          <span>8 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card sr s1" href="#" data-cat="platform" aria-label="Read: The Real Cost of Managing Campaigns Without AI">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-platform">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <path d="M45 100 L70 68 L95 82 L120 45 L145 60" stroke="rgba(59,130,246,.6)" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle cx="70" cy="68" r="5" fill="rgba(59,130,246,.5)"/>
+              <circle cx="95" cy="82" r="5" fill="rgba(59,130,246,.5)"/>
+              <circle cx="120" cy="45" r="5" fill="rgba(255,106,26,.7)"/>
+              <path d="M45 108 L145 108" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-platform">Platform</span>
+        <h3 class="pc-title">The Real Cost of Managing Campaigns Without AI in 2025</h3>
+        <p class="pc-excerpt">Time, money, missed opportunities. We quantified what manual campaign ops actually costs — and it's not pretty.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/ron.png" alt="Ron Kolsky" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">R</span>
+          </div>
+          <span>Ron Kolsky</span>
+          <span class="meta-sep">·</span>
+          <span>Apr 1</span>
+          <span class="meta-sep">·</span>
+          <span>5 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card sr s2" href="#" data-cat="creator" aria-label="Read: From Freelancer to Studio: Scaling Your Creative Business">
+      <div class="pc-cover">
+        <div class="pc-cover-inner cover-creator">
+          <div class="cover-deco">
+            <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+              <rect x="60" y="80" width="20" height="35" rx="3" fill="rgba(139,92,246,.3)"/>
+              <rect x="85" y="60" width="20" height="55" rx="3" fill="rgba(139,92,246,.45)"/>
+              <rect x="110" y="40" width="20" height="75" rx="3" fill="rgba(139,92,246,.6)"/>
+              <line x1="45" y1="118" x2="145" y2="118" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pc-body">
+        <span class="post-cat cat-creator">Creator Economy</span>
+        <h3 class="pc-title">From Freelancer to Studio: How to Scale Your Creative Business</h3>
+        <p class="pc-excerpt">The systems, mindset shifts, and tools that separate creators who grow from those who stay stuck at a ceiling.</p>
+        <div class="post-meta">
+          <div class="meta-av">
+            <img src="assets/team/roei.png" alt="Roei Michael" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span style="display:none">R</span>
+          </div>
+          <span>Roei Michael</span>
+          <span class="meta-sep">·</span>
+          <span>Mar 24</span>
+          <span class="meta-sep">·</span>
+          <span>6 min</span>
+        </div>
+      </div>
+    </a>
+
+  </div><!-- /blog-grid -->
+
+  <div class="no-results" id="noResults" role="status" aria-live="polite">
+    No posts in this category yet — check back soon.
+  </div>
+
+</main>
+
+<!-- NEWSLETTER CTA -->
+<section class="blog-cta" aria-labelledby="cta-heading">
+  <div class="blog-eyebrow" style="margin-bottom:16px;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+    Stay in the loop
+  </div>
+  <h2 id="cta-heading">Insights, straight to your inbox.</h2>
+  <p>One email per week. No fluff. Just what matters in the creator economy.</p>
+  <form class="cta-form" onsubmit="handleSubscribe(event)" novalidate>
+    <input type="email" placeholder="your@email.com" aria-label="Email address" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        EXPOSE
+      </div>
+      <div class="footer-tagline">The AI-powered marketing engine<br>for world-class creatives.</div>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h6>Product</h6>
+        <a href="site.html">For Creatives</a>
+        <a href="site-brands.html">For Brands</a>
+        <a href="site-exi.html">Meet EXi</a>
+        <a href="#">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="site-about.html">About Us</a>
+        <a href="#">Careers</a>
+        <a href="site-blog.html">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="legal">
+    <div>© 2025 EXPOSE AI Marketing. All rights reserved.</div>
+    <div><a href="#">Privacy Policy</a><span class="dot">·</span><a href="#">Terms of Service</a></div>
+  </div>
+</footer>
+
+<script>
+  // ── Drawer ──
+  const menuBtn = document.getElementById('navMenuBtn');
+  const drawer  = document.getElementById('drawer');
+  const overlay = document.getElementById('drawerOverlay');
+  const closeBtn = document.getElementById('drawerClose');
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.classList.add('drawer-lock');
+    overlay.removeAttribute('aria-hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.classList.remove('drawer-lock');
+    overlay.setAttribute('aria-hidden', 'true');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+  menuBtn.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+  drawer.querySelectorAll('.drawer-nav a[href^="#"]').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // ── EXi accordion ──
+  const exiToggle = document.getElementById('exiToggle');
+  const exiSubList = document.getElementById('exiSubList');
+  if (exiToggle && exiSubList) {
+    exiToggle.addEventListener('click', () => {
+      const open = exiSubList.classList.toggle('open');
+      exiToggle.setAttribute('aria-expanded', open);
+    });
+  }
+
+  // ── Category filter ──
+  const tabs = document.querySelectorAll('.ftab');
+  const cards = document.querySelectorAll('#blogGrid .post-card');
+  const featured = document.querySelector('.post-featured');
+  const noResults = document.getElementById('noResults');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+
+      // Featured post
+      if (featured) {
+        const fc = featured.dataset.cat;
+        featured.style.display = (filter === 'all' || filter === fc) ? '' : 'none';
+      }
+
+      let visible = 0;
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.cat === filter;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      noResults.classList.toggle('show', visible === 0 && filter !== 'all');
+    });
+  });
+
+  // ── Scroll reveal ──
+  const srEls = document.querySelectorAll('.sr');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    srEls.forEach(el => io.observe(el));
+  } else {
+    srEls.forEach(el => el.classList.add('in'));
+  }
+
+  // ── Newsletter ──
+  function handleSubscribe(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Subscribed ✓';
+    btn.style.background = '#16a34a';
+    e.target.querySelector('input').value = '';
+    setTimeout(() => {
+      btn.textContent = 'Subscribe';
+      btn.style.background = '';
+    }, 3000);
+  }
+</script>
+</body>
+</html>
