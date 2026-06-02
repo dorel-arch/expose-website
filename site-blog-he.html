@@ -703,6 +703,24 @@ function goToApp(e){e&&e.preventDefault();/iPad|iPhone|iPod/.test(navigator.user
 }
 .lang-switch:hover { background: var(--orange); color: #fff; }
 [dir="rtl"] .lang-switch { margin-left: 0; margin-right: 4px; }
+
+/* ── Language switcher ── */
+.lang-switch {
+  font-size: 12px; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
+  border: 1.5px solid rgba(255,106,26,.4);
+  color: var(--orange); background: transparent;
+  transition: background .15s, color .15s, border-color .15s;
+  text-decoration: none; display: inline-flex;
+  align-items: center; gap: 5px; line-height: 1;
+  white-space: nowrap;
+}
+.lang-switch:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+.lang-switch-globe { width: 12px; height: 12px; flex-shrink: 0; }
+/* Mobile: hide in top nav, show in drawer */
+@media(max-width:899px) { nav > .lang-switch { display: none; } }
+/* Desktop: show in top nav */
+@media(min-width:900px) { .drawer-lang-switch { display: none; } }
 </style>
 </head>
 <body class="page">
@@ -759,7 +777,8 @@ function goToApp(e){e&&e.preventDefault();/iPad|iPhone|iPod/.test(navigator.user
       צרו קשר
     </a>
   </nav>
-  <div class="drawer-foot">
+  <a href="site-blog.html" class="lang-switch drawer-lang-switch" style="margin:12px 24px 4px;display:inline-flex;" aria-label="English"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>&nbsp;English</a>
+    <div class="drawer-foot">
     <a href="#" onclick="goToApp(event)" class="btn-orange">הצטרפו ל-EXPOSE — חינם</a>
   </div>
 </aside>
@@ -781,6 +800,7 @@ function goToApp(e){e&&e.preventDefault();/iPad|iPhone|iPod/.test(navigator.user
     <a href="site-blog-he.html" class="active">בלוג</a>
   </div>
   <a class="nav-login" href="#" onclick="goToApp(event)">הצטרפו</a>
+  <a href="site-blog.html" class="lang-switch" aria-label="English version"><svg class="lang-switch-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>EN</a>
 </nav>
 
 <!-- HERO -->

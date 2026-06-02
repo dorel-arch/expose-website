@@ -3288,6 +3288,24 @@
   display: inline-block; line-height: 1;
 }
 .lang-switch:hover { background: var(--orange); color: #fff; }
+
+/* ── Language switcher ── */
+.lang-switch {
+  font-size: 12px; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
+  border: 1.5px solid rgba(255,106,26,.4);
+  color: var(--orange); background: transparent;
+  transition: background .15s, color .15s, border-color .15s;
+  text-decoration: none; display: inline-flex;
+  align-items: center; gap: 5px; line-height: 1;
+  white-space: nowrap;
+}
+.lang-switch:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+.lang-switch-globe { width: 12px; height: 12px; flex-shrink: 0; }
+/* Mobile: hide in top nav, show in drawer */
+@media(max-width:899px) { nav > .lang-switch { display: none; } }
+/* Desktop: show in top nav */
+@media(min-width:900px) { .drawer-lang-switch { display: none; } }
 </style>
 </head>
 <body>
@@ -3324,6 +3342,7 @@
       <a href="site-blog.html">Blog</a>
       <a href="site-contact.html">Contact</a>
     </nav>
+    <a href="site-brands-he.html" class="lang-switch drawer-lang-switch" style="margin:12px 24px 4px;display:inline-flex;" aria-label="עברית"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>&nbsp;עברית</a>
     <div class="drawer-foot">
       <a href="#" onclick="goToApp(event)" class="btn-orange">Join EXPOSE — It's Free</a>
     </div>
@@ -3345,7 +3364,8 @@
       <a href="site-about.html">About Us</a>
     </div>
     <a class="nav-login" href="#" onclick="goToApp(event)">Join</a>
-  </nav>
+  <a href="site-brands-he.html" class="lang-switch" aria-label="גרסה בעברית"><svg class="lang-switch-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>עברית</a>
+</nav>
 
   <!-- HERO -->
   <header class="hero">
