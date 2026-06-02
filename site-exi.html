@@ -513,6 +513,18 @@ body.drawer-lock{overflow:hidden}
 .footer-si-grid{display:flex;flex-wrap:wrap;gap:8px}
 .footer-si{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:rgba(255,255,255,.5);transition:background .15s,color .15s,border-color .15s;text-decoration:none;margin-bottom:0!important}
 .footer-si:hover{background:rgba(255,106,26,.15);border-color:rgba(255,106,26,.3);color:#FF6A1A}
+
+/* Language switcher */
+.lang-switch {
+  font-size: 12px; font-weight: 700; letter-spacing: .04em;
+  padding: 6px 12px; border-radius: 20px;
+  border: 1px solid rgba(255,106,26,.35);
+  color: var(--orange); background: transparent;
+  transition: background .15s, color .15s;
+  cursor: pointer; text-decoration: none;
+  display: inline-block; line-height: 1;
+}
+.lang-switch:hover { background: var(--orange); color: #fff; }
 </style>
 </head>
 <body>
@@ -561,7 +573,7 @@ body.drawer-lock{overflow:hidden}
     <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
     EXPOSE
   </div>
-  <div></div>
+  <a href="site-exi-he.html" class="lang-switch" aria-label="גרסה בעברית">עברית</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->

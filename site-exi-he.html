@@ -1,41 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EXi for Brands — your AI campaign agent that manages creator outreach, briefs, delivery tracking, and ROI reporting. Run your marketing 24/7 without the overhead.">
-<meta name="keywords" content="AI campaign agent for brands, creator outreach automation, influencer campaign management, marketing AI, brand campaign ROI">
-<link rel="canonical" href="https://expose.global/exi-brands">
+<meta name="description" content="הכירו את EXi — הסוכן ה-AI שנבנה ליוצרים. EXi מכיר את הפורטפוליו שלכם, מציג אתכם למותגים, מנהל קשרי לקוחות ועוקב אחר ההכנסות שלכם. חינם להתחיל.">
+<meta name="keywords" content="AI agent for creatives, portfolio AI, freelance automation, creative career management, AI pitching, brand deals for creators">
+<link rel="canonical" href="https://expose.global/exi">
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXPOSE">
-<meta property="og:url" content="https://expose.global/exi-brands">
-<meta property="og:title" content="EXi for Brands — AI Campaign Agent | EXPOSE">
-<meta property="og:description" content="EXi for Brands — your AI campaign agent that manages creator outreach, briefs, delivery tracking, and ROI reporting. Run your marketing 24/7 without the overhead.">
+<meta property="og:url" content="https://expose.global/exi">
+<meta property="og:title" content="EXi — הסוכן ה-AI שלך | EXPOSE">
+<meta property="og:description" content="הכירו את EXi — הסוכן ה-AI שנבנה ליוצרים. EXi מכיר את הפורטפוליו שלכם, מציג אתכם למותגים, מנהל קשרי לקוחות ועוקב אחר ההכנסות שלכם. חינם להתחיל.">
 <meta property="og:image" content="https://expose.global/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@expose.platform">
-<meta name="twitter:title" content="EXi for Brands — AI Campaign Agent | EXPOSE">
-<meta name="twitter:description" content="EXi for Brands — your AI campaign agent that manages creator outreach, briefs, delivery tracking, and ROI reporting. Run your marketing 24/7 without the overhead.">
+<meta name="twitter:title" content="EXi — הסוכן ה-AI שלך | EXPOSE">
+<meta name="twitter:description" content="הכירו את EXi — הסוכן ה-AI שנבנה ליוצרים. EXi מכיר את הפורטפוליו שלכם, מציג אתכם למותגים, מנהל קשרי לקוחות ועוקב אחר ההכנסות שלכם. חינם להתחיל.">
 <meta name="twitter:image" content="https://expose.global/assets/og-image.png">
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "EXi for Brands",
-  "url": "https://expose.global/exi-brands",
-  "description": "EXi is the AI campaign agent that runs brand-creator marketing autonomously — from brief to ROI report.",
-  "isPartOf": {"@type": "WebSite", "name": "EXPOSE", "url": "https://expose.global"}
+  "@type": "SoftwareApplication",
+  "name": "EXi by EXPOSE",
+  "url": "https://expose.global/exi",
+  "description": "EXi is an AI agent for creatives that manages pitching, scheduling, and client relationships autonomously.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS, Android",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
 }
 </script>
-<title>EXi for Brands — Campaign AI Agent | EXPOSE</title>
+<title>EXi — הסוכן ה-AI שלך | EXPOSE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --orange:#FF6A1A; --orange-2:#FF8533; --orange-soft:#FFEDE0;
@@ -71,21 +74,20 @@ a{color:inherit;text-decoration:none}
 .drawer-nav a:last-child{border-bottom:none}
 .drawer-nav a:hover{background:var(--bg-soft);color:var(--orange)}
 .drawer-nav a.active{color:var(--orange)}
+.da-wrap{border-bottom:1px solid var(--line)}
+.da-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 24px;font-size:16px;font-weight:600;color:var(--ink);background:none;border:none;cursor:pointer;font-family:inherit;text-align:left;transition:background .15s,color .15s}
+.da-toggle:hover{background:var(--bg-soft);color:var(--orange)}
+.da-toggle.exi-active{color:var(--orange)}
+.da-arrow{transition:transform .25s;flex-shrink:0;color:var(--gray)}
+.da-toggle[aria-expanded="true"] .da-arrow{transform:rotate(180deg)}
+.da-sub-list{display:none}
+.da-sub-list.open{display:block}
+.da-sub-list a{display:block;padding:12px 24px 12px 42px;font-size:14px;font-weight:600;color:var(--gray);border-top:1px solid var(--line);background:var(--bg-soft)}
+.da-sub-list a:hover{background:#fff;color:var(--orange)}
+.da-sub-list a.active{color:var(--orange);background:#fff}.drawer-divider{height:1px;background:var(--line);margin:4px 14px}
 .drawer-foot{padding:20px;border-top:1px solid var(--line)}
 .drawer-foot .btn-orange{display:block;text-align:center;padding:14px;border-radius:10px;background:var(--orange);color:#fff;font-size:14px;font-weight:700;box-shadow:0 4px 14px rgba(255,106,26,.3)}
 body.drawer-lock{overflow:hidden}
-
-/* ── Accordion nav ── */
-.da-wrap{border-bottom:1px solid var(--line)}
-.da-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 24px;font-size:16px;font-weight:600;color:var(--ink);background:none;border:none;cursor:pointer;font-family:inherit}
-.da-toggle.exi-active{color:var(--orange)}
-.da-arrow{transition:transform .25s;flex-shrink:0;color:var(--gray-2)}
-.da-toggle[aria-expanded="true"] .da-arrow{transform:rotate(180deg)}
-.da-sub-list{background:var(--bg-soft);display:none}
-.da-sub-list.open{display:block}
-.da-sub-list a{display:block;padding:12px 24px 12px 42px;font-size:14px;font-weight:600;color:var(--gray);border-top:1px solid var(--line);transition:color .15s,background .15s}
-.da-sub-list a:hover{color:var(--orange);background:#fff}
-.da-sub-list a.active{color:var(--orange)}.drawer-divider{height:1px;background:var(--line);margin:4px 14px}
 
 /* ── Scroll reveal ── */
 .sr{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
@@ -245,7 +247,7 @@ body.drawer-lock{overflow:hidden}
 .gauge-svg{width:100%;height:100%}
 .gauge-track{fill:none;stroke:var(--line);stroke-width:10;stroke-linecap:round}
 .gauge-fill{fill:none;stroke:url(#gaugeGrad);stroke-width:10;stroke-linecap:round;stroke-dasharray:565;stroke-dashoffset:565;transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1)}
-.gauge-fill.animated{stroke-dashoffset:79}
+.gauge-fill.animated{stroke-dashoffset:116}
 .gauge-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);text-align:center}
 .gauge-num{font-size:52px;font-weight:800;color:var(--ink);letter-spacing:-0.05em;line-height:1}
 .gauge-denom{font-size:16px;color:var(--gray-2);font-weight:500;margin-top:2px}
@@ -513,6 +515,99 @@ body.drawer-lock{overflow:hidden}
 .footer-si{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:rgba(255,255,255,.5);transition:background .15s,color .15s,border-color .15s;text-decoration:none;margin-bottom:0!important}
 .footer-si:hover{background:rgba(255,106,26,.15);border-color:rgba(255,106,26,.3);color:#FF6A1A}
 
+/* ── Hebrew RTL overrides ── */
+[dir="rtl"] body { font-family: 'Heebo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+[dir="rtl"] .eyebrow { letter-spacing: 0; }
+[dir="rtl"] .h-display, [dir="rtl"] .h-section { letter-spacing: -0.01em; }
+[dir="rtl"] .drawer { left: auto; right: 0; transform: translateX(100%); }
+[dir="rtl"] .drawer.open { transform: translateX(0); }
+[dir="rtl"] .da-toggle { text-align: right; }
+[dir="rtl"] .footer-cols { direction: rtl; }
+[dir="rtl"] .footer-brand { direction: rtl; }
+[dir="rtl"] .footer-si-grid { direction: ltr; }
+[dir="rtl"] .footer-apps { direction: ltr; }
+[dir="rtl"] .store-btn { direction: ltr; }
+[dir="rtl"] .footer-bottom { direction: rtl; }
+[dir="rtl"] .footer-socials { direction: ltr; }
+[dir="rtl"] .kc { text-align: right; direction: rtl; }
+[dir="rtl"] .sleeps-item { text-align: right; direction: rtl; }
+[dir="rtl"] .ns-card { text-align: right; direction: rtl; }
+[dir="rtl"] .act-card { text-align: right; direction: rtl; }
+[dir="rtl"] .bento-cell { text-align: right; direction: rtl; }
+[dir="rtl"] .notif { direction: rtl; }
+[dir="rtl"] .notif-btns { direction: ltr; }
+[dir="rtl"] .dash-status { text-align: right; direction: rtl; }
+[dir="rtl"] .dc-label { text-align: right; }
+[dir="rtl"] .dash-frame { direction: rtl; }
+[dir="rtl"] .dash-grid { direction: rtl; }
+[dir="rtl"] .dc-trend { direction: ltr; }
+[dir="rtl"] .dc-bars { direction: ltr; }
+[dir="rtl"] .hm-stats { direction: rtl; }
+[dir="rtl"] .tc-main { direction: rtl; }
+[dir="rtl"] .tc-info { text-align: right; }
+[dir="rtl"] .cs-team { direction: rtl; }
+[dir="rtl"] .cc { direction: rtl; }
+[dir="rtl"] .cc-arr { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
+[dir="rtl"] .cc:hover .cc-arr { transform: scaleX(-1) translateX(-4px); }
+[dir="rtl"] .ta-cta { direction: ltr; justify-content: flex-end; }
+[dir="rtl"] .cf-header { text-align: right; }
+[dir="rtl"] .topic-pills { direction: rtl; }
+[dir="rtl"] .cf-row { direction: rtl; }
+[dir="rtl"] .cf-field { text-align: right; }
+[dir="rtl"] .cf-field label { letter-spacing: 0; }
+[dir="rtl"] .cf-chars { right: auto; left: 16px; }
+[dir="rtl"] .cf-footer { direction: rtl; }
+[dir="rtl"] .cf-privacy { direction: rtl; }
+[dir="rtl"] .sb-head { direction: rtl; }
+[dir="rtl"] .sb-fill { background: linear-gradient(270deg,var(--orange),#FF8533); }
+[dir="rtl"] .score-bars-card { direction: rtl; }
+[dir="rtl"] .ta-inner { direction: rtl; }
+[dir="rtl"] .ta-card { text-align: right; direction: rtl; }
+[dir="rtl"] .knows-grid { direction: rtl; }
+[dir="rtl"] .cs-location { direction: rtl; }
+[dir="rtl"] .value-card { text-align: right; direction: rtl; }
+[dir="rtl"] .why-cards { direction: rtl; }
+[dir="rtl"] .why-card { text-align: right; direction: rtl; }
+[dir="rtl"] .section-origin, [dir="rtl"] .section-journey { text-align: right; direction: rtl; }
+[dir="rtl"] .manifesto-h { letter-spacing: -0.02em; }
+[dir="rtl"] .hero-stats { direction: rtl; }
+[dir="rtl"] .hs-chip { direction: rtl; }
+[dir="rtl"] .post-meta { direction: rtl; }
+[dir="rtl"] .pf-body, [dir="rtl"] .pc-body { text-align: right; direction: rtl; }
+[dir="rtl"] .blog-hero { text-align: center; }
+[dir="rtl"] .filter-tabs { direction: rtl; }
+[dir="rtl"] .cta-form { direction: rtl; }
+[dir="rtl"] .nb { direction: ltr; }
+[dir="rtl"] .ch-badges { direction: rtl; }
+[dir="rtl"] .cs-promise { direction: rtl; }
+[dir="rtl"] .cs-promise-badge { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .footer-copy { direction: rtl; }
+[dir="rtl"] .ac-body { text-align: right; }
+[dir="rtl"] .ac-actions { direction: ltr; }
+[dir="rtl"] .drawer-nav a { text-align: right; padding: 14px 24px; }
+[dir="rtl"] .da-sub-list a { padding: 12px 42px 12px 24px; }
+[dir="rtl"] .drawer-close { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .drawer-head { flex-direction: row-reverse; }
+[dir="rtl"] .bento { direction: rtl; }
+[dir="rtl"] .no-stop-sub, [dir="rtl"] .sleeps-sub, [dir="rtl"] .knows-sub, [dir="rtl"] .score-sub, [dir="rtl"] .acts-sub, [dir="rtl"] .control-sub { text-align: center; direction: rtl; }
+[dir="rtl"] .fc-cta-row { direction: rtl; }
+[dir="rtl"] .feature-card { text-align: right; direction: rtl; }
+[dir="rtl"] .step { text-align: right; direction: rtl; }
+[dir="rtl"] .stat-chip { direction: rtl; }
+[dir="rtl"] .social-proof { direction: rtl; }
+[dir="rtl"] .pf-body h2, [dir="rtl"] .pc-title { text-align: right; }
+[dir="rtl"] .nav-links { direction: rtl; }
+[dir="rtl"] .hero-text { text-align: right; direction: rtl; }
+[dir="rtl"] .hero-sub, [dir="rtl"] .ch-sub { text-align: right; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 { text-align: right; }
+[dir="rtl"] p { text-align: right; }
+[dir="rtl"] .hero h1, [dir="rtl"] .ch h1 { text-align: center; }
+[dir="rtl"] .hero-sub, [dir="rtl"] .ch-sub { text-align: center; }
+[dir="rtl"] .cta-sec h2, [dir="rtl"] .cta-sec p { text-align: center; }
+[dir="rtl"] .cta-eyebrow, [dir="rtl"] .eyebrow { text-align: center; }
+[dir="rtl"] .knows h2, [dir="rtl"] .sleeps h2, [dir="rtl"] .score-sec h2, [dir="rtl"] .acts h2, [dir="rtl"] .no-stop h2, [dir="rtl"] .one-agent h2, [dir="rtl"] .control h2 { text-align: right; }
+[dir="rtl"] .cf-success { direction: rtl; }
+
 /* Language switcher */
 .lang-switch {
   font-size: 12px; font-weight: 700; letter-spacing: .04em;
@@ -524,6 +619,7 @@ body.drawer-lock{overflow:hidden}
   display: inline-block; line-height: 1;
 }
 .lang-switch:hover { background: var(--orange); color: #fff; }
+[dir="rtl"] .lang-switch { margin-left: 0; margin-right: 4px; }
 </style>
 </head>
 <body>
@@ -537,42 +633,42 @@ body.drawer-lock{overflow:hidden}
       <svg class="spark" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
       EXPOSE
     </div>
-    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+    <button class="drawer-close" id="drawerClose" aria-label="סגור תפריט">
       <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
   </div>
   <nav class="drawer-nav">
-    <a href="site-brands.html">For Brands</a>
-    <a href="site.html">For Creatives</a>
+    <a href="site-brands-he.html">למותגים</a>
+    <a href="site-he.html">ליוצרים</a>
     <div class="drawer-divider"></div>
     <div class="da-wrap">
       <button class="da-toggle exi-active" id="exiToggle" aria-expanded="false">
-        Meet EXi
-        <svg class="da-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        הכירו את EXi
+        <svg class="da-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="da-sub-list" id="exiSubList">
-        <a href="site-exi.html">For Creatives</a>
-        <a href="site-exi-brands.html" class="active">For Brands</a>
+        <a href="site-exi-he.html" class="active">ליוצרים</a>
+        <a href="site-exi-brands-he.html">למותגים</a>
       </div>
     </div>
-    <a href="#pricing">Pricing</a>
-    <a href="site-about.html">About Us</a>
-    <a href="site-blog.html">Blog</a>
-    <a href="site-contact.html">Contact</a>
+    <a href="#pricing">תמחור</a>
+    <a href="site-about-he.html">אודותינו</a>
+    <a href="site-blog-he.html">בלוג</a>
+    <a href="site-contact-he.html">צרו קשר</a>
   </nav>
-  <div class="drawer-foot"><a href="#" onclick="goToApp(event)" class="btn-orange">Join EXPOSE — It's Free</a></div>
+  <div class="drawer-foot"><a href="#" onclick="goToApp(event)" class="btn-orange">הצטרפו ל-EXPOSE — חינם</a></div>
 </aside>
 
 <!-- Nav -->
 <nav class="nav">
-  <button class="nav-menu" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
+  <button class="nav-menu" id="navMenuBtn" aria-label="פתח תפריט" aria-expanded="false">
     <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
   </button>
   <div class="nav-logo">
     <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
     EXPOSE
   </div>
-  <a href="site-exi-brands-he.html" class="lang-switch" aria-label="גרסה בעברית">עברית</a>
+  <a href="site-exi.html" class="lang-switch" aria-label="English version">EN</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -587,14 +683,14 @@ body.drawer-lock{overflow:hidden}
       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
     </div>
   </div>
-  <h1 class="sr s1">The Agent that runs your campaigns <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--orange)">24/7</em></h1>
-  <p class="hero-sub sr s2">EXi manages your creator relationships, optimizes campaigns, and delivers real ROI data — so your team focuses on strategy, not admin.</p>
+  <h1 class="sr s1">הסוכן שעובד<br>בשבילכם <span class="italic-accent" style="color:var(--orange)">24/7</span></h1>
+  <p class="hero-sub sr s2">EXi מוצא את הפרויקטים, מגדיל את החשיפה שלכם ואומר בדיוק מה לעשות הלאה — כדי שתוכלו להגיע וליצור.</p>
   </div><!-- /hero-text -->
 
   <div class="dash-frame sr s3">
     <!-- Header -->
     <div class="dash-header">
-      <span class="dash-title">EXI BRAND DASHBOARD</span>
+      <span class="dash-title">EXi Master Dashboard</span>
       <div class="dash-dots">
         <div class="dash-dot active"></div>
         <div class="dash-dot idle"></div>
@@ -608,26 +704,26 @@ body.drawer-lock{overflow:hidden}
       </div>
       <div class="dash-status-text">
         <h5>EXi is active</h5>
-        <p>Managing your campaigns<span class="typing-dots"><span></span><span></span><span></span></span></p>
+        <p>Optimizing Your Career<span class="typing-dots"><span></span><span></span><span></span></span></p>
       </div>
     </div>
 
     <!-- 2×2 Stats grid -->
     <div class="dash-grid">
-      <!-- Active Campaigns -->
+      <!-- Active Proposals -->
       <div class="dc">
-        <div class="dc-label">Active Campaigns</div>
+        <div class="dc-label">Active Proposal</div>
         <div class="dc-num" id="dashProp">0</div>
         <div class="dc-trend">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          +12.5%
+          +18.2%
         </div>
       </div>
-      <!-- Creator Match Rate -->
+      <!-- Profile צפייהs -->
       <div class="dc">
-        <div class="dc-label">Creator Match Rate</div>
-        <div class="dc-num" id="dashViews">0x</div>
-        <div class="dc-trend" style="text-transform:uppercase;font-size:9px;letter-spacing:.06em">Above Average</div>
+        <div class="dc-label">Profile צפייהs</div>
+        <div class="dc-num" id="dashצפייהs">0%</div>
+        <div class="dc-trend" style="text-transform:uppercase;font-size:9px;letter-spacing:.06em">Above industry avg</div>
       </div>
       <!-- Social Media Eng — bar chart -->
       <div class="dc">
@@ -639,19 +735,19 @@ body.drawer-lock{overflow:hidden}
           <div class="dcb dim" style="height:55%"></div>
         </div>
         <div class="dc-bars-foot">
-          <div class="dc-trend">+38%</div>
+          <div class="dc-trend">+24%</div>
           <div class="dc-trend-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
           </div>
         </div>
       </div>
-      <!-- Content Ready -->
+      <!-- Project Matches -->
       <div class="dc">
-        <div class="dc-label">Content Ready</div>
+        <div class="dc-label">Projects Matches</div>
         <div class="dc-num" id="dashMatch">0</div>
         <div class="dc-trend">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          24/7 monitoring
+          12.4k צפייהs
         </div>
       </div>
     </div>
@@ -660,11 +756,11 @@ body.drawer-lock{overflow:hidden}
     <div class="dash-earnings">
       <div class="de-top">
         <div>
-          <div class="de-label">Campaign reach this week</div>
-          <div class="de-num" id="dashEarn">0</div>
+          <div class="de-label">Earnings this week</div>
+          <div class="de-num" id="dashEarn">$0</div>
           <div class="de-trend">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            +18.3%
+            +10.8%
           </div>
         </div>
         <div class="de-live">LIVE</div>
@@ -692,9 +788,9 @@ body.drawer-lock{overflow:hidden}
 
 <!-- ═══ KNOWS YOUR WORLD ═══ -->
 <section class="knows" id="knowsSection">
-  <div class="eyebrow sr">Always connected</div>
-  <h2 class="sr s1">EXi knows your brand<br><span class="italic-accent">better than your agency does.</span></h2>
-  <p class="knows-sub sr s2">EXi plugs into every tool your brand uses — and manages creators, content and campaigns 24/7 without manual work.</p>
+  <div class="eyebrow sr">תמיד מחובר</div>
+  <h2 class="sr s1">EXi מכיר את העולם שלכם<br><span class="italic-accent">טוב יותר מכם.</span></h2>
+  <p class="knows-sub sr s2">EXi מתחבר לכל פינה של הקריירה שלכם — ומספק כיסוי מלא, 24/7, בלי שתצטרכו להרים אצבע.</p>
 
   <!-- Hub -->
   <div class="knows-hub sr s2">
@@ -704,104 +800,104 @@ body.drawer-lock{overflow:hidden}
     </div>
   </div>
   <div class="hub-connector sr s2"></div>
-  <div class="knows-count sr s3"><div class="knows-count-dot"></div>8 live connections</div>
+  <div class="knows-count sr s3"><div class="knows-count-dot"></div>8 חיבורים חיים</div>
 
   <!-- Connection grid -->
   <div class="knows-grid" id="knowsGrid">
 
-    <!-- Instagram Business -->
+    <!-- Instagram -->
     <div class="kc" style="--kc-color:#E1306C;--kc-rgb:225,48,108">
       <div class="kc-ic">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
       </div>
       <div>
-        <div class="kc-title">Instagram Business</div>
-        <div class="kc-desc">Ad performance, reach &amp; ROAS metrics</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Live</div>
+        <div class="kc-title">Instagram</div>
+        <div class="kc-desc">Engagement, reach & best posting times</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>חי</div>
       </div>
     </div>
 
-    <!-- TikTok Business -->
+    <!-- TikTok -->
     <div class="kc" style="--kc-color:#69C9D0;--kc-rgb:105,201,208">
       <div class="kc-ic">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg>
       </div>
       <div>
-        <div class="kc-title">TikTok Business</div>
-        <div class="kc-desc">Video views, CPM &amp; conversion tracking</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Live</div>
+        <div class="kc-title">TikTok</div>
+        <div class="kc-desc">Trending sounds, reach & video performance</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>חי</div>
       </div>
     </div>
 
-    <!-- Creator Database -->
+    <!-- פורטפוליו -->
     <div class="kc" style="--kc-color:#FF6A1A;--kc-rgb:255,106,26">
       <div class="kc-ic">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 13h4"/></svg>
       </div>
       <div>
-        <div class="kc-title">Creator Database</div>
-        <div class="kc-desc">800+ vetted creatives across 40 niches</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Synced</div>
+        <div class="kc-title">פורטפוליו</div>
+        <div class="kc-desc">Scores, optimizes & tracks acceptance rates</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>מסונכרן</div>
       </div>
     </div>
 
-    <!-- Campaign Budget -->
-    <div class="kc" style="--kc-color:#10B981;--kc-rgb:16,185,129">
+    <!-- יומן -->
+    <div class="kc" style="--kc-color:#3B82F6;--kc-rgb:59,130,246">
       <div class="kc-ic">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       </div>
       <div>
-        <div class="kc-title">Campaign Budget</div>
-        <div class="kc-desc">Spend tracking, pacing &amp; ROI optimization</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Live</div>
+        <div class="kc-title">יומן</div>
+        <div class="kc-desc">Manages availability & books shoots for you</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>חי</div>
       </div>
     </div>
 
-    <!-- Market Analytics -->
+    <!-- מגמות שוק -->
     <div class="kc" style="--kc-color:#8B5CF6;--kc-rgb:139,92,246">
       <div class="kc-ic">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
       </div>
       <div>
-        <div class="kc-title">Market Analytics</div>
-        <div class="kc-desc">Competitor brand activity &amp; trend signals</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Live</div>
+        <div class="kc-title">מגמות שוק</div>
+        <div class="kc-desc">In-demand styles, niches & brand activity</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>חי</div>
       </div>
     </div>
 
-    <!-- Content Pipeline -->
-    <div class="kc" style="--kc-color:#3B82F6;--kc-rgb:59,130,246">
+    <!-- תשלומים ותעריפים -->
+    <div class="kc" style="--kc-color:#10B981;--kc-rgb:16,185,129">
       <div class="kc-ic">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 6.5L22 9l-5 5 1.18 7L12 18l-6.18 3L7 16 2 11l7-.5z" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
       <div>
-        <div class="kc-title">Content Pipeline</div>
-        <div class="kc-desc">Deliverables, deadlines &amp; approvals workflow</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Synced</div>
+        <div class="kc-title">תשלומים ותעריפים</div>
+        <div class="kc-desc">Earnings tracking & market rate benchmarks</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>מסונכרן</div>
       </div>
     </div>
 
-    <!-- CRM & Contacts -->
+    <!-- בריפים -->
     <div class="kc" style="--kc-color:#F59E0B;--kc-rgb:245,158,11">
       <div class="kc-ic">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2z"/></svg>
       </div>
       <div>
-        <div class="kc-title">CRM &amp; Contacts</div>
-        <div class="kc-desc">Creator history, relationships &amp; performance</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Synced</div>
+        <div class="kc-title">בריפים</div>
+        <div class="kc-desc">Scans open briefs & pre-matches to your style</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>סורק</div>
       </div>
     </div>
 
-    <!-- Brand Safety -->
+    <!-- Competitors -->
     <div class="kc" style="--kc-color:#EC4899;--kc-rgb:236,72,153">
       <div class="kc-ic">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
       </div>
       <div>
-        <div class="kc-title">Brand Safety</div>
-        <div class="kc-desc">Compliance checks &amp; risk monitoring 24/7</div>
-        <div class="kc-badge"><div class="kc-badge-dot"></div>Watching</div>
+        <div class="kc-title">מדדי תעשייה</div>
+        <div class="kc-desc">מדרג אתכם מול יוצרים מובילים בנישה שלכם</div>
+        <div class="kc-badge"><div class="kc-badge-dot"></div>עוקב</div>
       </div>
     </div>
 
@@ -810,15 +906,15 @@ body.drawer-lock{overflow:hidden}
 
 <!-- ═══ NEVER SLEEPS ═══ -->
 <section class="sleeps">
-  <div class="eyebrow sr">Always monitoring</div>
-  <h2 class="sr s1">EXi <span class="italic-accent" style="font-size:32px">Never Sleeps</span></h2>
-  <p class="sleeps-sub sr s2">While your team sleeps, EXi is scanning campaign performance, monitoring creators, and protecting your brand.</p>
+  <div class="eyebrow sr">תמיד עובד</div>
+  <h2 class="sr s1">EXi <span class="italic-accent" style="font-size:32px">לעולם לא ישן</span></h2>
+  <p class="sleeps-sub sr s2">בזמן שאתם נחים, EXi סורק שווקים, מייעל את הפרופיל שלכם ותופס הזדמנויות לפני שהן נעלמות.</p>
 
   <div class="sleeps-layout">
   <div class="terminal sr s3" id="terminalCard">
     <div class="terminal-bar">
       <div class="tb-dot"></div><div class="tb-dot"></div><div class="tb-dot"></div>
-      <div class="tb-title">exi.agent — live session</div>
+      <div class="tb-title">exi.agent — סשן חי</div>
       <div class="tb-live"><div class="tb-live-dot"></div>LIVE</div>
     </div>
     <div class="terminal-body" id="terminalBody">
@@ -828,28 +924,28 @@ body.drawer-lock{overflow:hidden}
 
   <div class="sleeps-items">
     <div class="sleeps-item sr s2">
-      <div class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-      <div><h4>Monitors Every Campaign 24/7</h4><p>Tracks performance metrics in real time and flags deviations before they hurt results.</p></div>
+      <div class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div><h4>מעדכן את מוצא הפרופיל שלכם</h4><p>שומר את הפרופיל שלכם חד ממוקד למותגים שמחפשים את הסגנון שלכם.</p></div>
     </div>
     <div class="sleeps-item sr s3">
-      <div class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-      <div><h4>Creator Deliverable Alerts</h4><p>Notifies you the moment a creator submits content so you can review and approve fast.</p></div>
+      <div class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+      <div><h4>התראות צמיחת קריירה</h4><p>מודיע לכם ברגע שהחשיפה שלכם מזנקת או שמותג מחפש את הנישה שלכם.</p></div>
     </div>
     <div class="sleeps-item sr s4">
-      <div class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-      <div><h4>Budget Pacing Guard</h4><p>Watches spend vs. target and reallocates budget to top performers automatically.</p></div>
+      <div class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div><h4>מתחיל את הסינון שלכם</h4><p>מסנן בריפים מראש ומכין את הגשתכם לפני שפותחים את האפליקציה.</p></div>
     </div>
   </div>
   </div><!-- /sleeps-layout -->
 </section>
 
-<!-- ═══ CAMPAIGN HEALTH SCORE ═══ -->
+<!-- ═══ CAREER SCORE ═══ -->
 <section class="score-sec" id="score">
   <!-- Decorative large number in background -->
-  <div aria-hidden="true" style="position:absolute;top:-10px;right:-10px;font-size:140px;font-weight:800;color:rgba(255,106,26,.06);letter-spacing:-0.06em;line-height:1;pointer-events:none;user-select:none">91</div>
-  <div class="eyebrow sr">Campaign health</div>
-  <h2 class="sr s1">Real data. Real ROI.<br>No <span class="italic-accent">guesswork.</span></h2>
-  <p class="score-sub sr s2">EXi gives you a real-time campaign health score based on content quality, reach, and actual ROI.</p>
+  <div aria-hidden="true" style="position:absolute;top:-10px;right:-10px;font-size:140px;font-weight:800;color:rgba(255,106,26,.06);letter-spacing:-0.06em;line-height:1;pointer-events:none;user-select:none">84</div>
+  <div class="eyebrow sr">דעו את הערך שלכם</div>
+  <h2 class="sr s1">You don't need an agency<br>to know your <span class="italic-accent">worth</span></h2>
+  <p class="score-sub sr s2">EXi gives you a real-time career score based on your profile, market demand, and social presence.</p>
 
   <div class="score-layout">
   <div class="gauge-wrap sr s3" id="gaugeWrap">
@@ -866,24 +962,24 @@ body.drawer-lock{overflow:hidden}
     <div class="gauge-center">
       <div class="gauge-num" id="gaugeNum">0</div>
       <div class="gauge-denom">/100</div>
-      <div class="gauge-label">Campaign Score</div>
+      <div class="gauge-label">Career Score</div>
     </div>
   </div>
 
   <div class="score-bars-card sr s4">
     <div class="sb-row">
-      <div class="sb-head">Content Quality <span>88%</span></div>
-      <div class="sb-track"><div class="sb-fill" data-w="88"></div></div>
+      <div class="sb-head">Profile Visibility <span>82%</span></div>
+      <div class="sb-track"><div class="sb-fill" data-w="82"></div></div>
     </div>
     <div class="sb-row">
-      <div class="sb-head">Audience Reach <span>94%</span></div>
-      <div class="sb-track"><div class="sb-fill" data-w="94"></div></div>
+      <div class="sb-head">התאמה למותגים <span>76%</span></div>
+      <div class="sb-track"><div class="sb-fill" data-w="76"></div></div>
     </div>
     <div class="sb-row">
-      <div class="sb-head">ROI Performance <span>91%</span></div>
-      <div class="sb-track"><div class="sb-fill" data-w="91"></div></div>
+      <div class="sb-head">Social Performance <span>68%</span></div>
+      <div class="sb-track"><div class="sb-fill" data-w="68"></div></div>
     </div>
-    <a href="#" onclick="goToApp(event)" class="score-cta">View Full Report →</a>
+    <a href="#" onclick="goToApp(event)" class="score-cta">קבלו את הביקורת המלאה →</a>
   </div>
   </div><!-- /score-layout -->
 </section>
@@ -892,65 +988,65 @@ body.drawer-lock{overflow:hidden}
 <section class="acts">
   <div class="eyebrow sr">Action, not noise</div>
   <h2 class="sr s1">EXi acts.<br><span class="italic-accent">You approve.</span></h2>
-  <p class="acts-sub sr s2">EXi drafts briefs, matches creators, and manages approvals — you review and confirm in one tap.</p>
+  <p class="acts-sub sr s2">EXi drafts the pitch, lines up the brief, prepares your application — you review and approve in one tap.</p>
 
   <div class="act-stack">
     <div class="act-card sr s2">
       <div class="ac-ic orange">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2z"/></svg>
       </div>
       <div class="ac-body">
-        <div class="ac-brand">Spring Campaign</div>
-        <div class="ac-title">Match 5 Creators for Lifestyle Brief</div>
-        <div class="ac-desc">Lifestyle &amp; fashion niche — 4-week timeline, 3 deliverables each</div>
+        <div class="ac-brand">Nike</div>
+        <div class="ac-title">Submit פורטפוליו for Sportswear Campaign</div>
+        <div class="ac-desc">Lifestyle photography brief — 3 deliverables, 2-week timeline</div>
         <div class="ac-match">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-          93% avg. fit score
+          94% match
         </div>
         <div class="ac-actions">
-          <button class="ac-btn approve" onclick="approveCard(this)">Approve</button>
-          <button class="ac-btn skip" onclick="skipCard(this)">Skip</button>
+          <button class="ac-btn approve" onclick="approveCard(this)">אישור</button>
+          <button class="ac-btn skip" onclick="skipCard(this)">דלג</button>
         </div>
       </div>
     </div>
     <div class="act-card sr s3">
       <div class="ac-ic blue">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       </div>
       <div class="ac-body">
-        <div class="ac-brand">Performance</div>
-        <div class="ac-title">Pause @creator — Below Engagement Target</div>
-        <div class="ac-desc">Engagement dropped 40% below brief threshold — EXi suggests pausing</div>
-        <div class="ac-match" style="color:var(--green);background:rgba(34,197,94,.08)">
+        <div class="ac-brand">פורטפוליו</div>
+        <div class="ac-title">Rewrite פורטפוליו Introduction</div>
+        <div class="ac-desc">EXi rewrote it to boost brand appeal — projected +22% acceptance rate</div>
+        <div class="ac-match">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-          Save $1,200 in spend
+          +22% acceptance
         </div>
         <div class="ac-actions">
-          <button class="ac-btn approve" onclick="approveCard(this)">Approve</button>
-          <button class="ac-btn skip" onclick="skipCard(this)">Skip</button>
+          <button class="ac-btn approve" onclick="approveCard(this)">אישור</button>
+          <button class="ac-btn skip" onclick="skipCard(this)">דלג</button>
         </div>
       </div>
     </div>
     <div class="act-card sr s4">
       <div class="ac-ic green">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
       </div>
       <div class="ac-body">
-        <div class="ac-brand">Budget</div>
-        <div class="ac-title">Reallocate $2,000 to Campaign #3</div>
-        <div class="ac-desc">Campaign #3 is outperforming target by 2.1x — more budget = more ROI</div>
+        <div class="ac-brand">Rates</div>
+        <div class="ac-title">Raise Your Minimum Daily Rate</div>
+        <div class="ac-desc">Market data shows you're under-charging by 30% for your category</div>
         <div class="ac-match" style="color:var(--green);background:rgba(34,197,94,.08)">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-          +2.1x ROI potential
+          +30% income potential
         </div>
         <div class="ac-actions">
-          <button class="ac-btn approve" onclick="approveCard(this)">Approve</button>
-          <button class="ac-btn skip" onclick="skipCard(this)">Skip</button>
+          <button class="ac-btn approve" onclick="approveCard(this)">אישור</button>
+          <button class="ac-btn skip" onclick="skipCard(this)">דלג</button>
         </div>
       </div>
     </div>
   </div>
-  <button class="act-approve-all" onclick="approveAll()">Approve All</button>
+  <button class="act-approve-all" onclick="approveAll()">אישור All</button>
 </section>
 
 <!-- ═══ DOESN'T STOP ═══ -->
@@ -963,14 +1059,14 @@ body.drawer-lock{overflow:hidden}
   <div class="no-stop-inner">
     <div class="eyebrow sr">Daily automation</div>
     <h2 class="sr s1">EXi doesn't stop<br><span class="italic-accent">when you do.</span></h2>
-    <p class="no-stop-sub sr s2">Every day, EXi manages your campaigns automatically — monitoring creators, optimizing spend, and protecting your brand.</p>
+    <p class="no-stop-sub sr s2">Every day, EXi runs these tasks on your behalf — finding opportunities, improving your profile, and keeping your career growing.</p>
 
     <div class="ns-cards">
       <div class="ns-card sr s2">
         <div class="ns-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2z"/></svg></div>
         <div>
-          <h4>Daily Campaign Reports</h4>
-          <p>Every morning: reach, spend, ROI, and what EXi did overnight for each campaign.</p>
+          <h4>Daily Career Reports</h4>
+          <p>A concise summary of your visibility, new briefs, and what EXi did overnight — delivered every morning.</p>
           <div class="ns-freq">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
             Every morning
@@ -980,67 +1076,67 @@ body.drawer-lock{overflow:hidden}
       <div class="ns-card sr s3">
         <div class="ns-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
         <div>
-          <h4>Creator Performance Alerts</h4>
-          <p>Flags underperforming creators before they drain your budget — with a suggested action.</p>
+          <h4>Instant Opportunity Alerts</h4>
+          <p>Brands searching for your style right now — EXi flags them before anyone else sees the brief.</p>
           <div class="ns-freq">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-            Real-time
+            בזמן אמת
           </div>
         </div>
       </div>
       <div class="ns-card sr s4">
         <div class="ns-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div>
         <div>
-          <h4>Budget Optimization</h4>
-          <p>Continuously shifts spend to top performers and pauses what isn't working — zero manual effort.</p>
+          <h4>Your Next Career Move</h4>
+          <p>EXi tells you exactly what to do next — which brands to target, what to post, how to level up your score.</p>
           <div class="ns-freq">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-            Always on
+            Weekly strategy
           </div>
         </div>
       </div>
     </div>
   </div>
-  <a href="#" onclick="goToApp(event)" class="ns-cta sr">Let EXi Run Your Campaigns →</a>
+  <a href="#" onclick="goToApp(event)" class="ns-cta sr">תנו ל-EXi לעבוד בשבילכם →</a>
 </section>
 
 <!-- ═══ ONE AGENT ═══ -->
 <section class="one-agent">
   <div class="eyebrow sr">Everything in one place</div>
   <h2 class="sr s1">One agent,<br><span class="italic-accent">total control.</span></h2>
-  <p class="sub sr s2">EXi runs your entire creator marketing operation — from brief to final report.</p>
+  <p class="sub sr s2">EXi doesn't just assist — it runs your entire career operation from a single dashboard.</p>
 
   <div class="bento">
     <div class="bento-cell bc-dark bc-big sr s2">
       <div class="bento-badge">Core feature</div>
       <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-      <h4>Campaign Management</h4>
-      <p>Every brief, creator, deadline and deliverable tracked in one clean view. No more spreadsheets.</p>
+      <h4>Career Management</h4>
+      <p>Every booking, brief, deadline, and conversation — tracked and managed in one clean view. No more spreadsheets.</p>
     </div>
     <div class="bento-cell bc-orange sr s2">
-      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h4>Creator Intelligence</h4>
-      <p>Smart matching to your brief, budget and brand.</p>
+      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg></div>
+      <h4>Work Intelligence</h4>
+      <p>Only surfaces briefs that truly fit your style and goals.</p>
     </div>
     <div class="bento-cell bc-light sr s3">
       <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-      <h4>Content Pipeline</h4>
-      <p>Tracks every deliverable and approval in real time.</p>
+      <h4>פורטפוליו Optimization</h4>
+      <p>Constantly strengthens your portfolio for better acceptance rates.</p>
     </div>
     <div class="bento-cell bc-warm sr s3">
-      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-      <h4>Budget Optimizer</h4>
-      <p>Maximizes ROI from every campaign dollar.</p>
+      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+      <h4>Market Trend Tracking</h4>
+      <p>Monitors what brands are looking for so you always stay ahead.</p>
     </div>
     <div class="bento-cell bc-blue sr s4">
-      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-      <h4>Market Intelligence</h4>
-      <p>Industry trends and competitor brand insights.</p>
+      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.51 5.79 21l2.39-7.15L2 9.36h7.61z"/></svg></div>
+      <h4>Auto Project Matching</h4>
+      <p>Applies to new briefs on your behalf before you even ask.</p>
     </div>
     <div class="bento-cell bc-green sr s4">
-      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <h4>Brand Safety Monitor</h4>
-      <p>Flags compliance issues before they go live.</p>
+      <div class="bento-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div>
+      <h4>Rate Advisor</h4>
+      <p>Tells you exactly what to charge so you stop leaving money on the table.</p>
     </div>
   </div>
 </section>
@@ -1049,31 +1145,31 @@ body.drawer-lock{overflow:hidden}
 <section class="control" id="control">
   <div class="eyebrow sr">Transparent by design</div>
   <h2 class="sr s1">You're always<br><span class="italic-accent">in control</span></h2>
-  <p class="control-sub sr s2">EXi acts fast, but never without you. Every creator action and budget move needs your sign-off before it happens.</p>
+  <p class="control-sub sr s2">EXi works hard, but never surprises you. Every action is visible and needs your approval before it happens.</p>
 
   <div class="notif-wrap" id="notifWrap">
     <div class="notif" id="n1">
       <div class="notif-av"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></div>
       <div class="notif-body">
-        <div class="notif-header"><span class="notif-title">4 creator matches for Spring brief</span><span class="notif-time">Just now</span></div>
-        <div class="notif-msg">EXi found 4 creators with 90%+ fit for your Spring lifestyle campaign. Review profiles before submitting.</div>
-        <div class="notif-btns"><button class="nb primary" onclick="approveNotif(this)">View Matches</button><button class="nb secondary">Skip</button></div>
+        <div class="notif-header"><span class="notif-title">New brief match found</span><span class="notif-time">Just now</span></div>
+        <div class="notif-msg">Zara is looking for a lifestyle photographer. Match score: 96%. EXi has drafted your application — review before sending.</div>
+        <div class="notif-btns"><button class="nb primary" onclick="approveNotif(this)">Apply עכשיו</button><button class="nb secondary">דלג</button></div>
       </div>
     </div>
     <div class="notif" id="n2">
       <div class="notif-av"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></div>
       <div class="notif-body">
-        <div class="notif-header"><span class="notif-title">@mia_k submitted content for review</span><span class="notif-time">1h ago</span></div>
-        <div class="notif-msg">Deliverable ready for your Spring brief. EXi flagged it as on-brand — approve to go live.</div>
-        <div class="notif-btns"><button class="nb primary" onclick="approveNotif(this)">Review Now</button><button class="nb secondary">Later</button></div>
+        <div class="notif-header"><span class="notif-title">Rate increase recommended</span><span class="notif-time">2h ago</span></div>
+        <div class="notif-msg">Your market value rose 28% — EXi suggests raising your min. rate to $850/day. אישור to update your profile.</div>
+        <div class="notif-btns"><button class="nb primary" onclick="approveNotif(this)">Update Rate</button><button class="nb secondary">Later</button></div>
       </div>
     </div>
     <div class="notif" id="n3">
       <div class="notif-av"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></div>
       <div class="notif-body">
-        <div class="notif-header"><span class="notif-title">Budget pacing alert — Campaign #3</span><span class="notif-time">3h ago</span></div>
-        <div class="notif-msg">Campaign #3 is outperforming. EXi recommends adding $2,000 to capture more reach before the brief closes.</div>
-        <div class="notif-btns"><button class="nb primary" onclick="approveNotif(this)">Approve</button><button class="nb secondary">Ignore</button></div>
+        <div class="notif-header"><span class="notif-title">פורטפוליו updated overnight</span><span class="notif-time">This morning</span></div>
+        <div class="notif-msg">EXi rewrote your intro section. Projected acceptance rate improvement: +18%. אישור changes to go live.</div>
+        <div class="notif-btns"><button class="nb primary" onclick="approveNotif(this)">אישור</button><button class="nb secondary">סקירה</button></div>
       </div>
     </div>
   </div>
@@ -1082,27 +1178,27 @@ body.drawer-lock{overflow:hidden}
 <!-- ═══ CTA ═══ -->
 <section class="cta-sec" id="cta">
   <div class="cta-eyebrow">Get started free</div>
-  <h2>Ready for smarter<br><span class="italic-accent">campaigns?</span></h2>
-  <p>Join 380+ brands already running better creator marketing through EXPOSE.</p>
+  <h2>Ready to get<br><span class="italic-accent">discovered?</span></h2>
+  <p>הצטרפו thousands of creatives already getting booked through EXPOSE.</p>
   <div class="cta-btns">
-    <a href="#" onclick="goToApp(event)" class="btn-primary">Start for Free</a>
-    <a href="site-contact.html" class="btn-secondary">Book a Demo</a>
+    <a href="#" onclick="goToApp(event)" class="btn-primary">התחילו בחינם</a>
+    <a href="site-contact-he.html" class="btn-secondary">קבעו פגישה</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-brand"><svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>EXPOSE</div>
-  <p class="footer-tagline">AI-powered creative career platform</p>
+  <p class="footer-tagline">פלטפורמת קריירה יצירתית מבוססת AI</p>
   <div class="footer-apps">
-    <a href="https://apps.apple.com/il/app/create-connect-expose/id6749957784?l=he" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><div class="store-label">Download on the</div><div class="store-name">App Store</div></div></a>
-    <a href="https://play.google.com/store/apps/details?id=com.expose.exposeapp&pcampaignid=web_share" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.66.19.99.08l12.35-7.04-2.73-2.74-10.61 9.7zM20.93 10.62L17.78 8.8l-3.07 3.07 3.07 3.07 3.17-1.84c.9-.52.9-2 .02-2.52l-.04.04zM2.08.37C1.7.61 1.5 1.03 1.5 1.55v20.9c0 .52.2.94.58 1.18l.08.04 11.71-11.71v-.27L2.08.37zm3.1 9.17l3.07-3.07L5.52 3.75 2.45 7.04l2.73 2.5z"/></svg><div><div class="store-label">Get it on</div><div class="store-name">Google Play</div></div></a>
+    <a href="https://apps.apple.com/il/app/create-connect-expose/id6749957784?l=he" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><div class="store-label">הורידו מה-</div><div class="store-name">App Store</div></div></a>
+    <a href="https://play.google.com/store/apps/details?id=com.expose.exposeapp&pcampaignid=web_share" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.66.19.99.08l12.35-7.04-2.73-2.74-10.61 9.7zM20.93 10.62L17.78 8.8l-3.07 3.07 3.07 3.07 3.17-1.84c.9-.52.9-2 .02-2.52l-.04.04zM2.08.37C1.7.61 1.5 1.03 1.5 1.55v20.9c0 .52.2.94.58 1.18l.08.04 11.71-11.71v-.27L2.08.37zm3.1 9.17l3.07-3.07L5.52 3.75 2.45 7.04l2.73 2.5z"/></svg><div><div class="store-label">הורידו מ-</div><div class="store-name">Google Play</div></div></a>
   </div>
   <div class="footer-cols">
-    <div class="footer-col"><h6>Product</h6><a href="site.html">For Creatives</a><a href="site-brands.html">For Brands</a><a href="site-exi.html">Meet EXi</a><a href="#">Pricing</a></div>
-    <div class="footer-col"><h6>Company</h6><a href="#">About</a><a href="#">Careers</a><a href="#">Blog</a><a href="#">Press</a></div>
-    <div class="footer-col"><h6>Support</h6><a href="#">Help Center</a><a href="#">Privacy</a><a href="#">Terms</a><a href="site-contact.html">Contact</a></div>
-    <div class="footer-col"><h6>Follow us</h6>
+    <div class="footer-col"><h6>מוצר</h6><a href="site-he.html">ליוצרים</a><a href="site-brands-he.html">למותגים</a><a href="site-exi-he.html">הכירו את EXi</a><a href="#">תמחור</a></div>
+    <div class="footer-col"><h6>חברה</h6><a href="#">About</a><a href="#">קריירה</a><a href="#">בלוג</a><a href="#">עיתונות</a></div>
+    <div class="footer-col"><h6>תמיכה</h6><a href="#">מרכז עזרה</a><a href="#">פרטיות</a><a href="#">תנאי שימוש</a><a href="site-contact-he.html">צרו קשר</a></div>
+    <div class="footer-col"><h6>עקבו אחרינו</h6>
       <div class="footer-si-grid">
         <a href="https://www.instagram.com/exposse.global?igsh=MTRyeTM3a25yMWU2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="footer-si" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.tiktok.com/@expose.global?_r=1&_t=ZS-96p77IB61VE" target="_blank" rel="noopener" class="footer-si" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg></a>
@@ -1113,7 +1209,7 @@ body.drawer-lock{overflow:hidden}
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 EXPOSE. All rights reserved.</span>
+    <span class="footer-copy">© 2025 EXPOSE. כל הזכויות שמורות.</span>
     <div class="footer-socials">
       <a href="https://www.instagram.com/exposse.global?igsh=MTRyeTM3a25yMWU2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a href="https://www.tiktok.com/@expose.global?_r=1&_t=ZS-96p77IB61VE" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg></a>
@@ -1142,22 +1238,22 @@ function animCount(el, end, suffix, duration){
   requestAnimationFrame(step);
 }
 setTimeout(()=>{
-  animCount(document.getElementById('dashProp'), 8, '', 800);
-  animCount(document.getElementById('dashMatch'), 12, '', 800);
-  // ROI counter
+  animCount(document.getElementById('dashProp'), 15, '', 900);
+  animCount(document.getElementById('dashMatch'), 15, '', 900);
+  // צפייהs counter with decimal
   (function(){
     const el=document.getElementById('dashViews');
     if(!el) return;
     let s=performance.now();
     function step(now){
-      const t=Math.min(1,(now-s)/1000);
+      const t=Math.min(1,(now-s)/1200);
       const ease=1-Math.pow(1-t,3);
-      el.textContent=(ease*3.2).toFixed(1)+'x';
+      el.textContent=(ease*6.48).toFixed(2)+'%';
       if(t<1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   })();
-  // Reach counter
+  // Earnings counter
   (function(){
     const el=document.getElementById('dashEarn');
     if(!el) return;
@@ -1165,8 +1261,7 @@ setTimeout(()=>{
     function step(now){
       const t=Math.min(1,(now-s)/1100);
       const ease=1-Math.pow(1-t,3);
-      const v=ease*2.4;
-      el.textContent=v.toFixed(1)+'M';
+      el.textContent='$'+(Math.round(ease*7800)).toLocaleString();
       if(t<1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -1175,13 +1270,13 @@ setTimeout(()=>{
 
 // ── Terminal typewriter ──
 const termLines = [
-  {time:'09:14:08',type:'scan',msg:'Monitoring <b>3 active campaigns</b> — all tracking above target'},
-  {time:'09:14:11',type:'match',msg:'Found <b>4 new creator candidates</b> for Spring brief — 91%+ fit score'},
-  {time:'09:14:15',type:'update',msg:'@maya_lens submitted deliverables — flagged for review'},
-  {time:'09:14:19',type:'alert',msg:'Campaign #2 ROI at <b>4.1x</b> — exceeding 3.2x target ↑'},
-  {time:'09:14:23',type:'scan',msg:'Brand safety check across <b>24 creator profiles</b> — all clear'},
-  {time:'09:14:28',type:'match',msg:'Budget pacing optimal — <b>$12,400 of $18,000</b> spent (68.8%)'},
-  {time:'09:14:31',type:'update',msg:'Campaign reach milestone: <b>2.4M impressions</b> this week'},
+  {time:'02:14:08',type:'scan',msg:'סורק <b>1,240 active briefs</b> for profile match...'},
+  {time:'02:14:09',type:'match',msg:'Found <b>3 high-confidence matches</b> — queuing applications'},
+  {time:'02:14:11',type:'update',msg:'פורטפוליו intro score improved: <b>61 → 79</b>'},
+  {time:'02:14:14',type:'alert',msg:'<b>Nike</b> brief closing in 6h — draft submitted for review'},
+  {time:'02:14:18',type:'scan',msg:'Analyzing competitor rates in lifestyle photography...'},
+  {time:'02:14:22',type:'match',msg:'Market rate for your tier: <b>$820–$1,100/day</b>'},
+  {time:'02:14:25',type:'update',msg:'Social visibility score updated: <b>68 → 72</b>'},
 ];
 let termIdx=0;
 function addLine(){
@@ -1223,7 +1318,7 @@ if(knowsEl) knowsObs.observe(knowsEl);
 const gaugeObs=new IntersectionObserver(entries=>{
   if(!entries[0].isIntersecting) return;
   document.getElementById('gaugeFill').classList.add('animated');
-  animCount(document.getElementById('gaugeNum'), 91, '', 1400);
+  animCount(document.getElementById('gaugeNum'), 84, '', 1400);
   document.querySelectorAll('.sb-fill').forEach(f=>{
     setTimeout(()=>{ f.style.width=f.dataset.w+'%'; },300);
   });
@@ -1245,13 +1340,13 @@ if(nWrap) notifObs.observe(nWrap);
 
 // ── Ticker ──
 const tickerItems=[
-  {icon:'<path d="M18 20V10M12 20V4M6 20v-6"/>',text:'Campaign #2 ROI: 4.1x'},
-  {icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',text:'Creator brief approved'},
-  {icon:'<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>',text:'Reach: 2.4M this week'},
-  {icon:'<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>',text:'4 new creator matches'},
-  {icon:'<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',text:'Budget pacing on track'},
-  {icon:'<path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.51 5.79 21l2.39-7.15L2 9.36h7.61z"/>',text:'Campaign score: 91/100'},
-  {icon:'<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>',text:'Brand safety: all clear'},
+  {icon:'<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>',text:'Nike brief match found'},
+  {icon:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',text:'Profile updated'},
+  {icon:'<path d="M18 20V10M12 20V4M6 20v-6"/>',text:'Visibility up +6.48%'},
+  {icon:'<path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.51 5.79 21l2.39-7.15L2 9.36h7.61z"/>',text:'3 new matches today'},
+  {icon:'<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',text:'Rate advice ready'},
+  {icon:'<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>',text:'Career score: 84/100'},
+  {icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',text:'Application approved'},
 ];
 function makeTicker(){
   const t=document.getElementById('ticker');
@@ -1267,9 +1362,9 @@ function makeTicker(){
 }
 makeTicker();
 
-// ── Approve card interactions ──
+// ── אישור card interactions ──
 function approveCard(btn){
-  btn.textContent='✓ Approved';
+  btn.textContent='✓ אישורd';
   btn.classList.add('done');
   btn.disabled=true;
   btn.closest('.act-card').classList.add('approved');
@@ -1283,7 +1378,7 @@ function approveAll(){
   document.querySelectorAll('.act-card:not(.approved)').forEach(card=>{
     card.classList.add('approved');
     const ab=card.querySelector('.ac-btn.approve');
-    if(ab){ab.textContent='✓ Approved';ab.classList.add('done');ab.disabled=true}
+    if(ab){ab.textContent='✓ אישורd';ab.classList.add('done');ab.disabled=true}
   });
 }
 
@@ -1308,15 +1403,13 @@ function approveNotif(btn){
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
   drawer.querySelectorAll('.drawer-nav a[href^="#"]').forEach(a=>a.addEventListener('click',close));
 })();
-
-// ── EXi accordion ──
 (function(){
-  const toggle=document.getElementById('exiToggle');
-  const subList=document.getElementById('exiSubList');
+  var toggle=document.getElementById('exiToggle');
+  var subList=document.getElementById('exiSubList');
   if(!toggle||!subList) return;
   toggle.addEventListener('click',function(){
-    const open=toggle.getAttribute('aria-expanded')==='true';
-    toggle.setAttribute('aria-expanded',!open);
+    var open=toggle.getAttribute('aria-expanded')==='true';
+    toggle.setAttribute('aria-expanded',String(!open));
     subList.classList.toggle('open',!open);
   });
 })();

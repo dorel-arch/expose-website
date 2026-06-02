@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +32,11 @@
   "publisher": {"@type": "Organization", "name": "EXPOSE", "url": "https://expose.global", "foundingLocation": "Tel Aviv, Israel"}
 }
 </script>
-<title>About Us — EXPOSE</title>
+<title>אודותינו — EXPOSE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --orange:      #FF6A1A;
@@ -668,6 +669,99 @@
 .footer-socials a:hover{background:rgba(255,255,255,.12);color:#fff}
 @media(min-width:900px){.footer{padding:60px max(40px,calc(50% - 570px)) 40px}.footer-cols{grid-template-columns:repeat(4,1fr)}.footer-apps{max-width:340px}}
 
+/* ── Hebrew RTL overrides ── */
+[dir="rtl"] body { font-family: 'Heebo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+[dir="rtl"] .eyebrow { letter-spacing: 0; }
+[dir="rtl"] .h-display, [dir="rtl"] .h-section { letter-spacing: -0.01em; }
+[dir="rtl"] .drawer { left: auto; right: 0; transform: translateX(100%); }
+[dir="rtl"] .drawer.open { transform: translateX(0); }
+[dir="rtl"] .da-toggle { text-align: right; }
+[dir="rtl"] .footer-cols { direction: rtl; }
+[dir="rtl"] .footer-brand { direction: rtl; }
+[dir="rtl"] .footer-si-grid { direction: ltr; }
+[dir="rtl"] .footer-apps { direction: ltr; }
+[dir="rtl"] .store-btn { direction: ltr; }
+[dir="rtl"] .footer-bottom { direction: rtl; }
+[dir="rtl"] .footer-socials { direction: ltr; }
+[dir="rtl"] .kc { text-align: right; direction: rtl; }
+[dir="rtl"] .sleeps-item { text-align: right; direction: rtl; }
+[dir="rtl"] .ns-card { text-align: right; direction: rtl; }
+[dir="rtl"] .act-card { text-align: right; direction: rtl; }
+[dir="rtl"] .bento-cell { text-align: right; direction: rtl; }
+[dir="rtl"] .notif { direction: rtl; }
+[dir="rtl"] .notif-btns { direction: ltr; }
+[dir="rtl"] .dash-status { text-align: right; direction: rtl; }
+[dir="rtl"] .dc-label { text-align: right; }
+[dir="rtl"] .dash-frame { direction: rtl; }
+[dir="rtl"] .dash-grid { direction: rtl; }
+[dir="rtl"] .dc-trend { direction: ltr; }
+[dir="rtl"] .dc-bars { direction: ltr; }
+[dir="rtl"] .hm-stats { direction: rtl; }
+[dir="rtl"] .tc-main { direction: rtl; }
+[dir="rtl"] .tc-info { text-align: right; }
+[dir="rtl"] .cs-team { direction: rtl; }
+[dir="rtl"] .cc { direction: rtl; }
+[dir="rtl"] .cc-arr { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
+[dir="rtl"] .cc:hover .cc-arr { transform: scaleX(-1) translateX(-4px); }
+[dir="rtl"] .ta-cta { direction: ltr; justify-content: flex-end; }
+[dir="rtl"] .cf-header { text-align: right; }
+[dir="rtl"] .topic-pills { direction: rtl; }
+[dir="rtl"] .cf-row { direction: rtl; }
+[dir="rtl"] .cf-field { text-align: right; }
+[dir="rtl"] .cf-field label { letter-spacing: 0; }
+[dir="rtl"] .cf-chars { right: auto; left: 16px; }
+[dir="rtl"] .cf-footer { direction: rtl; }
+[dir="rtl"] .cf-privacy { direction: rtl; }
+[dir="rtl"] .sb-head { direction: rtl; }
+[dir="rtl"] .sb-fill { background: linear-gradient(270deg,var(--orange),#FF8533); }
+[dir="rtl"] .score-bars-card { direction: rtl; }
+[dir="rtl"] .ta-inner { direction: rtl; }
+[dir="rtl"] .ta-card { text-align: right; direction: rtl; }
+[dir="rtl"] .knows-grid { direction: rtl; }
+[dir="rtl"] .cs-location { direction: rtl; }
+[dir="rtl"] .value-card { text-align: right; direction: rtl; }
+[dir="rtl"] .why-cards { direction: rtl; }
+[dir="rtl"] .why-card { text-align: right; direction: rtl; }
+[dir="rtl"] .section-origin, [dir="rtl"] .section-journey { text-align: right; direction: rtl; }
+[dir="rtl"] .manifesto-h { letter-spacing: -0.02em; }
+[dir="rtl"] .hero-stats { direction: rtl; }
+[dir="rtl"] .hs-chip { direction: rtl; }
+[dir="rtl"] .post-meta { direction: rtl; }
+[dir="rtl"] .pf-body, [dir="rtl"] .pc-body { text-align: right; direction: rtl; }
+[dir="rtl"] .blog-hero { text-align: center; }
+[dir="rtl"] .filter-tabs { direction: rtl; }
+[dir="rtl"] .cta-form { direction: rtl; }
+[dir="rtl"] .nb { direction: ltr; }
+[dir="rtl"] .ch-badges { direction: rtl; }
+[dir="rtl"] .cs-promise { direction: rtl; }
+[dir="rtl"] .cs-promise-badge { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .footer-copy { direction: rtl; }
+[dir="rtl"] .ac-body { text-align: right; }
+[dir="rtl"] .ac-actions { direction: ltr; }
+[dir="rtl"] .drawer-nav a { text-align: right; padding: 14px 24px; }
+[dir="rtl"] .da-sub-list a { padding: 12px 42px 12px 24px; }
+[dir="rtl"] .drawer-close { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .drawer-head { flex-direction: row-reverse; }
+[dir="rtl"] .bento { direction: rtl; }
+[dir="rtl"] .no-stop-sub, [dir="rtl"] .sleeps-sub, [dir="rtl"] .knows-sub, [dir="rtl"] .score-sub, [dir="rtl"] .acts-sub, [dir="rtl"] .control-sub { text-align: center; direction: rtl; }
+[dir="rtl"] .fc-cta-row { direction: rtl; }
+[dir="rtl"] .feature-card { text-align: right; direction: rtl; }
+[dir="rtl"] .step { text-align: right; direction: rtl; }
+[dir="rtl"] .stat-chip { direction: rtl; }
+[dir="rtl"] .social-proof { direction: rtl; }
+[dir="rtl"] .pf-body h2, [dir="rtl"] .pc-title { text-align: right; }
+[dir="rtl"] .nav-links { direction: rtl; }
+[dir="rtl"] .hero-text { text-align: right; direction: rtl; }
+[dir="rtl"] .hero-sub, [dir="rtl"] .ch-sub { text-align: right; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 { text-align: right; }
+[dir="rtl"] p { text-align: right; }
+[dir="rtl"] .hero h1, [dir="rtl"] .ch h1 { text-align: center; }
+[dir="rtl"] .hero-sub, [dir="rtl"] .ch-sub { text-align: center; }
+[dir="rtl"] .cta-sec h2, [dir="rtl"] .cta-sec p { text-align: center; }
+[dir="rtl"] .cta-eyebrow, [dir="rtl"] .eyebrow { text-align: center; }
+[dir="rtl"] .knows h2, [dir="rtl"] .sleeps h2, [dir="rtl"] .score-sec h2, [dir="rtl"] .acts h2, [dir="rtl"] .no-stop h2, [dir="rtl"] .one-agent h2, [dir="rtl"] .control h2 { text-align: right; }
+[dir="rtl"] .cf-success { direction: rtl; }
+
 /* Language switcher */
 .lang-switch {
   font-size: 12px; font-weight: 700; letter-spacing: .04em;
@@ -679,6 +773,7 @@
   display: inline-block; line-height: 1;
 }
 .lang-switch:hover { background: var(--orange); color: #fff; }
+[dir="rtl"] .lang-switch { margin-left: 0; margin-right: 4px; }
 </style>
 </head>
 <body>
@@ -693,56 +788,56 @@
       <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
       EXPOSE
     </div>
-    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+    <button class="drawer-close" id="drawerClose" aria-label="סגור תפריט">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
   </div>
   <nav class="drawer-nav">
-    <a href="site-brands.html">
+    <a href="site-brands-he.html">
       <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-      For Brands
+      למותגים
     </a>
-    <a href="site.html">
+    <a href="site-he.html">
       <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
-      For Creatives
+      For יוצרים
     </a>
     <div class="drawer-divider"></div>
     <div class="da-wrap">
       <button class="da-toggle" id="exiToggle" aria-expanded="false">
         <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></span>
-        Meet EXi
+        הכירו את EXi
         <svg class="da-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="da-sub-list" id="exiSubList">
-        <a href="site-exi.html">For Creatives</a>
-        <a href="site-exi-brands.html">For Brands</a>
+        <a href="site-exi-he.html">For יוצרים</a>
+        <a href="site-exi-brands-he.html">למותגים</a>
       </div>
     </div>
     <a href="#pricing">
       <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-      Pricing
+      תמחור
     </a>
-    <a href="site-about.html" class="active">
+    <a href="site-about-he.html" class="active">
       <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-      About Us
+      אודותינו
     </a>
-    <a href="site-blog.html">
+    <a href="site-blog-he.html">
       <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-      Blog
+      בלוג
     </a>
-    <a href="site-contact.html">
+    <a href="site-contact-he.html">
       <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-      Contact
+      צרו קשר
     </a>
   </nav>
   <div class="drawer-foot">
-    <a href="#" onclick="goToApp(event)" class="btn-orange">Join EXPOSE — It's Free</a>
+    <a href="#" onclick="goToApp(event)" class="btn-orange">הצטרפו ל-EXPOSE — חינם</a>
   </div>
 </aside>
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <button class="nav-menu" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
+  <button class="nav-menu" id="navMenuBtn" aria-label="פתח תפריט" aria-expanded="false">
     <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
   </button>
   <div class="nav-logo">
@@ -750,12 +845,12 @@
     EXPOSE
   </div>
   <div class="nav-links">
-    <a href="site-brands.html">For Brands</a>
-    <a href="site.html">For Creatives</a>
-    <a href="site-exi.html">Meet EXi</a>
-    <a href="site-about.html" class="active">About Us</a>
+    <a href="site-brands-he.html">למותגים</a>
+    <a href="site-he.html">For יוצרים</a>
+    <a href="site-exi-he.html">הכירו את EXi</a>
+    <a href="site-about-he.html" class="active">אודותינו</a>
   </div>
-  <a class="nav-login" href="#" onclick="goToApp(event)">Join</a>
+  <a class="nav-login" href="#" onclick="goToApp(event)">הצטרפו</a>
 </nav>
 
 <!-- ① HERO -->
@@ -764,26 +859,26 @@
     <div class="hero-content sr-left">
       <div class="hero-eyebrow">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-        Our Story
+        הסיפור שלנו
       </div>
-      <h1>Built by someone<br>who <em class="italic-accent">lived it.</em></h1>
-      <p class="hero-sub">We didn't build EXPOSE to check a box or chase a trend. The problem was ours — we lived it, and we knew someone had to fix it.</p>
+      <h1>נבנה על ידי מי<br>ש<em class="italic-accent">חי את זה.</em></h1>
+      <p class="hero-sub">לא בנינו את EXPOSE כדי לסמן תיבה או לרדוף אחרי טרנד. הבעיה הייתה שלנו — חיינו אותה, וידענו שמישהו צריך לפתור אותה.</p>
       <div class="hero-stats">
         <div class="hs-chip">
           <div class="hs-chip-icon">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div><b>10K+</b> <span>Creatives</span></div>
+          <div><b>10K+</b> <span>יוצרים</span></div>
         </div>
         <div class="hs-chip">
           <div class="hs-chip-icon">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
           </div>
-          <div><b>2024</b> <span>Founded</span></div>
+          <div><b>2024</b> <span>נוסד</span></div>
         </div>
         <div class="hs-chip">
           <div class="live-dot"></div>
-          <div><b>Live</b> <span>Projects</span></div>
+          <div><b>חי</b> <span>פרויקטים</span></div>
         </div>
       </div>
     </div>
@@ -792,27 +887,27 @@
     <div class="hero-mockup sr-right">
       <div class="hm-badge hm-badge-2" aria-hidden="true">
         <div class="hm-badge-icon" style="background:var(--orange-soft)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Free forever
+        חינם לתמיד
       </div>
       <div class="hm-card">
         <div class="hm-header">
           <div class="hm-logo">
             <svg class="spark" viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-            EXPOSE Platform
+            פלטפורמת EXPOSE
           </div>
           <div class="hm-live">
             <div class="live-dot"></div>
-            Live
+            חי
           </div>
         </div>
         <div class="hm-stats">
           <div class="hm-stat">
             <b>10K+</b>
-            <span>Creatives</span>
+            <span>יוצרים</span>
           </div>
           <div class="hm-stat">
             <b>2024</b>
-            <span>Founded</span>
+            <span>נוסד</span>
           </div>
           <div class="hm-stat">
             <b>4.9★</b>
@@ -863,7 +958,7 @@
         </div>
         <div class="fq-author-info">
           <b>Dorel Shnaiderman</b>
-          <span>Co-Founder &amp; CEO</span>
+          <span>Co-מייסד ומנכ"ל</span>
         </div>
       </div>
     </div>
@@ -886,7 +981,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h3>Fair pay for real work</h3>
-          <p>Creatives should charge what their work is worth — and get paid for it. Not haggle with scope-creeping clients or wait 90 days for an invoice to clear.</p>
+          <p>יוצרים should charge what their work is worth — and get paid for it. Not haggle with scope-creeping clients or wait 90 days for an invoice to clear.</p>
         </div>
       </div>
 
@@ -920,7 +1015,7 @@
 <section class="section-journey">
   <div class="journey-inner">
     <span class="section-eyebrow sr">The Journey</span>
-    <h2 class="sr s1">How we got here.</h2>
+    <h2 class="sr s1">איך הגענו לכאן.</h2>
 
     <div class="timeline" id="timeline">
       <div class="tl-item">
@@ -943,7 +1038,7 @@
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">Q4 2024 — We Go Live</div>
+        <div class="tl-date">Q4 2024 — We Go חי</div>
         <h3>Real work. Real money. Real proof.</h3>
         <p>First real users. Real projects. Real money moving to real creators. The feedback loop tells us we're on the right track.</p>
       </div>
@@ -977,7 +1072,7 @@
         <div class="value-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
-        <h3>Radical Transparency</h3>
+        <h3>שקיפות מוחלטת</h3>
         <p>No hidden fees, no vague pricing, no fine print surprises. We tell you exactly what we take — and why.</p>
       </div>
 
@@ -985,7 +1080,7 @@
         <div class="value-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
-        <h3>Creators First</h3>
+        <h3>יוצרים קודמים</h3>
         <p>Every product decision starts with one question: does this make a creative's life better? If not, we don't build it.</p>
       </div>
 
@@ -993,7 +1088,7 @@
         <div class="value-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <h3>Built to Work For You</h3>
+        <h3>נבנה לעבוד בשבילכם</h3>
         <p>We built EXi to handle the things you hate — so you can spend more time on the things you love.</p>
       </div>
 
@@ -1045,7 +1140,7 @@
           </div>
           <div class="tc-info">
             <div class="tc-name">Emily Zeltser</div>
-            <div class="tc-role">Head of Community</div>
+            <div class="tc-role">Head of קהילה</div>
           </div>
         </div>
         <div class="tc-quote">
@@ -1080,22 +1175,22 @@
   <div class="cta-inner">
     <div class="cta-badge sr">
       <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-      Join the community
+      הצטרפו the community
     </div>
     <h2 class="sr s1">Ready to be part of<br><em class="italic-accent">something real?</em></h2>
-    <p class="sr s2">Join thousands of creators who stopped chasing clients and started doing their best work.</p>
+    <p class="sr s2">הצטרפו thousands of creators who stopped chasing clients and started doing their best work.</p>
     <a href="#" onclick="goToApp(event)" class="cta-btn sr s3">
-      Join EXPOSE — It's Free
+      הצטרפו ל-EXPOSE — חינם
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     <div class="cta-stores sr s4">
       <a class="cta-store" href="https://apps.apple.com/il/app/create-connect-expose/id6749957784?l=he" target="_blank" rel="noopener">
         <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.86-3.08.40-1.09-.47-2.09-.48-3.24 0-1.44.62-2.20.44-3.06-.40C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.80 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.40 1.80-3.12 1.87-2.38 5.98.48 7.13-.57 1.50-1.31 2.99-2.53 4.09M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.50-3.74 4.25"/></svg>
-        <div><div class="small">Download on the</div><div class="big">App Store</div></div>
+        <div><div class="small">הורידו מה-</div><div class="big">App Store</div></div>
       </a>
       <a class="cta-store" href="https://play.google.com/store/apps/details?id=com.expose.exposeapp&pcampaignid=web_share" target="_blank" rel="noopener">
         <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.609 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zM14.5 12.71l2.32 2.32-11.06 6.43 8.74-8.75zm3.39-2.34l2.74 1.6c.6.34.97.97.97 1.64 0 .67-.37 1.3-.97 1.65l-2.74 1.59-2.83-2.83 2.83-2.65zM5.76 2.54l11.06 6.43-2.32 2.33L5.76 2.54z"/></svg>
-        <div><div class="small">Get it on</div><div class="big">Google Play</div></div>
+        <div><div class="small">הורידו מ-</div><div class="big">Google Play</div></div>
       </a>
     </div>
   </div>
@@ -1104,16 +1199,16 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-brand"><svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>EXPOSE</div>
-  <p class="footer-tagline">The AI-powered marketing engine for world-class creatives.</p>
+  <p class="footer-tagline">מנוע השיווק המופעל על ידי AI ליוצרים ברמה עולמית.</p>
   <div class="footer-apps">
-    <a href="https://apps.apple.com/il/app/create-connect-expose/id6749957784?l=he" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><div class="store-label">Download on the</div><div class="store-name">App Store</div></div></a>
-    <a href="https://play.google.com/store/apps/details?id=com.expose.exposeapp&pcampaignid=web_share" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.66.19.99.08l12.35-7.04-2.73-2.74-10.61 9.7zM20.93 10.62L17.78 8.8l-3.07 3.07 3.07 3.07 3.17-1.84c.9-.52.9-2 .02-2.52l-.04.04zM2.08.37C1.7.61 1.5 1.03 1.5 1.55v20.9c0 .52.2.94.58 1.18l.08.04 11.71-11.71v-.27L2.08.37zm3.1 9.17l3.07-3.07L5.52 3.75 2.45 7.04l2.73 2.5z"/></svg><div><div class="store-label">Get it on</div><div class="store-name">Google Play</div></div></a>
+    <a href="https://apps.apple.com/il/app/create-connect-expose/id6749957784?l=he" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><div class="store-label">הורידו מה-</div><div class="store-name">App Store</div></div></a>
+    <a href="https://play.google.com/store/apps/details?id=com.expose.exposeapp&pcampaignid=web_share" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.66.19.99.08l12.35-7.04-2.73-2.74-10.61 9.7zM20.93 10.62L17.78 8.8l-3.07 3.07 3.07 3.07 3.17-1.84c.9-.52.9-2 .02-2.52l-.04.04zM2.08.37C1.7.61 1.5 1.03 1.5 1.55v20.9c0 .52.2.94.58 1.18l.08.04 11.71-11.71v-.27L2.08.37zm3.1 9.17l3.07-3.07L5.52 3.75 2.45 7.04l2.73 2.5z"/></svg><div><div class="store-label">הורידו מ-</div><div class="store-name">Google Play</div></div></a>
   </div>
   <div class="footer-cols">
-    <div class="footer-col"><h6>Product</h6><a href="site.html">For Creatives</a><a href="site-brands.html">For Brands</a><a href="site-exi.html">Meet EXi</a><a href="#">Pricing</a></div>
-    <div class="footer-col"><h6>Company</h6><a href="site-about.html">About Us</a><a href="#">Careers</a><a href="site-blog.html">Blog</a><a href="#">Press</a></div>
-    <div class="footer-col"><h6>Support</h6><a href="#">Help Center</a><a href="#">Privacy</a><a href="#">Terms</a><a href="site-contact.html">Contact</a></div>
-    <div class="footer-col"><h6>Follow us</h6>
+    <div class="footer-col"><h6>מוצר</h6><a href="site-he.html">For יוצרים</a><a href="site-brands-he.html">למותגים</a><a href="site-exi-he.html">הכירו את EXi</a><a href="#">תמחור</a></div>
+    <div class="footer-col"><h6>חברה</h6><a href="site-about-he.html">אודותינו</a><a href="#">קריירה</a><a href="site-blog-he.html">בלוג</a><a href="#">עיתונות</a></div>
+    <div class="footer-col"><h6>תמיכה</h6><a href="#">מרכז עזרה</a><a href="#">פרטיות</a><a href="#">תנאי שימוש</a><a href="site-contact-he.html">צרו קשר</a></div>
+    <div class="footer-col"><h6>עקבו אחרינו</h6>
       <div class="footer-si-grid">
         <a href="https://www.instagram.com/exposse.global?igsh=MTRyeTM3a25yMWU2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="footer-si" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.tiktok.com/@expose.global?_r=1&_t=ZS-96p77IB61VE" target="_blank" rel="noopener" class="footer-si" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg></a>
@@ -1124,7 +1219,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 EXPOSE. All rights reserved.</span>
+    <span class="footer-copy">© 2025 EXPOSE. כל הזכויות שמורות.</span>
     <div class="footer-socials">
       <a href="https://www.instagram.com/exposse.global?igsh=MTRyeTM3a25yMWU2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a href="https://www.tiktok.com/@expose.global?_r=1&_t=ZS-96p77IB61VE" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg></a>

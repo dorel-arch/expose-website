@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Stop guessing your marketing. Let EXi — your AI campaign agent — brief creators in 60 seconds, run your campaigns 24/7, and show you real ROI.">
-<meta name="keywords" content="AI marketing for brands, campaign automation, creator brief, influencer ROI, brand marketing AI, campaign management software">
-<link rel="canonical" href="https://expose.global/brands">
+<meta name="description" content="EXPOSE היא פלטפורמת השיווק המופעלת על ידי AI ליוצרים ומותגים. תנו ל-EXi, סוכן ה-AI שלכם, לנהל את הקמפיינים, למצוא התאמות ולצמוח — 24/7.">
+<meta name="keywords" content="AI marketing platform, creator economy, brand collaborations, influencer marketing, creative freelancers, AI agent, campaign management">
+<link rel="canonical" href="https://expose.global">
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXPOSE">
-<meta property="og:url" content="https://expose.global/brands">
-<meta property="og:title" content="EXPOSE for Brands — AI Campaign Agent That Runs Your Marketing 24/7">
-<meta property="og:description" content="Stop guessing your marketing. Let EXi — your AI campaign agent — brief creators in 60 seconds, run your campaigns 24/7, and show you real ROI.">
+<meta property="og:url" content="https://expose.global">
+<meta property="og:title" content="EXPOSE — AI-Powered Marketing Platform for Creatives & Brands">
+<meta property="og:description" content="EXPOSE היא פלטפורמת השיווק המופעלת על ידי AI ליוצרים ומותגים. תנו ל-EXi, סוכן ה-AI שלכם, לנהל את הקמפיינים, למצוא התאמות ולצמוח — 24/7.">
 <meta property="og:image" content="https://expose.global/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@expose.platform">
-<meta name="twitter:title" content="EXPOSE for Brands — AI Campaign Agent That Runs Your Marketing 24/7">
-<meta name="twitter:description" content="Stop guessing your marketing. Let EXi — your AI campaign agent — brief creators in 60 seconds, run your campaigns 24/7, and show you real ROI.">
+<meta name="twitter:title" content="EXPOSE — AI-Powered Marketing Platform for Creatives & Brands">
+<meta name="twitter:description" content="EXPOSE היא פלטפורמת השיווק המופעלת על ידי AI ליוצרים ומותגים. תנו ל-EXi, סוכן ה-AI שלכם, לנהל את הקמפיינים, למצוא התאמות ולצמוח — 24/7.">
 <meta name="twitter:image" content="https://expose.global/assets/og-image.png">
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "EXPOSE for Brands",
-  "url": "https://expose.global/brands",
-  "description": "AI-powered campaign management for brands. EXi briefs creators, tracks delivery, and reports ROI automatically.",
-  "isPartOf": {"@type": "WebSite", "name": "EXPOSE", "url": "https://expose.global"}
+  "@type": "WebApplication",
+  "name": "EXPOSE",
+  "url": "https://expose.global",
+  "description": "AI-powered marketing platform connecting creatives and brands through EXi, the autonomous AI agent.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS, Android",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Organization", "name": "EXPOSE", "url": "https://expose.global"}
 }
 </script>
-<title>EXPOSE — Stop Guessing Your Marketing. Let EXi Run It.</title>
+<title>EXPOSE — הפסיקו לרדוף אחרי לקוחות. תנו ל-EXi לטפל בזה.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --orange:        #FF6A1A;
@@ -141,66 +145,101 @@
   .nav-links { display: none; }
   .nav-cta { display: none; }
 
-  /* ───────── Mobile drawer ───────── */
+  /* ── Mobile drawer ── */
   .drawer-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,.45); z-index: 999;
-    opacity: 0; transition: opacity .25s;
+    display: none;
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(19,19,19,.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity .25s ease;
   }
   .drawer-overlay.open { display: block; opacity: 1; }
+
   .drawer {
-    position: fixed; top: 0; left: 0; bottom: 0; width: 80vw; max-width: 300px;
-    background: #fff; z-index: 1000;
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: min(320px, 85vw);
+    background: #fff;
+    z-index: 201;
     display: flex; flex-direction: column;
-    transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1);
-    box-shadow: 4px 0 24px rgba(0,0,0,.12);
+    padding: 0;
+    transform: translateX(-100%);
+    transition: transform .3s cubic-bezier(.16,1,.3,1);
+    box-shadow: 8px 0 40px rgba(19,19,19,.12);
   }
   .drawer.open { transform: translateX(0); }
+
   .drawer-head {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 20px; border-bottom: 1px solid var(--line);
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--line);
   }
-  .drawer-head .nav-logo {
-    font-size: 18px; font-weight: 800; color: var(--ink);
+  .drawer-logo {
     display: flex; align-items: center; gap: 6px;
+    font-weight: 800; font-size: 17px; color: var(--ink);
   }
+  .drawer-logo .spark { width: 13px; height: 13px; color: var(--orange); }
   .drawer-close {
     width: 32px; height: 32px; border-radius: 8px;
     display: grid; place-items: center;
-    background: var(--bg-soft); border: none; cursor: pointer; color: var(--ink);
+    color: var(--gray); background: var(--bg-soft);
+    border: 1px solid var(--line);
   }
-  .drawer-nav { flex: 1; padding: 12px 0; overflow-y: auto; }
+  .drawer-close:hover { color: var(--ink); }
+
+  .drawer-nav {
+    flex: 1; padding: 16px 12px;
+    display: flex; flex-direction: column; gap: 2px;
+    overflow-y: auto;
+  }
   .drawer-nav a {
-    display: block; padding: 14px 24px;
-    font-size: 16px; font-weight: 600; color: var(--ink);
-    text-decoration: none; border-bottom: 1px solid var(--line);
-    transition: background .15s, color .15s;
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 14px; border-radius: 12px;
+    font-size: 15px; font-weight: 600; color: var(--ink-2);
+    transition: background .15s ease, color .15s ease;
+    text-decoration: none;
   }
-  .drawer-nav a:last-child { border-bottom: none; }
-  .drawer-nav a:hover { background: var(--bg-soft); color: var(--orange); }
-  .drawer-nav a.active { color: var(--orange); }
-  .da-wrap { border-bottom: 1px solid var(--line); }
-  .da-toggle { display:flex; align-items:center; justify-content:space-between; width:100%; padding:14px 24px; font-size:16px; font-weight:600; color:var(--ink); background:none; border:none; cursor:pointer; font-family:inherit; text-align:left; transition:background .15s,color .15s; }
-  .da-toggle:hover { background:var(--bg-soft); color:var(--orange); }
-  .da-toggle.exi-active { color:var(--orange); }
-  .da-arrow { transition:transform .25s; flex-shrink:0; color:var(--gray); }
+  .drawer-nav a:hover { background: var(--bg-soft); color: var(--ink); }
+  .drawer-nav a.active { background: var(--orange-soft); color: var(--orange); }
+  .drawer-nav a .dn-icon {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: var(--bg-soft); border: 1px solid var(--line);
+    display: grid; place-items: center; flex-shrink: 0;
+    color: var(--gray);
+  }
+  .drawer-nav a.active .dn-icon { background: rgba(255,106,26,.12); border-color: rgba(255,106,26,.2); color: var(--orange); }
+  .drawer-nav a:hover .dn-icon { color: var(--orange); }
+  .drawer-divider { height: 1px; background: var(--line); margin: 8px 14px; }
+  .drawer-nav .dn-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gray-2); padding: 6px 14px 2px; }
+  .da-wrap { border-radius: 12px; overflow: hidden; }
+  .da-toggle { display:flex; align-items:center; gap:12px; width:100%; padding:13px 14px; border-radius:12px; font-size:15px; font-weight:600; color:var(--ink-2); background:none; border:none; cursor:pointer; font-family:inherit; text-align:left; transition:background .15s,color .15s; }
+  .da-toggle:hover { background:var(--bg-soft); color:var(--ink); }
+  .da-toggle.exi-active { background:var(--orange-soft); color:var(--orange); }
+  .da-toggle .dn-icon { width:34px; height:34px; border-radius:9px; background:var(--bg-soft); border:1px solid var(--line); display:grid; place-items:center; flex-shrink:0; color:var(--gray); }
+  .da-toggle.exi-active .dn-icon { background:rgba(255,106,26,.12); border-color:rgba(255,106,26,.2); color:var(--orange); }
+  .da-toggle:hover .dn-icon { color:var(--orange); }
+  .da-arrow { margin-left:auto; flex-shrink:0; color:var(--gray-2); transition:transform .25s; }
   .da-toggle[aria-expanded="true"] .da-arrow { transform:rotate(180deg); }
-  .da-sub-list { display:none; }
-  .da-sub-list.open { display:block; }
-  .da-sub-list a { display:block; padding:12px 24px 12px 42px; font-size:14px; font-weight:600; color:var(--gray); border-bottom:none; border-top:1px solid var(--line); background:var(--bg-soft); }
-  .da-sub-list a:hover { background:#fff; color:var(--orange); }
-  .da-sub-list a.active { color:var(--orange); background:#fff; }
-  .drawer-divider { height: 1px; background: var(--line); margin: 4px 14px; }
+  .da-sub-list { display:none; padding:0 8px 4px 60px; }
+  .da-sub-list.open { display:flex; flex-direction:column; gap:2px; }
+  .da-sub-list a { display:block; padding:9px 12px; border-radius:9px; font-size:14px; font-weight:600; color:var(--gray); transition:background .15s,color .15s; text-decoration:none; }
+  .da-sub-list a:hover { background:var(--bg-soft); color:var(--orange); }
+  .da-sub-list a.active { color:var(--orange); background:var(--orange-soft); }
+
   .drawer-foot {
-    padding: 20px; border-top: 1px solid var(--line);
+    padding: 16px 22px 28px;
+    border-top: 1px solid var(--line);
   }
   .drawer-foot .btn-orange {
-    display: block; text-align: center; width: 100%;
-    padding: 14px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; padding: 14px; border-radius: 12px;
     background: var(--orange); color: #fff;
-    font-size: 14px; font-weight: 700; text-decoration: none;
-    box-shadow: 0 4px 14px rgba(255,106,26,.3);
+    font-size: 14px; font-weight: 700; letter-spacing: .02em;
+    box-shadow: 0 4px 14px rgba(255,106,26,.32);
+    text-decoration: none;
   }
+
   body.drawer-lock { overflow: hidden; }
 
   /* ───────── Hero ───────── */
@@ -209,6 +248,7 @@
     text-align: center;
     overflow: hidden;
     background: #FFFBF7;
+    /* Lock height — prevents iOS Safari resize-on-scroll */
     height: 100svh;
     min-height: 580px;
     max-height: 100svh;
@@ -244,8 +284,9 @@
     position: absolute; inset: 0;
     pointer-events: none;
     z-index: 0;
-    display: none;
+    display: none; /* mobile: hidden; shown ≥900px */
   }
+  /* SVG connector lines */
   .hero-orbit-svg {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
@@ -269,6 +310,7 @@
     100% { opacity: .4; stroke-dashoffset: 0; }
   }
 
+  /* Floating live-activity cards */
   .hero-card {
     position: absolute;
     pointer-events: auto;
@@ -334,11 +376,13 @@
     to   { transform: scaleY(1); }
   }
 
+  /* Card positions + per-card animation delays + tilt */
   .hero-card-1 { --rot: -3deg; top: 7%; left: 4%;  animation-delay: .55s; }
   .hero-card-2 { --rot:  4deg; top: 5%; right: 4%; animation-delay: .70s; }
   .hero-card-3 { --rot: -2deg; bottom: 9%; left: 6%;  width: 220px; animation-delay: .85s; }
   .hero-card-4 { --rot:  3deg; bottom: 7%; right: 5%; width: 230px; animation-delay: 1.00s; }
 
+  /* Floating avatar bubbles */
   .hero-blob {
     position: absolute;
     border-radius: 50%;
@@ -368,6 +412,7 @@
   .hero-blob.b4 { width: 46px; height: 46px; bottom: 24%; right: 22%; animation-delay: .75s, 2.0s; }
   .hero-blob.b5 { width: 32px; height: 32px; top: 13%;  right: 36%; animation-delay: .85s, 2.2s; }
 
+  /* "EXi" satellite badge — floats top-center above the heading */
   .hero-exi {
     position: absolute;
     width: 52px; height: 52px; border-radius: 50%;
@@ -397,10 +442,12 @@
   @media (min-width: 1280px) {
     .hero-orbit { display: block; }
     .hero { min-height: 780px; }
+    /* Cards tucked into corners, outside the centered content column */
     .hero-card-1 { top: 6%;    left: 2%; }
     .hero-card-2 { top: 4%;   right: 2%; }
     .hero-card-3 { bottom: 14%; left: 2%; }
     .hero-card-4 { bottom: 12%; right: 2%; }
+    /* Blobs between cards and content column, no overlap */
     .hero-blob.b1 { top: 23%;    left: 21%; }
     .hero-blob.b2 { top: 21%;   right: 19%; }
     .hero-blob.b3 { bottom: 23%; left: 19%; }
@@ -445,10 +492,17 @@
     padding: 6px 6px 6px 22px;
     display: flex; align-items: center; gap: 8px;
     box-shadow:
-      0 1px 0 rgba(255,106,26,.15) inset,
-      0 10px 24px rgba(255,106,26,.18),
-      0 2px 6px rgba(28,18,8,.06);
-    border: 1px solid #FFE2CB;
+      0 1px 0 rgba(255,106,26,.12) inset,
+      0 12px 32px rgba(255,106,26,.20),
+      0 3px 8px rgba(28,18,8,.07);
+    border: 1px solid rgba(255,106,26,.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: search-in 1s cubic-bezier(.16,1,.3,1) .6s both;
+  }
+  @keyframes search-in {
+    from { opacity: 0; transform: translateY(12px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
   }
   .hero-search input {
     flex: 1; border: 0; outline: 0; background: transparent;
@@ -506,9 +560,10 @@
   .chip:nth-child(3n+1) .dot { background: var(--orange); }
   .chip:nth-child(3n+2) .dot { background: #7C3AED; }
   .trust-row {
-    margin: 22px auto 0;
-    display: inline-flex; align-items: center; gap: 10px;
+    margin: 28px auto 0;
+    display: inline-flex; align-items: center; gap: 14px;
     padding: 0;
+    border-radius: 999px;
     background: transparent;
     border: 0;
     box-shadow: none;
@@ -517,11 +572,12 @@
     display: flex;
   }
   .avatar-stack .av {
-    width: 22px; height: 22px; border-radius: 50%;
-    border: 1.5px solid #fff;
-    margin-left: -7px;
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -8px;
     background-size: cover; background-position: center;
     background-color: var(--orange-soft);
+    box-shadow: 0 1px 3px rgba(28,18,8,.10);
     transition: opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
     will-change: opacity, transform;
   }
@@ -533,15 +589,16 @@
   }
   .avatar-stack .av:first-child { margin-left: 0; }
   .avatar-stack .av-more { display: none; }
-  .trust-meta { display: flex; align-items: center; gap: 6px; }
+  .trust-meta { display: flex; flex-direction: column; gap: 2px; align-items: flex-start; line-height: 1.1; }
   .trust-num {
-    font-size: 11.5px; font-weight: 500; color: var(--ink-2);
-    display: flex; align-items: center; gap: 5px;
-    line-height: 1;
+    font-size: 13.5px; font-weight: 600; color: var(--ink-2);
+    display: flex; align-items: center; gap: 6px;
+    line-height: 1.1;
+    letter-spacing: -.005em;
   }
-  .trust-num b { font-weight: 700; color: var(--ink); }
+  .trust-num b { font-weight: 800; color: var(--ink); }
   .live-dot {
-    width: 6px; height: 6px; border-radius: 50%;
+    width: 7px; height: 7px; border-radius: 50%;
     background: #1FBF6B;
     box-shadow: 0 0 0 0 rgba(31,191,107,.55);
     animation: pulse 1.8s ease-out infinite;
@@ -552,7 +609,13 @@
     70%  { box-shadow: 0 0 0 5px rgba(31,191,107,0); }
     100% { box-shadow: 0 0 0 0 rgba(31,191,107,0); }
   }
-  .trust-sub { display: none; }
+  .trust-sub {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; color: var(--gray); font-weight: 500;
+    line-height: 1.1;
+  }
+  .trust-sub .stars { color: var(--orange); letter-spacing: 1px; font-size: 10px; }
+  .trust-sub .dot { opacity: .5; }
 
   /* Trusted by */
   .trusted {
@@ -631,34 +694,7 @@
     box-shadow: 0 4px 10px rgba(255,106,26,.3);
   }
 
-  /* ───────── Tabs row ───────── */
-  .tabs-row { padding: 0 20px 24px; }
-  .tabs-row .tabs { width: 100%; max-width: 320px; margin: 0 auto; }
-
-  /* ───────── Workflow title ───────── */
-  .workflow .workflow-title {
-    font-size: 22px;
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -.02em;
-    margin: 8px 0 24px;
-  }
-  .workflow .workflow-title .workflow-sub {
-    display: block;
-    margin-top: 6px;
-    font-size: 14px;
-    color: var(--gray);
-    font-weight: 400;
-    line-height: 1.5;
-  }
-  @media (min-width: 900px) {
-    .tabs-row { padding: 0 60px 40px; }
-    .tabs-row .tabs { max-width: 360px; }
-    .workflow .workflow-title { font-size: 38px; margin: 12px 0 36px; }
-    .workflow .workflow-title .workflow-sub { font-size: 16px; margin-top: 10px; }
-  }
-
-  /* ───────── For Creatives section ───────── */
+  /* ───────── ליוצרים section ───────── */
   .creatives {
     padding: 16px 20px 36px;
     text-align: left; position: relative;
@@ -668,21 +704,52 @@
   .creatives .copy { min-width: 0; }
   .creatives h2 {
     margin: 10px 0 12px;
-    font-size: 19px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;
+    font-size: 24px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;
   }
   .creatives .eyebrow { font-size: 9.5px; }
   .creatives .btn { padding: 10px 14px; font-size: 12px; }
-  .check-list { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 18px; }
+  .check-list { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 14px; }
   .check-list li {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: flex-start; gap: 10px;
     font-size: 12px; color: var(--ink-2);
+    line-height: 1.3;
   }
+  .check-list li .cl-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .check-list li .cl-title { font-weight: 700; color: var(--ink); letter-spacing: -.005em; }
+  .check-list li .cl-sub { font-size: 11px; color: var(--gray); line-height: 1.35; }
   .check-list .ck {
-    width: 16px; height: 16px; border-radius: 50%;
+    width: 18px; height: 18px; border-radius: 50%;
     background: var(--orange); color: white;
     display: grid; place-items: center; flex-shrink: 0;
-    font-size: 10px;
+    font-size: 10px; margin-top: 1px;
+    box-shadow: 0 4px 10px rgba(255,106,26,.28);
   }
+
+  /* Social proof mini-row */
+  .creatives-proof {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin: 12px 0 0;
+    padding: 6px 14px 6px 6px; border-radius: 999px;
+    background: rgba(255,255,255,.6);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .creatives-proof .av-mini-stack { display: flex; }
+  .creatives-proof .av-mini-stack .am {
+    width: 22px; height: 22px; border-radius: 50%;
+    margin-left: -6px;
+    border: 2px solid #fff;
+    background-size: cover; background-position: center;
+    box-shadow: 0 1px 2px rgba(28,18,8,.08);
+  }
+  .creatives-proof .av-mini-stack .am:first-child { margin-left: 0; }
+  .creatives-proof .cp-text {
+    font-size: 11.5px; color: var(--ink-2);
+    line-height: 1.2;
+  }
+  .creatives-proof .cp-text b { color: var(--ink); font-weight: 800; }
+  .creatives-proof .cp-text span { display: block; font-size: 9.5px; font-weight: 600; letter-spacing: .06em; color: var(--gray-2); text-transform: uppercase; margin-top: 1px; }
 
   /* Phone mockup – iPhone bezel */
   .phone-wrap {
@@ -690,6 +757,54 @@
     width: 100%;
     margin: 0;
   }
+  /* Floating iOS-style push notification beside the phone */
+  .phone-push {
+    position: absolute;
+    z-index: 4;
+    width: 200px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    border: 1px solid rgba(255,255,255,.6);
+    box-shadow: 0 14px 30px rgba(28,18,8,.18), 0 2px 6px rgba(28,18,8,.06);
+    display: none; align-items: flex-start; gap: 9px; /* hidden on mobile — shown ≥900px */
+    opacity: 0;
+    animation: phone-push-pop 1s cubic-bezier(.34,1.5,.64,1) 1.6s forwards,
+               phone-push-float 5.5s ease-in-out 2.6s infinite;
+    /* Default position — overridden per-instance */
+  }
+  @keyframes phone-push-pop {
+    0%   { opacity: 0; transform: translateY(18px) scale(.9) rotate(var(--pr, 0deg)); }
+    100% { opacity: 1; transform: translateY(0) scale(1) rotate(var(--pr, 0deg)); }
+  }
+  @keyframes phone-push-float {
+    0%, 100% { transform: translateY(0) rotate(var(--pr, 0deg)); }
+    50%      { transform: translateY(-5px) rotate(var(--pr, 0deg)); }
+  }
+  .phone-push .pp-icon {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: linear-gradient(135deg, #FF8B47, #FF6A1A);
+    color: #fff;
+    display: grid; place-items: center;
+    font-family: 'Instrument Serif', serif; font-style: italic; font-size: 14px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(255,106,26,.30);
+  }
+  .phone-push .pp-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .phone-push .pp-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; font-weight: 700; color: var(--ink);
+    letter-spacing: -.005em;
+  }
+  .phone-push .pp-head .pp-ago { color: var(--gray-2); font-weight: 500; font-size: 9px; }
+  .phone-push .pp-title { font-size: 12px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; line-height: 1.25; }
+  .phone-push .pp-meta { font-size: 10.5px; color: var(--gray); line-height: 1.3; }
+  .phone-push .pp-meta b { color: var(--orange); font-weight: 800; }
+
+  .phone-push.pp-1 { --pr: -4deg; top: -8%; left: -18%; }
+  .phone-push.pp-2 { --pr:  3deg; bottom: 8%; right: -22%; animation-delay: 2.0s, 3.0s; }
   .iphone {
     position: relative;
     width: 100%;
@@ -929,7 +1044,7 @@
     pointer-events: none;
     opacity: .5;
   }
-  .workflow .eyebrow { color: var(--orange); position: relative; }
+  .workflow .eyebrow { color: var(--orange); }
   .workflow h2 {
     margin: 8px 0 32px;
     font-size: 24px; font-weight: 700; line-height: 1.2;
@@ -1172,7 +1287,7 @@
     animation: pulse 1.6s ease-out infinite;
   }
 
-  /* Meet EXi label */
+  /* הכירו את EXi label */
   .meet-exi-tag {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 7px 14px; border-radius: 999px;
@@ -1182,7 +1297,7 @@
   }
   .meet-exi-tag .sp { color: var(--orange); }
 
-  /* ───────── Meet EXi ───────── */
+  /* ───────── הכירו את EXi ───────── */
   .meet {
     padding: 36px 20px 44px;
   }
@@ -2178,22 +2293,15 @@
   }
 
   /* ───────── FAQ ───────── */
-  .faq { padding: 40px 20px 48px; position: relative; overflow: hidden; }
-  .faq-eyebrow {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 6px 12px 6px 10px; border-radius: 999px;
-    background: var(--tag-bg); color: #fff;
-    font-size: 11px; font-weight: 600;
-    margin-bottom: 12px;
-  }
-  .faq-eyebrow .sp { color: var(--orange); font-weight: 800; }
+  .faq { padding: 40px 20px 48px; position: relative; overflow: hidden; text-align: center; }
   .faq h2 {
     font-size: 30px; font-weight: 700; letter-spacing: -0.02em;
     line-height: 1.12; margin: 0 0 8px;
   }
   .faq-sub {
     font-size: 13px; color: var(--gray); line-height: 1.55;
-    margin: 0 0 22px;
+    margin: 0 auto 22px;
+    max-width: 420px;
   }
 
   /* Chat panel */
@@ -2376,7 +2484,61 @@
     padding: 56px 20px 32px;
     text-align: center;
     overflow: hidden;
+    isolation: isolate;
   }
+  /* Soft warm panel + decorative glow */
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 24px 12px;
+    border-radius: 32px;
+    background:
+      radial-gradient(60% 80% at 50% 0%,   rgba(255,150,80,.20), rgba(255,150,80,0) 70%),
+      radial-gradient(70% 100% at 50% 100%, rgba(255,180,120,.12), rgba(255,180,120,0) 70%),
+      linear-gradient(180deg, rgba(255,243,232,.7) 0%, rgba(255,253,250,.55) 100%);
+    border: 1px solid rgba(255,180,120,.30);
+    box-shadow:
+      0 30px 60px -30px rgba(255,106,26,.18),
+      0 1px 0 rgba(255,255,255,.6) inset;
+    pointer-events: none;
+    z-index: -1;
+  }
+  /* Decorative orbit arc behind the heading */
+  .final-cta::after {
+    content: '';
+    position: absolute;
+    top: 60px; left: 50%;
+    width: 320px; height: 320px;
+    margin-left: -160px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(255,106,26,.22);
+    pointer-events: none;
+    z-index: -1;
+    animation: fc-arc-spin 60s linear infinite;
+  }
+  @keyframes fc-arc-spin { to { transform: rotate(360deg); } }
+
+  /* Floating "Exi" spark badge — small orange dot at top */
+  .fc-spark-badge {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #FF8B47, #FF6A1A);
+    color: #fff;
+    display: inline-grid; place-items: center;
+    margin: 0 auto 16px;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic; font-size: 20px;
+    box-shadow:
+      0 10px 28px rgba(255,106,26,.42),
+      0 0 0 6px rgba(255,106,26,.10);
+    animation: fc-spark-pulse 3s ease-in-out 1.5s infinite;
+    position: relative;
+  }
+  @keyframes fc-spark-pulse {
+    0%, 100% { box-shadow: 0 10px 28px rgba(255,106,26,.42), 0 0 0 6px rgba(255,106,26,.10); }
+    50%      { box-shadow: 0 14px 36px rgba(255,106,26,.55), 0 0 0 12px rgba(255,106,26,.05); }
+  }
+  .final-cta:not(.revealed) .fc-spark-badge { opacity: 0; transform: scale(.5); }
+  .final-cta .fc-spark-badge { transition: opacity .7s ease, transform .8s cubic-bezier(.34,1.5,.64,1); }
   .final-cta > * { position: relative; z-index: 2; }
 
   /* Eyebrow */
@@ -2838,6 +3000,8 @@
   .sr.s4 { transition-delay: .32s; }
   .sr.s5 { transition-delay: .40s; }
   .sr.s6 { transition-delay: .48s; }
+  .sr.sr-scale { transform: translateY(16px) scale(.97); }
+  .sr.sr-scale.in { transform: translateY(0) scale(1); }
 
   /* ── Nav scroll shadow ── */
   .nav.scrolled {
@@ -2861,7 +3025,8 @@
     transform-origin: left;
     transition: transform .25s cubic-bezier(.16,1,.3,1);
   }
-  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-links a:hover::after,
+  .nav-links a.active::after { transform: scaleX(1); }
 
   /* ── Hero badge ── */
   .hero-badge {
@@ -2923,10 +3088,7 @@
       text-transform: uppercase; color: var(--gray-2);
     }
   }
-  @keyframes cue-fade-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
+  @keyframes cue-fade-in { to { opacity: 1; } }
   @keyframes cue-bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(8px); }
@@ -2944,6 +3106,20 @@
     transition: left .6s ease;
   }
   .fc-cta-primary:hover::before, .nav-login:hover::before { left: 100%; }
+
+  /* ── Section divider accent ── */
+  .section-accent {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 10px;
+  }
+  .section-accent::before {
+    content: '';
+    width: 24px; height: 2px; border-radius: 99px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-2));
+    flex-shrink: 0;
+  }
 
   /* ── Premium stat cards ── */
   .stat-card {
@@ -3018,17 +3194,20 @@
   .stores .store { color: #fff; }
   .socials { border-top-color: rgba(255,255,255,.08) !important; }
 
-  @media (prefers-reduced-motion: reduce) {
-    .sr { transition: none !important; opacity: 1 !important; transform: none !important; }
-    .hero-badge, .hero-sub { animation: none !important; opacity: 1 !important; }
-  }
+  /* ── Counter numbers ── */
+  [data-count] { font-variant-numeric: tabular-nums; }
 
-  /* ── Mobile benefit cards (brand version) ── */
-  .mobile-benefits { display: none; }
+  /* ── Mobile benefit cards (replaces phone mockup) ── */
+  .mobile-benefits {
+    display: none; /* shown only on mobile via media query below */
+  }
   .mb-card {
     display: flex; align-items: flex-start; gap: 14px;
-    background: #fff; border: 1px solid var(--line); border-radius: 18px;
-    padding: 16px 18px; opacity: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px 18px;
+    opacity: 0;
     transform: translateY(20px) scale(.96);
     transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);
     box-shadow: 0 4px 14px rgba(28,18,8,.05);
@@ -3046,16 +3225,28 @@
   }
   .mb-icon svg { color: #fff; }
   .mb-body { flex: 1; min-width: 0; }
-  .mb-title { font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; line-height: 1.2; margin: 0 0 3px; }
+  .mb-title {
+    font-size: 14px; font-weight: 700; color: var(--ink);
+    letter-spacing: -.01em; line-height: 1.2; margin: 0 0 3px;
+  }
   .mb-desc { font-size: 12px; color: var(--gray); line-height: 1.45; margin: 0; }
-  .mb-tag { display: inline-block; margin-top: 5px; font-size: 11px; font-weight: 700; color: var(--orange); background: var(--orange-soft); padding: 2px 8px; border-radius: 99px; }
+  .mb-tag {
+    display: inline-block; margin-top: 5px;
+    font-size: 11px; font-weight: 700; color: var(--orange);
+    background: var(--orange-soft); padding: 2px 8px; border-radius: 99px;
+  }
 
   @media (max-width: 899px) {
     .mobile-benefits { display: grid; gap: 10px; margin-top: 4px; }
     .creatives .phone-wrap { display: none; }
-    .creatives .check-list { display: none; }
+    .creatives .check-list { display: none; } /* replaced by .mobile-benefits */
     .creatives { grid-template-columns: 1fr; padding: 24px 20px 36px; }
     .creatives .cta-row { margin-top: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sr { transition: none !important; opacity: 1 !important; transform: none !important; }
+    .hero-badge, .hero-sub { animation: none !important; opacity: 1 !important; }
   }
 
   /* ── Larger desktop scale ── */
@@ -3063,7 +3254,7 @@
     .hero h1 { font-size: 80px; letter-spacing: -0.036em; line-height: 1.04; }
     .hero h1 .it { font-size: 80px; }
     .hero-sub { font-size: 18px; max-width: 560px; }
-    .brands h2 { font-size: 48px; }
+    .creatives h2 { font-size: 48px; }
     .workflow h2 { font-size: 46px; }
     .meet h2 { font-size: 46px; }
     .stats h2 { font-size: 46px; }
@@ -3078,14 +3269,17 @@
      MOBILE — visual section separation + typography normalization
      ============================================ */
   @media (max-width: 899px) {
+    /* Alternating backgrounds so sections don't blend together */
     .stats     { background: var(--bg-soft); }
     .campaigns { background: var(--bg-soft); }
     .faq       { background: var(--bg-soft); }
+
+    /* Subtle top border on white sections that follow white sections */
     .meet, .community, .testi { border-top: 1px solid var(--line); }
 
     /* ── Uniform heading sizes across all sections ── */
-    .brands h2,
-    .workflow .workflow-title,
+    .creatives h2,
+    .workflow h2,
     .meet h2,
     .stats h2,
     .community h2,
@@ -3097,14 +3291,19 @@
       letter-spacing: -0.02em !important;
       line-height: 1.15 !important;
     }
-    .workflow .workflow-title .workflow-sub { font-size: 13px !important; }
+    .workflow h2 span { font-size: 13px !important; font-weight: 400 !important; color: var(--gray) !important; }
 
     /* ── Uniform description/sub text ── */
+    .creatives .check-list li { font-size: 14px; }
     .stats > p,
     .meet > p,
     .community > p,
     .campaigns > p,
     .faq-sub { font-size: 14px; color: var(--gray); }
+    .testi-meta { font-size: 13px; }
+
+    /* ── Hero full-screen (desktop overrides back to auto) ── */
+    /* already set in .hero base styles */
 
     /* ── Final CTA: hide stat cards on mobile, bigger heading ── */
     .fc-stats { display: none; }
@@ -3115,6 +3314,7 @@
      DESKTOP — ≥ 900px
      ============================================ */
   @media (min-width: 900px) {
+    .phone-push { display: flex; } /* restore on desktop */
     body { font-size: 16px; }
     .nav {
       grid-template-columns: 1fr auto 1fr;
@@ -3132,8 +3332,12 @@
     }
     .nav-menu { display: none; }
 
-    .hero { padding: 100px 60px 90px; min-height: 780px; display: flex; flex-direction: column; justify-content: center; }
+    .hero { padding: 100px 60px 90px; min-height: 780px; max-height: 920px; display: flex; flex-direction: column; justify-content: center; }
     .hero h1 { font-size: 80px; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .trust-row { gap: 16px; padding: 0; margin-top: 36px; }
+    .avatar-stack .av { width: 34px; height: 34px; }
+    .trust-num { font-size: 15px; }
+    .trust-sub { font-size: 12px; }
     .hero h1 .it { font-size: 80px; }
     .hero-search { max-width: 560px; padding: 8px 8px 8px 28px; }
     .hero-search input { font-size: 15px; padding: 12px 0; }
@@ -3146,7 +3350,7 @@
     .brand.vogue { font-size: 32px; }
     .brand-track { gap: 64px; }
 
-    /* For Creatives now centered + 2-column */
+    /* ליוצרים now centered + 2-column */
     .creatives {
       padding: 60px 60px 40px;
       max-width: 1100px; margin: 0 auto;
@@ -3218,10 +3422,15 @@
     .testi-author b { font-size: 14px; }
     .testi-author span { font-size: 12px; }
 
-    .faq { padding: 60px 60px 80px; max-width: 760px; margin: 0 auto; }
-    .faq h2 { font-size: 38px; }
-    .faq-sub { font-size: 14px; }
-    .faq-chat { padding: 20px 18px 16px; }
+    .faq {
+      padding: 80px 60px 90px;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .faq h2 { font-size: 42px; margin-bottom: 12px; }
+    .faq-sub { font-size: 15px; margin: 0 auto 32px; max-width: 540px; }
+    .faq-chat { padding: 20px 18px 16px; text-align: left; }
     .faq-thread { min-height: 280px; max-height: 440px; }
     .faq-msg .bubble { font-size: 14px; }
     .faq-chip { font-size: 13px; padding: 10px 14px; }
@@ -3277,6 +3486,99 @@
 .footer-socials a:hover{background:rgba(255,255,255,.12);color:#fff}
 @media(min-width:900px){.footer{padding:60px max(40px,calc(50% - 570px)) 40px}.footer-cols{grid-template-columns:repeat(4,1fr)}.footer-apps{max-width:340px}}
 
+/* ── Hebrew RTL overrides ── */
+[dir="rtl"] body { font-family: 'Heebo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+[dir="rtl"] .eyebrow { letter-spacing: 0; }
+[dir="rtl"] .h-display, [dir="rtl"] .h-section { letter-spacing: -0.01em; }
+[dir="rtl"] .drawer { left: auto; right: 0; transform: translateX(100%); }
+[dir="rtl"] .drawer.open { transform: translateX(0); }
+[dir="rtl"] .da-toggle { text-align: right; }
+[dir="rtl"] .footer-cols { direction: rtl; }
+[dir="rtl"] .footer-brand { direction: rtl; }
+[dir="rtl"] .footer-si-grid { direction: ltr; }
+[dir="rtl"] .footer-apps { direction: ltr; }
+[dir="rtl"] .store-btn { direction: ltr; }
+[dir="rtl"] .footer-bottom { direction: rtl; }
+[dir="rtl"] .footer-socials { direction: ltr; }
+[dir="rtl"] .kc { text-align: right; direction: rtl; }
+[dir="rtl"] .sleeps-item { text-align: right; direction: rtl; }
+[dir="rtl"] .ns-card { text-align: right; direction: rtl; }
+[dir="rtl"] .act-card { text-align: right; direction: rtl; }
+[dir="rtl"] .bento-cell { text-align: right; direction: rtl; }
+[dir="rtl"] .notif { direction: rtl; }
+[dir="rtl"] .notif-btns { direction: ltr; }
+[dir="rtl"] .dash-status { text-align: right; direction: rtl; }
+[dir="rtl"] .dc-label { text-align: right; }
+[dir="rtl"] .dash-frame { direction: rtl; }
+[dir="rtl"] .dash-grid { direction: rtl; }
+[dir="rtl"] .dc-trend { direction: ltr; }
+[dir="rtl"] .dc-bars { direction: ltr; }
+[dir="rtl"] .hm-stats { direction: rtl; }
+[dir="rtl"] .tc-main { direction: rtl; }
+[dir="rtl"] .tc-info { text-align: right; }
+[dir="rtl"] .cs-team { direction: rtl; }
+[dir="rtl"] .cc { direction: rtl; }
+[dir="rtl"] .cc-arr { margin-left: 0; margin-right: auto; transform: scaleX(-1); }
+[dir="rtl"] .cc:hover .cc-arr { transform: scaleX(-1) translateX(-4px); }
+[dir="rtl"] .ta-cta { direction: ltr; justify-content: flex-end; }
+[dir="rtl"] .cf-header { text-align: right; }
+[dir="rtl"] .topic-pills { direction: rtl; }
+[dir="rtl"] .cf-row { direction: rtl; }
+[dir="rtl"] .cf-field { text-align: right; }
+[dir="rtl"] .cf-field label { letter-spacing: 0; }
+[dir="rtl"] .cf-chars { right: auto; left: 16px; }
+[dir="rtl"] .cf-footer { direction: rtl; }
+[dir="rtl"] .cf-privacy { direction: rtl; }
+[dir="rtl"] .sb-head { direction: rtl; }
+[dir="rtl"] .sb-fill { background: linear-gradient(270deg,var(--orange),#FF8533); }
+[dir="rtl"] .score-bars-card { direction: rtl; }
+[dir="rtl"] .ta-inner { direction: rtl; }
+[dir="rtl"] .ta-card { text-align: right; direction: rtl; }
+[dir="rtl"] .knows-grid { direction: rtl; }
+[dir="rtl"] .cs-location { direction: rtl; }
+[dir="rtl"] .value-card { text-align: right; direction: rtl; }
+[dir="rtl"] .why-cards { direction: rtl; }
+[dir="rtl"] .why-card { text-align: right; direction: rtl; }
+[dir="rtl"] .section-origin, [dir="rtl"] .section-journey { text-align: right; direction: rtl; }
+[dir="rtl"] .manifesto-h { letter-spacing: -0.02em; }
+[dir="rtl"] .hero-stats { direction: rtl; }
+[dir="rtl"] .hs-chip { direction: rtl; }
+[dir="rtl"] .post-meta { direction: rtl; }
+[dir="rtl"] .pf-body, [dir="rtl"] .pc-body { text-align: right; direction: rtl; }
+[dir="rtl"] .blog-hero { text-align: center; }
+[dir="rtl"] .filter-tabs { direction: rtl; }
+[dir="rtl"] .cta-form { direction: rtl; }
+[dir="rtl"] .nb { direction: ltr; }
+[dir="rtl"] .ch-badges { direction: rtl; }
+[dir="rtl"] .cs-promise { direction: rtl; }
+[dir="rtl"] .cs-promise-badge { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .footer-copy { direction: rtl; }
+[dir="rtl"] .ac-body { text-align: right; }
+[dir="rtl"] .ac-actions { direction: ltr; }
+[dir="rtl"] .drawer-nav a { text-align: right; padding: 14px 24px; }
+[dir="rtl"] .da-sub-list a { padding: 12px 42px 12px 24px; }
+[dir="rtl"] .drawer-close { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .drawer-head { flex-direction: row-reverse; }
+[dir="rtl"] .bento { direction: rtl; }
+[dir="rtl"] .no-stop-sub, [dir="rtl"] .sleeps-sub, [dir="rtl"] .knows-sub, [dir="rtl"] .score-sub, [dir="rtl"] .acts-sub, [dir="rtl"] .control-sub { text-align: center; direction: rtl; }
+[dir="rtl"] .fc-cta-row { direction: rtl; }
+[dir="rtl"] .feature-card { text-align: right; direction: rtl; }
+[dir="rtl"] .step { text-align: right; direction: rtl; }
+[dir="rtl"] .stat-chip { direction: rtl; }
+[dir="rtl"] .social-proof { direction: rtl; }
+[dir="rtl"] .pf-body h2, [dir="rtl"] .pc-title { text-align: right; }
+[dir="rtl"] .nav-links { direction: rtl; }
+[dir="rtl"] .hero-text { text-align: right; direction: rtl; }
+[dir="rtl"] .hero-sub, [dir="rtl"] .ch-sub { text-align: right; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 { text-align: right; }
+[dir="rtl"] p { text-align: right; }
+[dir="rtl"] .hero h1, [dir="rtl"] .ch h1 { text-align: center; }
+[dir="rtl"] .hero-sub, [dir="rtl"] .ch-sub { text-align: center; }
+[dir="rtl"] .cta-sec h2, [dir="rtl"] .cta-sec p { text-align: center; }
+[dir="rtl"] .cta-eyebrow, [dir="rtl"] .eyebrow { text-align: center; }
+[dir="rtl"] .knows h2, [dir="rtl"] .sleeps h2, [dir="rtl"] .score-sec h2, [dir="rtl"] .acts h2, [dir="rtl"] .no-stop h2, [dir="rtl"] .one-agent h2, [dir="rtl"] .control h2 { text-align: right; }
+[dir="rtl"] .cf-success { direction: rtl; }
+
 /* Language switcher */
 .lang-switch {
   font-size: 12px; font-weight: 700; letter-spacing: .04em;
@@ -3288,50 +3590,72 @@
   display: inline-block; line-height: 1;
 }
 .lang-switch:hover { background: var(--orange); color: #fff; }
+[dir="rtl"] .lang-switch { margin-left: 0; margin-right: 4px; }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- Mobile drawer overlay + panel -->
+  <!-- Mobile drawer overlay -->
   <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
-  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site navigation">
+
+  <!-- Mobile drawer -->
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
     <div class="drawer-head">
-      <div class="nav-logo">
-        <svg class="spark" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+      <div class="drawer-logo">
+        <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
         EXPOSE
       </div>
-      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
-        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <button class="drawer-close" id="drawerClose" aria-label="סגור תפריט">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
     <nav class="drawer-nav">
-      <a href="site-brands.html" class="active">For Brands</a>
-      <a href="site.html">For Creatives</a>
+      <a href="site-brands-he.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+        למותגים
+      </a>
+      <a href="site-he.html" class="active">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+        ליוצרים
+      </a>
       <div class="drawer-divider"></div>
       <div class="da-wrap">
         <button class="da-toggle" id="exiToggle" aria-expanded="false">
-          Meet EXi
+          <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></span>
+          הכירו את EXi
           <svg class="da-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="da-sub-list" id="exiSubList">
-          <a href="site-exi.html">For Creatives</a>
-          <a href="site-exi-brands.html">For Brands</a>
+          <a href="site-exi-he.html">ליוצרים</a>
+          <a href="site-exi-brands-he.html">למותגים</a>
         </div>
       </div>
-      <a href="#pricing">Pricing</a>
-      <a href="site-about.html">About Us</a>
-      <a href="site-blog.html">Blog</a>
-      <a href="site-contact.html">Contact</a>
+      <a href="#pricing">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        תמחור
+      </a>
+      <a href="site-about-he.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        אודותינו
+      </a>
+      <a href="site-blog-he.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        בלוג
+      </a>
+      <a href="site-contact-he.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+        צרו קשר
+      </a>
     </nav>
     <div class="drawer-foot">
-      <a href="#" onclick="goToApp(event)" class="btn-orange">Join EXPOSE — It's Free</a>
+      <a href="#" onclick="goToApp(event)" class="btn-orange">הצטרפו ל-EXPOSE — חינם</a>
     </div>
   </aside>
 
   <!-- NAV -->
   <nav class="nav">
-    <button class="nav-menu" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
+    <button class="nav-menu" id="navMenuBtn" aria-label="פתח תפריט" aria-expanded="false">
       <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
     <div class="nav-logo">
@@ -3339,12 +3663,12 @@
       EXPOSE
     </div>
     <div class="nav-links">
-      <a href="site-brands.html" class="active">For Brands</a>
-      <a href="site.html">For Creatives</a>
-      <a href="site-exi-brands.html">Meet EXi</a>
-      <a href="site-about.html">About Us</a>
+      <a href="site-brands-he.html">למותגים</a>
+      <a href="site-he.html" class="active">ליוצרים</a>
+      <a href="site-exi-he.html">הכירו את EXi</a>
+      <a href="site-about-he.html">אודותינו</a>
     </div>
-    <a class="nav-login" href="#" onclick="goToApp(event)">Join</a>
+    <a class="nav-login" href="#" onclick="goToApp(event)">הצטרפו</a>
   </nav>
 
   <!-- HERO -->
@@ -3360,18 +3684,18 @@
 
       <!-- live activity cards -->
       <div class="hero-card hero-card-1">
-        <div class="hc-head"><span class="live-dot"></span> Campaign live</div>
-        <div class="hc-title">Nike — Summer Drop '25</div>
-        <div class="hc-meta"><b>14 creatives</b> · 3 cities · Active</div>
+        <div class="hc-head"><span class="live-dot"></span> New brief match</div>
+        <div class="hc-title">Editorial — Vogue Italia</div>
+        <div class="hc-meta"><b>$4,200</b> · 3 weeks · Milan</div>
       </div>
       <div class="hero-card hero-card-2">
-        <div class="hc-head"><span class="hc-payicon">↑</span> ROI this week</div>
-        <div class="hc-title">+340% engagement</div>
-        <div class="hc-meta">vs last campaign · EXi-optimised</div>
+        <div class="hc-head"><span class="hc-payicon">$</span> Payment landed</div>
+        <div class="hc-title">+$8,500 from Nike</div>
+        <div class="hc-meta">2 min ago · Cleared</div>
       </div>
       <div class="hero-card hero-card-3">
         <div class="hc-head"><span class="live-dot"></span> EXi at work</div>
-        <div class="hc-title">8 briefs matched today</div>
+        <div class="hc-title">12 pitches sent today</div>
         <div class="hc-bars">
           <span class="br"></span>
           <span class="br"></span>
@@ -3382,8 +3706,8 @@
       </div>
       <div class="hero-card hero-card-4">
         <div class="hc-head"><span class="live-dot"></span> Booked</div>
-        <div class="hc-title">Asanaké — SS25 Campaign</div>
-        <div class="hc-meta"><b>$22,000</b> · 6 weeks · Paris</div>
+        <div class="hc-title">Asanaké — SS25 Lookbook</div>
+        <div class="hc-meta"><b>$18,200</b> · 5 weeks · Lisbon</div>
       </div>
 
       <!-- avatar bubbles -->
@@ -3399,16 +3723,15 @@
 
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      EXi is live · AI-powered talent matching for brands
+      EXi is live · AI-powered creative matching
     </div>
 
     <h1>
-      Stop Guessing Your Marketing.
+      Stop Chasing After Clients.
       <span class="it italic-accent">Let EXi Run It.</span>
     </h1>
 
-    <p class="hero-sub">The AI platform that finds, books, and manages top creative talent for your brand — so you scale faster with less effort.</p>
-
+    <p class="hero-sub">The AI platform connecting the world's best creatives with the brands that need them — no hustle required.</p>
     <div class="hero-search" style="width: 450px">
       <input placeholder="How to improve my Instagram?" />
       <button aria-label="Search">
@@ -3460,7 +3783,7 @@
         <div class="av av-more">+2k</div>
       </div>
       <div class="trust-meta">
-        <div class="trust-num"><span class="live-dot"></span><b>2,400+</b> brands shipping weekly</div>
+        <div class="trust-num"><span class="live-dot"></span><b>2,439+</b> verified creatives</div>
         <div class="trust-sub"><span class="stars">★★★★★</span> 4.9 <span class="dot">·</span> trusted in 14 cities</div>
       </div>
     </div>
@@ -3475,69 +3798,79 @@
   </header>
 
   <!-- TABS -->
-  <section class="trusted tabs-row">
+  <section class="trusted" style="padding: 0 20px 16px">
     <div class="tabs" role="tablist">
-      <a href="site-brands.html" class="active">For Brands</a>
-      <a href="site.html">For Creatives</a>
+      <a href="site-brands-he.html">למותגים</a>
+      <a href="site-he.html" class="active">ליוצרים</a>
     </div>
   </section>
 
-  <!-- FOR BRANDS -->
+  <!-- FOR CREATIVES -->
   <section class="creatives">
     <div class="copy">
-      <div class="eyebrow sr">Full marketing visibility.</div>
-      <h2 class="sr s1">Finally understand your marketing. <span class="muted" style="color: var(--orange);">And make it work.</span></h2>
+      <div class="eyebrow sr">Your career, supercharged.</div>
+      <h2 class="sr s1">Work offers come to you. <span class="muted" style="color: var(--orange);">Not the other way around.</span></h2>
       <ul class="check-list">
         <li>
           <span class="ck">✓</span>
           <div class="cl-body">
-            <span class="cl-title">Live data, every metric</span>
-            <span class="cl-sub">Impressions, engagement, conversions and ROI — all updated in real time.</span>
+            <span class="cl-title">Work comes to you</span>
+            <span class="cl-sub">EXi matches your style and sends your profile directly to the right brands — no cold pitching.</span>
           </div>
         </li>
         <li>
           <span class="ck">✓</span>
           <div class="cl-body">
-            <span class="cl-title">Understand what's working</span>
-            <span class="cl-sub">EXi reads your numbers and tells you exactly what's driving results — and what isn't.</span>
+            <span class="cl-title">EXi is your personal agent</span>
+            <span class="cl-sub">Know exactly what to post, how to improve your profile, and what gets you seen by more brands.</span>
           </div>
         </li>
         <li>
           <span class="ck">✓</span>
           <div class="cl-body">
-            <span class="cl-title">Your full marketing stack</span>
-            <span class="cl-sub">Briefs, creators, content and strategy — all in one place, managed by EXi.</span>
+            <span class="cl-title">Manage your career in one place</span>
+            <span class="cl-sub">Briefs, portfolio, bookings and progress — all tracked in one clean dashboard.</span>
           </div>
         </li>
         <li>
           <span class="ck">✓</span>
           <div class="cl-body">
-            <span class="cl-title">Always-on optimization</span>
-            <span class="cl-sub">EXi monitors and improves your campaigns continuously — no manual work needed.</span>
+            <span class="cl-title">Stop juggling platforms</span>
+            <span class="cl-sub">No more switching between 10 apps. Everything work-related happens right here.</span>
           </div>
         </li>
       </ul>
 
-      <!-- Mobile-only animated benefit cards -->
+      <!-- Mobile-only animated benefit cards (phone mockup hidden on mobile) -->
       <div class="mobile-benefits" aria-hidden="true">
         <div class="mb-card">
           <div class="mb-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div class="mb-body">
-            <p class="mb-title">See everything live</p>
-            <p class="mb-desc">Every impression, click, and conversion tracked in real time — across every campaign.</p>
-            <span class="mb-tag">Live dashboard</span>
+            <p class="mb-title">Work finds you</p>
+            <p class="mb-desc">EXi constantly matches your profile to new briefs — get discovered without lifting a finger.</p>
+            <span class="mb-tag">Avg. 3 matches/week</span>
           </div>
         </div>
         <div class="mb-card">
           <div class="mb-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3l2 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
           </div>
           <div class="mb-body">
-            <p class="mb-title">Know what's working</p>
-            <p class="mb-desc">EXi reads your data and shows you exactly where to focus to grow faster.</p>
-            <span class="mb-tag">AI insights</span>
+            <p class="mb-title">EXi is your agent</p>
+            <p class="mb-desc">Personalized tips on what to post, how to improve, and what gets you more exposure.</p>
+            <span class="mb-tag">Personal AI agent</span>
+          </div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="mb-body">
+            <p class="mb-title">Your career, organized</p>
+            <p class="mb-desc">Briefs, bookings, portfolio and career progress — all in one clean dashboard, nothing scattered.</p>
+            <span class="mb-tag">Zero juggling</span>
           </div>
         </div>
         <div class="mb-card">
@@ -3545,26 +3878,16 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           </div>
           <div class="mb-body">
-            <p class="mb-title">One place, everything</p>
-            <p class="mb-desc">Briefs, creators, content and strategy — all managed by EXi in a single workspace.</p>
-            <span class="mb-tag">Zero app-switching</span>
-          </div>
-        </div>
-        <div class="mb-card">
-          <div class="mb-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="mb-body">
-            <p class="mb-title">Never misses a beat</p>
-            <p class="mb-desc">EXi monitors your campaigns 24/7 and optimizes in real time — while you focus on the big picture.</p>
-            <span class="mb-tag">24/7 AI agent</span>
+            <p class="mb-title">One platform, everything</p>
+            <p class="mb-desc">No more 10 tabs open. Every part of your work life — contracts, briefs, calendar — lives here.</p>
+            <span class="mb-tag">All-in-one</span>
           </div>
         </div>
       </div>
 
       <div class="cta-row">
         <a class="btn btn-dark" href="#" onclick="goToApp(event)">Find Talent</a>
-        <a class="btn btn-orange" href="site-contact.html">Book Demo</a>
+        <a class="btn btn-orange" href="site-contact-he.html">קבעו דמו</a>
       </div>
     </div>
     <div class="phone-wrap">
@@ -3572,17 +3895,17 @@
       <div class="phone-push pp-1" aria-hidden="true">
         <div class="pp-icon">E</div>
         <div class="pp-body">
-          <div class="pp-head">EXi · campaign update <span class="pp-ago">now</span></div>
-          <div class="pp-title">Spring Editorial — 2.4M impressions</div>
-          <div class="pp-meta"><b>+34% ROI</b> · 5 days remaining</div>
+          <div class="pp-head">EXi · brief match <span class="pp-ago">now</span></div>
+          <div class="pp-title">Vogue Italia — Editorial</div>
+          <div class="pp-meta"><b>$4,200</b> · 3 weeks · Milan</div>
         </div>
       </div>
       <div class="phone-push pp-2" aria-hidden="true">
-        <div class="pp-icon">✓</div>
+        <div class="pp-icon">$</div>
         <div class="pp-body">
-          <div class="pp-head">Creator booked <span class="pp-ago">2m</span></div>
-          <div class="pp-title">Sofia Rossi confirmed</div>
-          <div class="pp-meta">Content goes live in 48h</div>
+          <div class="pp-head">Payment landed <span class="pp-ago">2m</span></div>
+          <div class="pp-title">+ $8,500 from Nike</div>
+          <div class="pp-meta">Cleared to your account</div>
         </div>
       </div>
 
@@ -3597,33 +3920,33 @@
           <div class="iphone-island"></div>
           <div class="ms-header">
             <div class="ms-back">‹</div>
-            <div class="ms-title">Campaigns</div>
-            <div class="ms-badge" style="background:#1FBF6B;color:#fff">Live</div>
+            <div class="ms-title">New Briefs</div>
+            <div class="ms-badge">3</div>
           </div>
-          <div class="ms-live"><span class="ms-dot"></span>3 active campaigns · All on track</div>
+          <div class="ms-live"><span class="ms-dot"></span>3 brands matched you today</div>
           <div class="ms-cards">
             <div class="ms-card featured">
               <div class="ms-logo vogue"><span>V</span></div>
               <div class="ms-card-body">
-                <div class="ms-card-h"><b>Spring Editorial</b><span class="ms-tag new" style="background:#e6f9f0;color:#1FBF6B">Live</span></div>
-                <div class="ms-card-sub">2.4M reach · Sofia Rossi</div>
-                <div class="ms-card-meta"><span class="ms-price" style="color:#1FBF6B">+34% ROI</span><span class="ms-time">5d left</span></div>
+                <div class="ms-card-h"><b>Vogue Italia</b><span class="ms-tag new">NEW</span></div>
+                <div class="ms-card-sub">Editorial campaign</div>
+                <div class="ms-card-meta"><span class="ms-price">$4,200</span><span class="ms-time">5 days</span></div>
               </div>
             </div>
             <div class="ms-card">
               <div class="ms-logo nike"><span>N</span></div>
               <div class="ms-card-body">
-                <div class="ms-card-h"><b>Run Club SS25</b></div>
-                <div class="ms-card-sub">Photography · Marcus Chen</div>
-                <div class="ms-card-meta"><span class="ms-price" style="color:#1FBF6B">+41% ROI</span><span class="ms-time">2d left</span></div>
+                <div class="ms-card-h"><b>Nike Run Club</b></div>
+                <div class="ms-card-sub">Photography · SS25</div>
+                <div class="ms-card-meta"><span class="ms-price">$2,800</span><span class="ms-time">2 days</span></div>
               </div>
             </div>
             <div class="ms-card">
               <div class="ms-logo adidas"><span>A</span></div>
               <div class="ms-card-body">
-                <div class="ms-card-h"><b>Summer Campaign</b></div>
-                <div class="ms-card-sub">Brief sent · 3 creators matched</div>
-                <div class="ms-card-meta"><span class="ms-price">$8,500</span><span class="ms-time">Pending</span></div>
+                <div class="ms-card-h"><b>Adidas Originals</b></div>
+                <div class="ms-card-sub">Editorial set</div>
+                <div class="ms-card-meta"><span class="ms-price">$3,500</span><span class="ms-time">1 week</span></div>
               </div>
             </div>
           </div>
@@ -3636,7 +3959,7 @@
   <!-- WORKFLOW -->
   <section class="workflow">
     <div class="eyebrow sr">Workflow</div>
-    <h2 class="workflow-title sr s1">Complete marketing ecosystem<br><span class="workflow-sub">EXPOSE streamlines every step of the modern marketing workflow.</span></h2>
+    <h2 class="sr s1" style="font-size: 35px; font-weight: 500">Complete career ecosystem<br><span style="color: rgb(145, 145, 145); font-weight: 400; font-size: 16px">expose gives you everything you need to grow, get booked, and get paid.</span></h2>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
@@ -3656,8 +3979,8 @@
             <span class="vp-tag">Skills</span>
           </div>
         </div>
-        <h3>Plan Your Strategy</h3>
-        <p style="font-size: 16px">EXi analyzes your brand, audience, and competitors — then builds a clear marketing plan tailored to you.</p>
+        <h3>Build Your Profile</h3>
+        <p style="font-size: 16px">EXPOSE maps your portfolio, identifies what's missing, and tells you exactly what to add to attract the brands you want.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
@@ -3670,8 +3993,8 @@
           <div class="match-brand b2">N</div>
           <div class="match-brand b3">A</div>
         </div>
-        <h3>Find Your Team</h3>
-        <p style="font-size: 16px">EXi matches you with the right creative pros for your project — based on your style, budget, location, and timeline.</p>
+        <h3>Get Discovered</h3>
+        <p style="font-size: 16px">EXPOSE matches your profile and style with brands actively looking for someone like you — and submits your profile automatically.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
@@ -3695,8 +4018,8 @@
             <span class="dot"></span>
           </div>
         </div>
-        <h3>Scale Your Marketing</h3>
-        <p style="font-size: 16px">EXi tracks your activity, monitors campaign performance, and makes sure nothing gets missed.</p>
+        <h3>צמחו בקריירה</h3>
+        <p style="font-size: 16px">EXPOSE tracks your bookings, monitors your social-media visibility, and tells you exactly what to do to get more work and earn more.</p>
       </div>
     </div>
   </section>
@@ -3706,37 +4029,37 @@
     <div class="copy">
       <div class="meet-exi-tag" style="width: 100px">
         <svg class="sp" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-        Meet EXi
+        הכירו את EXi
       </div>
-      <h2 class="sr">Your AI marketing agent.<br>That never sleeps.</h2>
-      <p class="sr s1">EXi monitors your channels, tracks competition, detects gaps, builds campaigns, matches your team — and reports back, all in real time.</p>
+      <h2 class="sr">Your personal agent.<br>Always working for you.</h2>
+      <p class="sr s1">EXi watches your visibility, lines the right projects, submits your work, and tells you exactly what to do to grow. You never figure it out alone.</p>
 
       <div class="feature">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
         <div>
-          <h4>Instant Marketing Diagnosis</h4>
-          <p>EXi scans your performance and tells you exactly what's pulling your ROI down.</p>
+          <h4>Your Agent, Not Just an App</h4>
+          <p>EXi negotiates briefing, secures briefings, and works for you 24/7.</p>
         </div>
       </div>
       <div class="feature">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg></div>
         <div>
-          <h4>Auto-Optimization</h4>
-          <p>Real-time tweaks, live ROI tracking, and content that performs better with every campaign.</p>
+          <h4>Visible Beyond EXPOSE</h4>
+          <p>EXi notices you socially — and tells you exactly what to post.</p>
         </div>
       </div>
       <div class="feature">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <div>
-          <h4>24/7 Management</h4>
-          <p>The right crew, briefed and ready to launch every campaign on time, on brand.</p>
+          <h4>Know Exactly What You're Worth</h4>
+          <p>EXi tells you what to charge — so you stop earning money on the table.</p>
         </div>
       </div>
       <div class="feature">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.51 5.79 21l2.39-7.15L2 9.36h7.61z"/></svg></div>
         <div>
-          <h4>Pixel-Level Attribution</h4>
-          <p>EXi tracks every post back to revenue — so you know exactly which creator drove which dollar.</p>
+          <h4>Briefs Matched to Your Style</h4>
+          <p>EXi reads your portfolio and only surfaces briefs that genuinely fit you — no noise.</p>
         </div>
       </div>
     </div>
@@ -3771,20 +4094,20 @@
   <!-- STATS -->
   <section class="stats">
     <h2 class="sr">Why EXPOSE?</h2>
-    <p class="sr s1">Brands that use EXPOSE ship faster, spend smarter, and scale bigger.</p>
+    <p class="sr s1">Real numbers. Real results.</p>
     <div class="stat-grid">
-      <!-- Card 1: Brands -->
+      <!-- Card 1: Community -->
       <div class="stat-card dark">
-        <div class="stat-num">380<span class="plus">+</span></div>
-        <div class="stat-label">Brands trust EXPOSE</div>
+        <div class="stat-num">2.4K<span class="plus">+</span></div>
+        <div class="stat-label">Verified creatives</div>
         <div class="stat-avs">
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&auto=format')"></div>
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&auto=format')"></div>
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&auto=format')"></div>
           <div class="sa" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=60&h=60&fit=crop&auto=format')"></div>
-          <div class="sa sa-more">+350</div>
+          <div class="sa sa-more">+2K</div>
         </div>
-        <span class="city-pin">Shipping campaigns weekly</span>
+        <span class="city-pin">Across 14 cities</span>
       </div>
 
       <!-- Card 2: Speed -->
@@ -3803,17 +4126,17 @@
             </div>
           </div>
         </div>
-        <div class="stat-label">Brief to first creator booked</div>
+        <div class="stat-label">Median time to first booking</div>
       </div>
 
-      <!-- Card 3: ROI -->
+      <!-- Card 3: Income lift -->
       <div class="stat-card cream">
         <span class="trend-tag">
           <svg width="9" height="9" viewBox="0 0 12 12" fill="currentColor"><path d="M2 9l4-5 4 5z"/></svg>
-          vs agencies
+          Trending
         </span>
-        <div class="stat-num orange-text" style="margin-top:8px">3.2x</div>
-        <div class="stat-label">Avg. ROI vs traditional agency</div>
+        <div class="stat-num orange-text" style="margin-top:8px">+60%</div>
+        <div class="stat-label">Avg. monthly income lift</div>
         <div class="bars">
           <span class="bar" style="height:22%"></span>
           <span class="bar" style="height:36%"></span>
@@ -3839,15 +4162,15 @@
           </svg>
         </div>
         <div class="stat-num orange-text">24/7</div>
-        <div class="stat-label">EXi monitors your campaigns</div>
+        <div class="stat-label">EXPOSE never stops working</div>
       </div>
     </div>
   </section>
 
   <!-- COMMUNITY -->
   <section class="community">
-    <h2 class="sr">Every creative you'll need.</h2>
-    <p class="sr s1">Browse 2,400+ vetted creatives — ready to ship your next campaign.</p>
+    <h2 class="sr">הצטרפו לקהילה</h2>
+    <p class="sr s1">of getting booked, paid, and growing together.</p>
     <div class="filter-tabs">
       <button class="active"><span class="emo">✨</span>All</button>
       <button data-c="rose"><span class="emo">📷</span>Photography</button>
@@ -3906,13 +4229,13 @@
         </div>
       </div>
     </div>
-    <a class="browse-all" href="#" onclick="goToApp(event)">Browse all 2,400+ creatives →</a>
+    <a class="browse-all" href="#" onclick="goToApp(event)">עיינו בכל המקצוענים →</a>
   </section>
 
   <!-- CAMPAIGNS -->
   <section class="campaigns">
     <h2 class="sr">Real campaigns. Real results.</h2>
-    <p class="sr s1">See what brands have already shipped on EXPOSE this season.</p>
+    <p class="sr s1">Real projects, real brands, real pay — booked on EXPOSE this season.</p>
     <div class="case-grid">
 
       <div class="case">
@@ -4068,6 +4391,13 @@
       </div>
 
     </div>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <a class="btn btn-ghost" href="#" onclick="goToApp(event)" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; font-size: 14px; font-weight: 600; border-radius: 999px; border: 1.5px solid var(--line); cursor: pointer;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg>
+        Browse all campaigns
+      </a>
+    </div>
   </section>
 
   <!-- TESTIMONIALS -->
@@ -4081,108 +4411,109 @@
       <span class="testi-bubble b6"></span>
       <span class="testi-bubble b7"></span>
     </div>
-    <h2 class="sr">Loved by brands.</h2>
-    <p class="testi-meta sr s1">2,400+ brands · 4.9★ average · 14 markets</p>
+    <h2 class="sr">Loved by creatives.</h2>
+    <p class="testi-meta sr s1">2,439+ professionals · 4.9★ average · 14 cities</p>
 
     <!-- Row 1 — scroll left -->
     <div class="testi-marquee">
       <div class="testi-track" data-row="1">
+        <!-- repeat once for seamless loop -->
         <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">CMO</span></div>
-          <p class="testi-quote">"We shipped a launch in 6 days that used to take 6 weeks. EXi found the right creators on the first try."</p>
+          <div class="stars">★★★★★<span class="role-tag">Photographer</span></div>
+          <p class="testi-quote">"EXi turned an underperforming brief into 405 leads in 71 days. I didn't even know I'd be earning this much from creative work."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Maya Chen</b><span>CMO · Lumen Skincare</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Ines Levi</b><span>Photographer · Tel Aviv</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★<span class="role-tag">Stylist</span></div>
+          <p class="testi-quote">"My first month I booked two editorials and a campaign. EXi pitched me to brands I would've been too shy to email."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Noa Levi</b><span>Stylist · Tel Aviv</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★<span class="role-tag">Director</span></div>
+          <p class="testi-quote">"I used to spend hours filling forms trying to reach brands. EXPOSE did it for me in 4 weeks. I now know I can compete."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Sussan Anangat</b><span>Creative Director · Berlin</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★<span class="role-tag">Designer</span></div>
+          <p class="testi-quote">"It's like having an agent that never sleeps. Three branded gigs in my first 6 weeks — and EXi raised my rates."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Kai Tanaka</b><span>Brand Designer · Osaka</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★<span class="role-tag">Motion</span></div>
+          <p class="testi-quote">"The brief matching is uncanny — every project feels like it was made for me. Pay lands on time, every time."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Jonas Weber</b><span>Motion Designer · Berlin</span></div>
           </div>
         </div>
         <div class="testi-card">
           <div class="stars">★★★★★<span class="role-tag">Founder</span></div>
-          <p class="testi-quote">"Our first influencer campaign generated 4.2× ROI. EXPOSE took the guesswork out of marketing — for good."</p>
+          <p class="testi-quote">"EXi told us exactly what to post, when, and why. Engagement doubled by week three. It's a marketing director that never stops."</p>
           <div class="testi-author">
             <div class="av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>David Kim</b><span>Founder · Northwind</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Brand Mgr</span></div>
-          <p class="testi-quote">"12 perfect matches in 10 minutes. I used to spend three weeks on outreach for the same result."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Sarah Park</b><span>Brand Manager · Rivet Supply</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Growth</span></div>
-          <p class="testi-quote">"Pixel-level attribution means I can prove influencer spend works. CFO finally signed off on scaling."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Marcus Reed</b><span>Growth Lead · Moray Beauty</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">CMO</span></div>
-          <p class="testi-quote">"EXi flagged a creator running engagement fraud before we paid them. That alone paid for the platform."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Lena Voss</b><span>CMO · Asanaké</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Mkt Director</span></div>
-          <p class="testi-quote">"Our quarterly campaign launches are now monthly. Same team, 4× output, half the back-and-forth."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>James O'Connor</b><span>Marketing Director · Sonas</span></div>
+            <div><b>Ryan Mendel</b><span>Founder · Form Studio</span></div>
           </div>
         </div>
 
         <!-- duplicate set -->
         <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">CMO</span></div>
-          <p class="testi-quote">"We shipped a launch in 6 days that used to take 6 weeks. EXi found the right creators on the first try."</p>
+          <div class="stars">★★★★★<span class="role-tag">Photographer</span></div>
+          <p class="testi-quote">"EXi turned an underperforming brief into 405 leads in 71 days. I didn't even know I'd be earning this much from creative work."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Maya Chen</b><span>CMO · Lumen Skincare</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Ines Levi</b><span>Photographer · Tel Aviv</span></div>
+          </div>
+        </div>
+        <div class="testi-card" aria-hidden="true">
+          <div class="stars">★★★★★<span class="role-tag">Stylist</span></div>
+          <p class="testi-quote">"My first month I booked two editorials and a campaign. EXi pitched me to brands I would've been too shy to email."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Noa Levi</b><span>Stylist · Tel Aviv</span></div>
+          </div>
+        </div>
+        <div class="testi-card" aria-hidden="true">
+          <div class="stars">★★★★★<span class="role-tag">Director</span></div>
+          <p class="testi-quote">"I used to spend hours filling forms trying to reach brands. EXPOSE did it for me in 4 weeks. I now know I can compete."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Sussan Anangat</b><span>Creative Director · Berlin</span></div>
+          </div>
+        </div>
+        <div class="testi-card" aria-hidden="true">
+          <div class="stars">★★★★★<span class="role-tag">Designer</span></div>
+          <p class="testi-quote">"It's like having an agent that never sleeps. Three branded gigs in my first 6 weeks — and EXi raised my rates."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Kai Tanaka</b><span>Brand Designer · Osaka</span></div>
+          </div>
+        </div>
+        <div class="testi-card" aria-hidden="true">
+          <div class="stars">★★★★★<span class="role-tag">Motion</span></div>
+          <p class="testi-quote">"The brief matching is uncanny — every project feels like it was made for me. Pay lands on time, every time."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Jonas Weber</b><span>Motion Designer · Berlin</span></div>
           </div>
         </div>
         <div class="testi-card" aria-hidden="true">
           <div class="stars">★★★★★<span class="role-tag">Founder</span></div>
-          <p class="testi-quote">"Our first influencer campaign generated 4.2× ROI. EXPOSE took the guesswork out of marketing — for good."</p>
+          <p class="testi-quote">"EXi told us exactly what to post, when, and why. Engagement doubled by week three. It's a marketing director that never stops."</p>
           <div class="testi-author">
             <div class="av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>David Kim</b><span>Founder · Northwind</span></div>
-          </div>
-        </div>
-        <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Brand Mgr</span></div>
-          <p class="testi-quote">"12 perfect matches in 10 minutes. I used to spend three weeks on outreach for the same result."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Sarah Park</b><span>Brand Manager · Rivet Supply</span></div>
-          </div>
-        </div>
-        <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Growth</span></div>
-          <p class="testi-quote">"Pixel-level attribution means I can prove influencer spend works. CFO finally signed off on scaling."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Marcus Reed</b><span>Growth Lead · Moray Beauty</span></div>
-          </div>
-        </div>
-        <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">CMO</span></div>
-          <p class="testi-quote">"EXi flagged a creator running engagement fraud before we paid them. That alone paid for the platform."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Lena Voss</b><span>CMO · Asanaké</span></div>
-          </div>
-        </div>
-        <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Mkt Director</span></div>
-          <p class="testi-quote">"Our quarterly campaign launches are now monthly. Same team, 4× output, half the back-and-forth."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>James O'Connor</b><span>Marketing Director · Sonas</span></div>
+            <div><b>Ryan Mendel</b><span>Founder · Form Studio</span></div>
           </div>
         </div>
       </div>
@@ -4192,101 +4523,101 @@
     <div class="testi-marquee">
       <div class="testi-track reverse" data-row="2">
         <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Head of Brand</span></div>
-          <p class="testi-quote">"From scattered Notion docs and Instagram DMs to one dashboard. We never go back."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Priya Sharma</b><span>Head of Brand · Mira Studio</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Founder</span></div>
-          <p class="testi-quote">"Sold through our summer drop in 9 days. EXPOSE made us look like we'd been doing this for years."</p>
+          <div class="stars">★★★★★<span class="role-tag">Cinematographer</span></div>
+          <p class="testi-quote">"I went from one shoot a month to four. EXi knows my style better than half my agents did."</p>
           <div class="testi-author">
             <div class="av" style="background-image:url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Tomás Marín</b><span>Founder · Rivet Supply</span></div>
+            <div><b>Diego Marín</b><span>Cinematographer · Madrid</span></div>
           </div>
         </div>
         <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Performance</span></div>
-          <p class="testi-quote">"ROI doubled in the first quarter. Briefing went from 2 hours to 2 minutes."</p>
+          <div class="stars">★★★★★<span class="role-tag">Illustrator</span></div>
+          <p class="testi-quote">"Two cover commissions in my second month. The whole pitching nightmare just… disappeared."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Ava Müller</b><span>Performance Lead · Nordica</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Lina Park</b><span>Illustrator · Seoul</span></div>
           </div>
         </div>
         <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Strategist</span></div>
-          <p class="testi-quote">"The match quality is uncanny. Every creator EXi sent us was on-brand, on-budget, and ready to ship."</p>
+          <div class="stars">★★★★★<span class="role-tag">Copywriter</span></div>
+          <p class="testi-quote">"Briefs that actually match my voice. I closed a brand campaign two days after joining — I wasn't ready."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Daniel Roth</b><span>Brand Strategist · Vogue IT</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Ava Morgan</b><span>Copywriter · NYC</span></div>
           </div>
         </div>
         <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">CEO</span></div>
-          <p class="testi-quote">"I used to lose sleep over influencer ROI. Now I sleep — and the campaigns run themselves."</p>
+          <div class="stars">★★★★★<span class="role-tag">3D Artist</span></div>
+          <p class="testi-quote">"The escrow is what sold me. No more chasing invoices for 90 days. Money lands, work flows."</p>
           <div class="testi-author">
             <div class="av" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Olivia Pereira</b><span>CEO · Form Studio</span></div>
+            <div><b>Yuki Aoki</b><span>3D Artist · Tokyo</span></div>
           </div>
         </div>
         <div class="testi-card">
-          <div class="stars">★★★★★<span class="role-tag">Content Lead</span></div>
-          <p class="testi-quote">"We launched in 4 markets simultaneously. EXi handled the local creator pools — we just approved."</p>
+          <div class="stars">★★★★★<span class="role-tag">UI/UX</span></div>
+          <p class="testi-quote">"EXi rewrote my portfolio intro overnight. My acceptance rate jumped from 12% to 38%."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Nikolai Aslan</b><span>Content Lead · Asanaké</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Omar Khaled</b><span>UI / UX · Cairo</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★<span class="role-tag">Model</span></div>
+          <p class="testi-quote">"I stopped agency hopping. Two Vogue Italia features in one season — straight through the app."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Sarah Chen</b><span>Model · Tel Aviv</span></div>
           </div>
         </div>
 
         <!-- duplicate set -->
         <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Head of Brand</span></div>
-          <p class="testi-quote">"From scattered Notion docs and Instagram DMs to one dashboard. We never go back."</p>
-          <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Priya Sharma</b><span>Head of Brand · Mira Studio</span></div>
-          </div>
-        </div>
-        <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Founder</span></div>
-          <p class="testi-quote">"Sold through our summer drop in 9 days. EXPOSE made us look like we'd been doing this for years."</p>
+          <div class="stars">★★★★★<span class="role-tag">Cinematographer</span></div>
+          <p class="testi-quote">"I went from one shoot a month to four. EXi knows my style better than half my agents did."</p>
           <div class="testi-author">
             <div class="av" style="background-image:url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Tomás Marín</b><span>Founder · Rivet Supply</span></div>
+            <div><b>Diego Marín</b><span>Cinematographer · Madrid</span></div>
           </div>
         </div>
         <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Performance</span></div>
-          <p class="testi-quote">"ROI doubled in the first quarter. Briefing went from 2 hours to 2 minutes."</p>
+          <div class="stars">★★★★★<span class="role-tag">Illustrator</span></div>
+          <p class="testi-quote">"Two cover commissions in my second month. The whole pitching nightmare just… disappeared."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Ava Müller</b><span>Performance Lead · Nordica</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Lina Park</b><span>Illustrator · Seoul</span></div>
           </div>
         </div>
         <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Strategist</span></div>
-          <p class="testi-quote">"The match quality is uncanny. Every creator EXi sent us was on-brand, on-budget, and ready to ship."</p>
+          <div class="stars">★★★★★<span class="role-tag">Copywriter</span></div>
+          <p class="testi-quote">"Briefs that actually match my voice. I closed a brand campaign two days after joining — I wasn't ready."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Daniel Roth</b><span>Brand Strategist · Vogue IT</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Ava Morgan</b><span>Copywriter · NYC</span></div>
           </div>
         </div>
         <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">CEO</span></div>
-          <p class="testi-quote">"I used to lose sleep over influencer ROI. Now I sleep — and the campaigns run themselves."</p>
+          <div class="stars">★★★★★<span class="role-tag">3D Artist</span></div>
+          <p class="testi-quote">"The escrow is what sold me. No more chasing invoices for 90 days. Money lands, work flows."</p>
           <div class="testi-author">
             <div class="av" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Olivia Pereira</b><span>CEO · Form Studio</span></div>
+            <div><b>Yuki Aoki</b><span>3D Artist · Tokyo</span></div>
           </div>
         </div>
         <div class="testi-card" aria-hidden="true">
-          <div class="stars">★★★★★<span class="role-tag">Content Lead</span></div>
-          <p class="testi-quote">"We launched in 4 markets simultaneously. EXi handled the local creator pools — we just approved."</p>
+          <div class="stars">★★★★★<span class="role-tag">UI/UX</span></div>
+          <p class="testi-quote">"EXi rewrote my portfolio intro overnight. My acceptance rate jumped from 12% to 38%."</p>
           <div class="testi-author">
-            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&auto=format')"></div>
-            <div><b>Nikolai Aslan</b><span>Content Lead · Asanaké</span></div>
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Omar Khaled</b><span>UI / UX · Cairo</span></div>
+          </div>
+        </div>
+        <div class="testi-card" aria-hidden="true">
+          <div class="stars">★★★★★<span class="role-tag">Model</span></div>
+          <p class="testi-quote">"I stopped agency hopping. Two Vogue Italia features in one season — straight through the app."</p>
+          <div class="testi-author">
+            <div class="av" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&auto=format')"></div>
+            <div><b>Sarah Chen</b><span>Model · Tel Aviv</span></div>
           </div>
         </div>
       </div>
@@ -4295,9 +4626,8 @@
 
   <!-- FAQ -->
   <section class="faq">
-    <span class="faq-eyebrow"><span class="live-dot"></span>Live Q&amp;A <span class="sp">·</span> with EXi</span>
     <h2 class="sr">Got questions? <span class="italic-accent">Ask EXi.</span></h2>
-    <p class="faq-sub sr s1">Tap a question below — EXi answers in real time. No waiting on hold, no contact forms.</p>
+    <p class="faq-sub sr s1">Tap a question below — EXi answers in real time.</p>
 
     <div class="faq-chat">
       <div class="faq-chat-head">
@@ -4319,34 +4649,34 @@
       <div class="faq-prompt">Suggested questions</div>
       <div class="faq-chips" id="faqChips">
         <button class="faq-chip" type="button"
-          data-q="How fast can I launch a campaign?"
-          data-a="Most brands launch their first campaign within 6 days. If you arrive with a brief, I can generate 12 matching creators in under 10 minutes.">
-          <span class="dot"></span>How fast can I launch?
+          data-q="How does EXi find me work?"
+          data-a="I scan live briefs across the platform 24/7, match you to ones your portfolio and rates fit, and submit a tailored pitch automatically. You only see the matches that actually fit your style.">
+          <span class="dot"></span>How does EXi find me work?
         </button>
         <button class="faq-chip" type="button"
-          data-q="How do you vet creators?"
-          data-a="Every creator passes audience-authenticity checks, engagement-fraud detection, and a manual editorial review before joining EXPOSE. I remove anyone whose audience quality dips below our bar.">
-          <span class="dot"></span>How do you vet creators?
+          data-q="How much does EXPOSE take?"
+          data-a="6% of project value — about a third of what a traditional agent would charge. No subscription fees, no hidden costs, no charges for unsuccessful pitches.">
+          <span class="dot"></span>How much do you take?
         </button>
         <button class="faq-chip" type="button"
-          data-q="How is ROI tracked?"
-          data-a="Pixel-level attribution back to revenue. Every post carries a UTM tag, and I track reach, engagement, link-level CTR, conversions, and — for e-commerce — revenue per creator.">
-          <span class="dot"></span>How is ROI tracked?
+          data-q="When and how do I get paid?"
+          data-a="Brands fund the project upfront into escrow. The moment you ship a milestone, the cash releases — usually within 24h. No chasing invoices, no 90-day net terms.">
+          <span class="dot"></span>How does payment work?
         </button>
         <button class="faq-chip" type="button"
-          data-q="What does pricing look like?"
-          data-a="A flat monthly fee for the workspace — no success fees, no cut of creator payouts. Plans start at $390/mo. Creator budgets are separate and transparent. 14-day free trial on every plan.">
-          <span class="dot"></span>What does it cost?
+          data-q="Do I need experience?"
+          data-a="No — I work for anyone serious about a creative career. I'll review your portfolio in seconds and tell you exactly what to build first to attract your first paid brief.">
+          <span class="dot"></span>Do I need experience?
         </button>
         <button class="faq-chip" type="button"
-          data-q="Can I bring my own creators?"
-          data-a="Yes — invite your existing roster into your workspace and manage them alongside new matches. Same contracts, same dashboard, same payouts.">
-          <span class="dot"></span>Can I bring my roster?
+          data-q="How do you know my style?"
+          data-a="I read your portfolio, social posts, and engagement data — then map the gap between where you are and the brands you want. The more you use me, the sharper my picks get.">
+          <span class="dot"></span>How do you know my style?
         </button>
         <button class="faq-chip" type="button"
-          data-q="Do you handle international markets?"
-          data-a="40+ markets with local creator pools, native-language briefs, and region-specific compliance (GDPR, LGPD, etc.). One workspace, every region.">
-          <span class="dot"></span>Do you support global markets?
+          data-q="Can I turn down a brief?"
+          data-a="Always. Every match goes to you first — I never commit you to anything. Decline as many as you like; I learn from each one and refine the next batch.">
+          <span class="dot"></span>Can I decline briefs?
         </button>
       </div>
     </div>
@@ -4354,36 +4684,37 @@
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <span class="fc-eyebrow"><span class="live-dot"></span><b id="fcJoinedHour">5 brands</b> joined in the last hour</span>
+    <div class="fc-spark-badge" aria-hidden="true">E</div>
+    <span class="fc-eyebrow"><span class="live-dot"></span><b id="fcJoinedHour">7 creatives</b> joined in the last hour</span>
 
     <h2>
       <span class="line">
         <span class="word" style="--i:0">Stop</span>
-        <span class="word" style="--i:1">guessing.</span>
+        <span class="word" style="--i:1">chasing.</span>
       </span>
       <span class="line italic-accent">
         <span class="word" style="--i:2">Start</span>
-        <span class="word" style="--i:3">shipping</span>
-        <span class="word" style="--i:4">campaigns.</span>
+        <span class="word" style="--i:3">getting</span>
+        <span class="word" style="--i:4">booked.</span>
       </span>
     </h2>
 
-    <p class="fc-sub">Brief in 60 seconds. EXi matches you with vetted creators, runs the campaign, and — <b>shows you the ROI before you ship the next one.</b></p>
+    <p class="fc-sub">Your portfolio is already enough. The next brief is sitting in EXi's inbox — <b>open the app and it's yours.</b></p>
 
     <div class="fc-ctas">
-      <a class="fc-cta fc-cta-primary" href="site-contact.html">Book a demo <span class="arrow">→</span></a>
-      <a class="fc-cta fc-cta-ghost" href="site-contact.html">
+      <a class="fc-cta fc-cta-primary" href="#" onclick="goToApp(event)">התחילו בחינם — קבלו התאמות <span class="arrow">→</span></a>
+      <a class="fc-cta fc-cta-ghost" href="site-contact-he.html">
         <span class="play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        Watch 2-min tour
+        Watch 60-sec demo
       </a>
     </div>
 
     <div class="fc-meta">
-      <span>✓ 14-day free trial</span>
+      <span>✓ Free forever for creatives</span>
       <span class="sep">·</span>
-      <span>✓ No success fees</span>
+      <span>✓ No credit card</span>
       <span class="sep">·</span>
-      <span>✓ White-glove onboarding</span>
+      <span>✓ 2-min setup</span>
     </div>
 
     <div class="fc-stats">
@@ -4444,24 +4775,24 @@
 
     <div class="fc-ticker" aria-hidden="true">
       <div class="fc-ticker-track" id="fcTicker">
-        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&auto=format')"></span><b>Lumen</b> launched a $45K campaign<span class="ago">· 2m</span></span>
-        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Moray Beauty</b> just joined<span class="ago">· 4m</span></span>
-        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&auto=format')"></span><b>Rivet</b> hit 4.2× ROI today<span class="ago">· 7m</span></span>
-        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Northwind</b> shipped to 4 markets<span class="ago">· 12m</span></span>
-        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop&auto=format')"></span><b>Sonas</b> matched with 12 creators<span class="ago">· 18m</span></span>
-        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Asanaké</b> just joined<span class="ago">· 22m</span></span>
-        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&auto=format')"></span><b>Form Studio</b> closed a launch<span class="ago">· 28m</span></span>
-        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Nordica</b> unlocked Growth plan<span class="ago">· 34m</span></span>
+        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&auto=format')"></span><b>Ines</b> got booked for Vogue Italia<span class="ago">· 2m</span></span>
+        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Jonas</b> just joined from Berlin<span class="ago">· 4m</span></span>
+        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&auto=format')"></span><b>Diego</b> shipped a Nike editorial<span class="ago">· 7m</span></span>
+        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Sarah</b> raised her rate to $140/hr<span class="ago">· 12m</span></span>
+        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop&auto=format')"></span><b>Lina</b> got 3 new matches<span class="ago">· 18m</span></span>
+        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Omar</b> just joined from Cairo<span class="ago">· 22m</span></span>
+        <span class="fc-ticker-pill"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&auto=format')"></span><b>Ava</b> closed a brand campaign<span class="ago">· 28m</span></span>
+        <span class="fc-ticker-pill"><span class="live-dot"></span><b>Kai</b> hit $10K this month<span class="ago">· 34m</span></span>
 
         <!-- duplicate for seamless loop -->
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&auto=format')"></span><b>Lumen</b> launched a $45K campaign<span class="ago">· 2m</span></span>
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Moray Beauty</b> just joined<span class="ago">· 4m</span></span>
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&auto=format')"></span><b>Rivet</b> hit 4.2× ROI today<span class="ago">· 7m</span></span>
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Northwind</b> shipped to 4 markets<span class="ago">· 12m</span></span>
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop&auto=format')"></span><b>Sonas</b> matched with 12 creators<span class="ago">· 18m</span></span>
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Asanaké</b> just joined<span class="ago">· 22m</span></span>
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&auto=format')"></span><b>Form Studio</b> closed a launch<span class="ago">· 28m</span></span>
-        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Nordica</b> unlocked Growth plan<span class="ago">· 34m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&auto=format')"></span><b>Ines</b> got booked for Vogue Italia<span class="ago">· 2m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Jonas</b> just joined from Berlin<span class="ago">· 4m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&auto=format')"></span><b>Diego</b> shipped a Nike editorial<span class="ago">· 7m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Sarah</b> raised her rate to $140/hr<span class="ago">· 12m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop&auto=format')"></span><b>Lina</b> got 3 new matches<span class="ago">· 18m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Omar</b> just joined from Cairo<span class="ago">· 22m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="mini-av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&auto=format')"></span><b>Ava</b> closed a brand campaign<span class="ago">· 28m</span></span>
+        <span class="fc-ticker-pill" aria-hidden="true"><span class="live-dot"></span><b>Kai</b> hit $10K this month<span class="ago">· 34m</span></span>
       </div>
     </div>
   </section>
@@ -4469,16 +4800,16 @@
   <!-- FOOTER -->
   <footer class="footer">
   <div class="footer-brand"><svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>EXPOSE</div>
-  <p class="footer-tagline">The AI-powered marketing engine for world-class creatives.</p>
+  <p class="footer-tagline">מנוע השיווק המופעל על ידי AI ליוצרים ברמה עולמית.</p>
   <div class="footer-apps">
-    <a href="https://apps.apple.com/il/app/create-connect-expose/id6749957784?l=he" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><div class="store-label">Download on the</div><div class="store-name">App Store</div></div></a>
-    <a href="https://play.google.com/store/apps/details?id=com.expose.exposeapp&pcampaignid=web_share" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.66.19.99.08l12.35-7.04-2.73-2.74-10.61 9.7zM20.93 10.62L17.78 8.8l-3.07 3.07 3.07 3.07 3.17-1.84c.9-.52.9-2 .02-2.52l-.04.04zM2.08.37C1.7.61 1.5 1.03 1.5 1.55v20.9c0 .52.2.94.58 1.18l.08.04 11.71-11.71v-.27L2.08.37zm3.1 9.17l3.07-3.07L5.52 3.75 2.45 7.04l2.73 2.5z"/></svg><div><div class="store-label">Get it on</div><div class="store-name">Google Play</div></div></a>
+    <a href="https://apps.apple.com/il/app/create-connect-expose/id6749957784?l=he" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><div class="store-label">הורידו מה-</div><div class="store-name">App Store</div></div></a>
+    <a href="https://play.google.com/store/apps/details?id=com.expose.exposeapp&pcampaignid=web_share" target="_blank" rel="noopener" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.66.19.99.08l12.35-7.04-2.73-2.74-10.61 9.7zM20.93 10.62L17.78 8.8l-3.07 3.07 3.07 3.07 3.17-1.84c.9-.52.9-2 .02-2.52l-.04.04zM2.08.37C1.7.61 1.5 1.03 1.5 1.55v20.9c0 .52.2.94.58 1.18l.08.04 11.71-11.71v-.27L2.08.37zm3.1 9.17l3.07-3.07L5.52 3.75 2.45 7.04l2.73 2.5z"/></svg><div><div class="store-label">הורידו מ-</div><div class="store-name">Google Play</div></div></a>
   </div>
   <div class="footer-cols">
-    <div class="footer-col"><h6>Product</h6><a href="site.html">For Creatives</a><a href="site-brands.html">For Brands</a><a href="site-exi.html">Meet EXi</a><a href="#">Pricing</a></div>
-    <div class="footer-col"><h6>Company</h6><a href="site-about.html">About Us</a><a href="#">Careers</a><a href="site-blog.html">Blog</a><a href="#">Press</a></div>
-    <div class="footer-col"><h6>Support</h6><a href="#">Help Center</a><a href="#">Privacy</a><a href="#">Terms</a><a href="site-contact.html">Contact</a></div>
-    <div class="footer-col"><h6>Follow us</h6>
+    <div class="footer-col"><h6>מוצר</h6><a href="site-he.html">ליוצרים</a><a href="site-brands-he.html">למותגים</a><a href="site-exi-he.html">הכירו את EXi</a><a href="#">תמחור</a></div>
+    <div class="footer-col"><h6>חברה</h6><a href="site-about-he.html">אודותינו</a><a href="#">קריירה</a><a href="site-blog-he.html">בלוג</a><a href="#">עיתונות</a></div>
+    <div class="footer-col"><h6>תמיכה</h6><a href="#">מרכז עזרה</a><a href="#">פרטיות</a><a href="#">תנאי שימוש</a><a href="site-contact-he.html">צרו קשר</a></div>
+    <div class="footer-col"><h6>עקבו אחרינו</h6>
       <div class="footer-si-grid">
         <a href="https://www.instagram.com/exposse.global?igsh=MTRyeTM3a25yMWU2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="footer-si" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.tiktok.com/@expose.global?_r=1&_t=ZS-96p77IB61VE" target="_blank" rel="noopener" class="footer-si" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg></a>
@@ -4489,7 +4820,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 EXPOSE. All rights reserved.</span>
+    <span class="footer-copy">© 2025 EXPOSE. כל הזכויות שמורות.</span>
     <div class="footer-socials">
       <a href="https://www.instagram.com/exposse.global?igsh=MTRyeTM3a25yMWU2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a href="https://www.tiktok.com/@expose.global?_r=1&_t=ZS-96p77IB61VE" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.23 8.23 0 0 0 4.81 1.54V6.78a4.85 4.85 0 0 1-1.04-.09z"/></svg></a>
@@ -4719,33 +5050,33 @@
     const composerInput = document.querySelector('.meet .composer-input');
     if (!chat) return;
 
-    // Script of the conversation — brand-focused
+    // Script of the conversation
     const SCRIPT = [
       { type: 'exi-typing', delay: 350 },
-      { type: 'exi', text: 'Good morning! Your Q2 campaign is up <b>+34%</b> vs last month.', delay: 700 },
+      { type: 'exi', text: 'Good morning ☀️ Your portfolio just scored <b>84/100</b> — up from 71 last week.', delay: 700 },
       { type: 'exi-typing', delay: 400 },
-      { type: 'exi', text: 'Here\'s your live dashboard 👇', delay: 500 },
+      { type: 'exi', text: 'I pulled this week so far 👇', delay: 500 },
       { type: 'stats', delay: 350 },
       { type: 'exi-typing', delay: 500 },
-      { type: 'exi', text: '3 creators perfectly matched your Spring brief. This one has the highest reach →', delay: 900 },
-      { type: 'brief', delay: 400, brand: 'S', brandColor: '#7C3AED', name: 'Sofia Rossi', sub: '2.1M reach · Fashion & Lifestyle', price: '98% match' },
+      { type: 'exi', text: '4 new briefs just landed that match your style. One feels really right for you →', delay: 900 },
+      { type: 'brief', delay: 400, brand: 'V', brandColor: '#111', name: 'Vogue Italia', sub: 'Editorial · Milan', price: '$4,200' },
       { type: 'quick', delay: 500, options: [
-        { label: 'See all 3', primary: false },
-        { label: 'Book her', primary: true }
+        { label: 'Tell me more', primary: false },
+        { label: 'Apply for me', primary: true }
       ] },
       { type: 'user-typing', delay: 800 },
-      { type: 'user', text: 'Book her', delay: 400 },
+      { type: 'user', text: 'Apply for me', delay: 400 },
       { type: 'exi-typing', delay: 500 },
-      { type: 'exi', text: '✓ Sofia is confirmed. Contract signed, brief sent. Content goes live in <b>48h</b>.', delay: 1100 },
+      { type: 'exi', text: '✓ Submitted with your top 8 frames + the SS25 reel. I\'ll ping you the moment they reply.', delay: 1100 },
     ];
 
     // Composer placeholder rotation while chat plays
     const PLACEHOLDERS = [
       'Ask EXi anything…',
-      'Find me a photographer in NYC…',
-      'How is my campaign performing?',
-      'Match me with top creators…',
-      'What should we post this week?'
+      'Find me a fashion brief in NYC…',
+      'How do I raise my rates?',
+      'Pitch me to Nike…',
+      'What should I post today?'
     ];
     let phIdx = 0, phTimer = null;
     const rotatePlaceholder = () => {
@@ -4788,8 +5119,8 @@
       wrap.className = 'msg from-exi';
       wrap.innerHTML = `
         <div class="msg-stats">
-          <div class="msg-stat"><b>2.4M</b><span>Impressions</span></div>
-          <div class="msg-stat"><b class="green">3.2x</b><span>ROI</span></div>
+          <div class="msg-stat"><b>4</b><span>Done projects</span></div>
+          <div class="msg-stat"><b class="green">$2,000</b><span>Average offer</span></div>
         </div>`;
       return wrap;
     };
@@ -5031,7 +5362,7 @@
           if (n > 38) n = 6 + Math.floor(Math.random() * 4);
           joined.style.transition = 'color .3s ease';
           joined.style.color = 'var(--orange)';
-          joined.textContent = n + ' brands';
+          joined.textContent = n + ' creatives';
           setTimeout(() => { joined.style.color = ''; }, 500);
         }
       }, 4500);
@@ -5152,7 +5483,7 @@
     io.observe(section);
   })();
 
-  // Tabs (For Brands / For Creatives)
+  // Tabs (למותגים / ליוצרים)
   document.querySelectorAll('.tabs button').forEach((b) => {
     b.addEventListener('click', () => {
       document.querySelectorAll('.tabs button').forEach((x) => x.classList.remove('active'));
@@ -5229,8 +5560,8 @@
     // ─── Counter ───
     const nums = document.querySelectorAll('.trust-num b');
     if (!nums.length) return;
-    let current = 2340;          // start a bit below target for the count-up reveal
-    let target  = 2400;
+    let current = 2380;          // start a bit below target for the count-up reveal
+    let target  = 2439;
     const fmt = (n) => n.toLocaleString('en-US') + '+';
     nums.forEach(n => n.textContent = fmt(current));
 
