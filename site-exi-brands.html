@@ -59,21 +59,76 @@ a{color:inherit;text-decoration:none}
 .nav-menu{grid-column:1;justify-self:start;width:36px;height:36px;display:grid;place-items:center;border-radius:10px;color:var(--ink)}
 
 /* ── Drawer ── */
-.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;opacity:0;transition:opacity .25s}
-.drawer-overlay.open{display:block;opacity:1}
-.drawer{position:fixed;top:0;left:0;bottom:0;width:80vw;max-width:300px;background:#fff;z-index:1000;display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .28s cubic-bezier(.4,0,.2,1);box-shadow:4px 0 24px rgba(0,0,0,.15)}
-.drawer.open{transform:translateX(0)}
-.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
-.drawer-head .nav-logo{color:var(--ink)}
-.drawer-close{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;background:var(--bg-soft);border:none;cursor:pointer;color:var(--ink)}
-.drawer-nav{flex:1;padding:12px 0;overflow-y:auto}
-.drawer-nav a{display:block;padding:14px 24px;font-size:16px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);transition:background .15s,color .15s}
-.drawer-nav a:last-child{border-bottom:none}
-.drawer-nav a:hover{background:var(--bg-soft);color:var(--orange)}
-.drawer-nav a.active{color:var(--orange)}
-.drawer-foot{padding:20px;border-top:1px solid var(--line)}
-.drawer-foot .btn-orange{display:block;text-align:center;padding:14px;border-radius:10px;background:var(--orange);color:#fff;font-size:14px;font-weight:700;box-shadow:0 4px 14px rgba(255,106,26,.3)}
-body.drawer-lock{overflow:hidden}
+/* ── Mobile drawer ── */
+  .drawer-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(19,19,19,.45); backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); opacity: 0;
+    transition: opacity .25s ease;
+  }
+  .drawer-overlay.open { display: block; opacity: 1; }
+  .drawer {
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: min(320px, 85vw); background: #fff; z-index: 201;
+    display: flex; flex-direction: column; padding: 0;
+    transform: translateX(-100%);
+    transition: transform .3s cubic-bezier(.16,1,.3,1);
+    box-shadow: 8px 0 40px rgba(19,19,19,.12);
+  }
+  .drawer.open { transform: translateX(0); }
+  [dir="rtl"] .drawer { left: auto; right: 0; transform: translateX(100%); }
+  [dir="rtl"] .drawer.open { transform: translateX(0); }
+  .drawer-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 22px; border-bottom: 1px solid var(--line);
+  }
+  .drawer-logo {
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 800; font-size: 17px; color: var(--ink);
+  }
+  .drawer-logo .spark { width: 13px; height: 13px; color: var(--orange); }
+  .drawer-close {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: grid; place-items: center;
+    color: var(--gray); background: var(--bg-soft);
+    border: 1px solid var(--line);
+  }
+  .drawer-close:hover { color: var(--ink); }
+  .drawer-nav {
+    flex: 1; padding: 16px 12px;
+    display: flex; flex-direction: column; gap: 2px; overflow-y: auto;
+  }
+  .drawer-nav a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 14px; border-radius: 12px;
+    font-size: 15px; font-weight: 600; color: var(--ink-2);
+    transition: background .15s ease, color .15s ease; text-decoration: none;
+  }
+  .drawer-nav a:hover { background: var(--bg-soft); color: var(--ink); }
+  .drawer-nav a.active { background: var(--orange-soft); color: var(--orange); }
+  .drawer-nav a .dn-icon {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: var(--bg-soft); border: 1px solid var(--line);
+    display: grid; place-items: center; flex-shrink: 0; color: var(--gray);
+  }
+  .drawer-nav a.active .dn-icon { background: rgba(255,106,26,.12); border-color: rgba(255,106,26,.2); color: var(--orange); }
+  .drawer-nav a:hover .dn-icon { color: var(--orange); }
+  .drawer-divider { height: 1px; background: var(--line); margin: 8px 14px; }
+  .drawer-nav .dn-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gray-2); padding: 8px 14px 2px;
+  }
+  .drawer-foot {
+    padding: 16px 22px 28px; border-top: 1px solid var(--line);
+  }
+  .drawer-foot .btn-orange {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; padding: 14px; border-radius: 12px;
+    background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 700; letter-spacing: .02em;
+    box-shadow: 0 4px 14px rgba(255,106,26,.32); text-decoration: none;
+  }
+  body.drawer-lock { overflow: hidden; }
 
 /* ── Accordion nav ── */
 .da-wrap{border-bottom:1px solid var(--line)}
@@ -513,35 +568,98 @@ body.drawer-lock{overflow:hidden}
 .footer-si{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:rgba(255,255,255,.5);transition:background .15s,color .15s,border-color .15s;text-decoration:none;margin-bottom:0!important}
 .footer-si:hover{background:rgba(255,106,26,.15);border-color:rgba(255,106,26,.3);color:#FF6A1A}
 
-/* Language switcher */
-.lang-switch {
-  font-size: 12px; font-weight: 700; letter-spacing: .04em;
-  padding: 6px 12px; border-radius: 20px;
-  border: 1px solid rgba(255,106,26,.35);
-  color: var(--orange); background: transparent;
-  transition: background .15s, color .15s;
-  cursor: pointer; text-decoration: none;
-  display: inline-block; line-height: 1;
-}
-.lang-switch:hover { background: var(--orange); color: #fff; }
+/* Language switcher (drawer only on mobile) */
+  .drawer-lang-switch {
+    font-size: 12px; font-weight: 700; letter-spacing: .04em;
+    padding: 6px 14px; border-radius: 20px;
+    border: 1.5px solid rgba(255,106,26,.4);
+    color: var(--orange); background: transparent;
+    transition: background .15s, color .15s, border-color .15s;
+    text-decoration: none; display: inline-flex;
+    align-items: center; gap: 5px; line-height: 1;
+    white-space: nowrap; margin: 12px 24px 4px;
+  }
+  .drawer-lang-switch:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+  @media(min-width:900px) { .drawer-lang-switch { display: none; } }
 
-/* ── Language switcher ── */
-.lang-switch {
-  font-size: 12px; font-weight: 700;
-  padding: 6px 14px; border-radius: 20px;
-  border: 1.5px solid rgba(255,106,26,.4);
-  color: var(--orange); background: transparent;
-  transition: background .15s, color .15s, border-color .15s;
-  text-decoration: none; display: inline-flex;
-  align-items: center; gap: 5px; line-height: 1;
-  white-space: nowrap;
-}
-.lang-switch:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
-.lang-switch-globe { width: 12px; height: 12px; flex-shrink: 0; }
-/* Mobile: hide in top nav, show in drawer */
-@media(max-width:899px) { nav > .lang-switch { display: none; } }
-/* Desktop: show in top nav */
-@media(min-width:900px) { .drawer-lang-switch { display: none; } }
+  /* ── Desktop nav (≥ 900px) ── */
+  @media (min-width: 900px) {
+    .nav { grid-template-columns: auto 1fr auto; padding: 0 56px; height: 64px; }
+    .nav-logo { grid-column: 1; justify-self: start; font-size: 21px; }
+    .nav-links {
+      grid-column: 2; display: flex; align-items: center;
+      justify-content: center; gap: 4px;
+      font-size: 14px; font-weight: 500; color: var(--ink-2);
+    }
+    .nav-right { grid-column: 3; gap: 10px; }
+    .nav-login { padding: 10px 20px; font-size: 13px; }
+    .nav-menu { display: none; }
+    .lang-circle { display: inline-flex; }
+
+    .nav-links > a {
+      position: relative; padding: 4px 10px; border-radius: 6px;
+      transition: color .2s ease;
+    }
+    .nav-links > a::after {
+      content: ''; position: absolute;
+      bottom: -2px; left: 10px; right: 10px;
+      height: 2px; border-radius: 99px; background: var(--orange);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .25s cubic-bezier(.16,1,.3,1);
+    }
+    .nav-links > a:hover { color: var(--orange); }
+    .nav-links > a:hover::after,
+    .nav-links > a.active::after { transform: scaleX(1); }
+    .nav-links > a.active { color: var(--orange); }
+
+    .nav-dropdown { position: relative; }
+    .nav-dd-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 14px; font-weight: 500; color: var(--ink-2);
+      background: none; border: none; cursor: pointer;
+      padding: 4px 10px; border-radius: 6px; font-family: inherit;
+      line-height: 1.5; transition: color .2s ease; position: relative;
+    }
+    .nav-dd-btn::after {
+      content: ''; position: absolute;
+      bottom: -2px; left: 10px; right: 10px;
+      height: 2px; border-radius: 99px; background: var(--orange);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .25s cubic-bezier(.16,1,.3,1);
+    }
+    .nav-dd-btn:hover { color: var(--orange); }
+    .nav-dd-btn:hover::after, .nav-dd-btn.active::after { transform: scaleX(1); }
+    .nav-dd-btn.active { color: var(--orange); }
+    .nav-dd-chevron { transition: transform .2s; flex-shrink: 0; }
+    .nav-dropdown:hover .nav-dd-chevron,
+    .nav-dropdown:focus-within .nav-dd-chevron { transform: rotate(180deg); }
+    .nav-dd-menu {
+      display: none; position: absolute;
+      top: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+      background: #fff; border: 1px solid rgba(236,231,226,.9);
+      border-radius: 14px; padding: 6px;
+      box-shadow: 0 8px 32px rgba(19,19,19,.12), 0 2px 8px rgba(19,19,19,.05);
+      min-width: 180px; z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dd-menu,
+    .nav-dropdown:focus-within .nav-dd-menu { display: block; }
+    .nav-dd-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 9px;
+      font-size: 13px; font-weight: 600; color: var(--ink-2);
+      text-decoration: none; transition: background .12s, color .12s;
+      white-space: nowrap;
+    }
+    .nav-dd-menu a .dd-ico {
+      width: 28px; height: 28px; border-radius: 7px;
+      background: var(--bg-soft); border: 1px solid var(--line);
+      display: grid; place-items: center; flex-shrink: 0; color: var(--gray);
+    }
+    .nav-dd-menu a:hover { background: var(--orange-soft); color: var(--orange); }
+    .nav-dd-menu a:hover .dd-ico { color: var(--orange); border-color: rgba(255,106,26,.2); background: rgba(255,106,26,.1); }
+    .nav-dd-menu a.active { background: var(--orange-soft); color: var(--orange); }
+    .nav-dd-menu a.active .dd-ico { color: var(--orange); border-color: rgba(255,106,26,.2); background: rgba(255,106,26,.1); }
+  }
 </style>
 </head>
 <body>
@@ -549,49 +667,94 @@ body.drawer-lock{overflow:hidden}
 
 <!-- Drawer -->
 <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
-<aside class="drawer" id="drawer" role="dialog" aria-modal="true">
-  <div class="drawer-head">
+  <!-- Mobile drawer overlay -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+
+  <!-- Mobile drawer -->
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="drawer-head">
+      <div class="drawer-logo">
+        <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+        EXPOSE
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <div class="dn-label">How it works</div>
+      <a href="site.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        For Creatives
+      </a>
+      <a href="site-brands.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+        For Brands
+      </a>
+      <div class="drawer-divider"></div>
+      <a href="site-about.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        About Us
+      </a>
+      <a href="site-exi.html" class="active">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></span>
+        Meet EXi
+      </a>
+      <a href="#pricing">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        Pricing
+      </a>
+      <div class="drawer-divider"></div>
+      <a href="site-blog.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        Blog
+      </a>
+      <a href="site-contact.html">
+        <span class="dn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+        Contact
+      </a>
+    </nav>
+    <a href="site-exi-brands-he.html" class="drawer-lang-switch" aria-label="גרסה בעברית">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>&nbsp;עברית
+    </a>
+    <div class="drawer-foot">
+      <a href="#" onclick="goToApp(event)" class="btn-orange">Join EXPOSE — Free</a>
+    </div>
+  </aside>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <button class="nav-menu" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
     <div class="nav-logo">
-      <svg class="spark" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
+      <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
       EXPOSE
     </div>
-    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
-      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-  <nav class="drawer-nav">
-    <a href="site-brands.html">For Brands</a>
-    <a href="site.html">For Creatives</a>
-    <div class="drawer-divider"></div>
-    <div class="da-wrap">
-      <button class="da-toggle exi-active" id="exiToggle" aria-expanded="false">
-        Meet EXi
-        <svg class="da-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="da-sub-list" id="exiSubList">
-        <a href="site-exi.html">For Creatives</a>
-        <a href="site-exi-brands.html" class="active">For Brands</a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <button class="nav-dd-btn" aria-haspopup="true">
+          How it works
+          <svg class="nav-dd-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dd-menu">
+          <a href="site.html">
+            <span class="dd-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>For Creatives
+          </a>
+          <a href="site-brands.html">
+            <span class="dd-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>For Brands
+          </a>
+        </div>
       </div>
+      <a href="site-about.html">About Us</a>
+      <a href="site-exi.html" class="active">Meet EXi</a>
+      <a href="#pricing">Pricing</a>
     </div>
-    <a href="#pricing">Pricing</a>
-    <a href="site-about.html">About Us</a>
-    <a href="site-blog.html">Blog</a>
-    <a href="site-contact.html">Contact</a>
-  <a href="site-exi-brands-he.html" class="lang-switch" aria-label="גרסה בעברית"><svg class="lang-switch-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>עברית</a>
-  <a href="site-exi-brands-he.html" class="lang-switch drawer-lang-switch" style="margin:12px 24px 4px;display:inline-flex;" aria-label="עברית"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>&nbsp;עברית</a>
-    <div class="drawer-foot"><a href="#" onclick="goToApp(event)" class="btn-orange">Join EXPOSE — It's Free</a></div>
-</aside>
-
-<!-- Nav -->
-<nav class="nav">
-  <button class="nav-menu" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
-    <svg width="22" height="16" viewBox="0 0 22 16"><path d="M0 1.5h22M0 8h22M0 14.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-  </button>
-  <div class="nav-logo">
-    <svg class="spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg>
-    EXPOSE
-  </div>
-</nav>
+    <div class="nav-right">
+      <a class="nav-login" href="#" onclick="goToApp(event)">Join</a>
+      <a href="site-exi-brands-he.html" class="lang-circle" aria-label="גרסה בעברית">עב</a>
+    </div>
+  </nav>
 
 <!-- ═══ HERO ═══ -->
 <header class="hero">
